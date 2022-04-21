@@ -9,9 +9,9 @@ def app():
     
     st.title('Batter Comparison')    
     
-    deliveres = pd.read_csv("C:/Personal/Tutorials/Cricket Analytics using Python/IPL Dataset and Code/IPL Ball-by-Ball 2008-2022.csv")
-    matches = pd.read_csv("C:/Personal/Tutorials/Cricket Analytics using Python/IPL Dataset and Code/IPL Matches 2008-2022.csv")
-    player = pd.read_csv("C:/Personal/Tutorials/Cricket Analytics using Python/IPL Dataset and Code/Player Profile.csv")
+    deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
+    matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
+    player = pd.read_csv("data/Player Profile.csv")
     
     # Make a copy
     del_df = deliveres.copy()

@@ -9,8 +9,8 @@ def app():
     
     st.title('Batsman Records')    
     
-    deliveres = pd.read_csv("C:/Personal/Tutorials/Cricket Analytics using Python/IPL Dataset and Code/IPL Ball-by-Ball 2008-2022.csv")
-    matches = pd.read_csv("C:/Personal/Tutorials/Cricket Analytics using Python/IPL Dataset and Code/IPL Matches 2008-2022.csv")
+    deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
+    matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
 
     # Make a copy
     del_df = deliveres.copy()
