@@ -1,0 +1,17 @@
+import streamlit as st
+from multiapp import MultiApp
+from apps import  home,batsmananalysis,bowleranalysis,battercomparison,bowlercomparison,predictwinpercent,scorepredictor # import your app modules here
+
+app = MultiApp()
+
+# Add all your application here
+app.add_app("Home", home.app)
+app.add_app("Batsman Analysis", batsmananalysis.app)
+app.add_app("Bowler Analysis", bowleranalysis.app)
+app.add_app("Batsman Comparison", battercomparison.app)
+app.add_app("Bowler Comparison", bowlercomparison.app)
+app.add_app("Win Predictor", predictwinpercent.app)
+app.add_app("Score Predictor", scorepredictor.app)
+
+# The main app
+app.run()
