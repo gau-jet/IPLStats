@@ -38,7 +38,7 @@ def app():
     with col3:
         score = st.number_input('Score',min_value=0,format='%d')
     with col4:
-        overs = st.number_input('Overs completed')
+        overs = st.number_input('Overs completed',min_value=0.0,step=0.1,format="%.1f")
     with col5:
         wickets = st.number_input('Wickets out',min_value=0,max_value=10,format='%d')
 
@@ -54,5 +54,5 @@ def app():
         result = pipe.predict_proba(input_df)
         loss = result[0][0]
         win = result[0][1]
-        st.header(batting_team + "- " + str(round(win*100)) + "%")
-        st.header(bowling_team + "- " + str(round(loss*100)) + "%")
+        st.subheader(batting_team + "- " + str(round(win*100)) + "%" + "  " +bowling_team + "- " + str(round(loss*100)) + "%")
+        

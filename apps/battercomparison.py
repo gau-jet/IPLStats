@@ -74,7 +74,8 @@ def app():
     def plotScatterGraph(df,key1,key2,xlabel,ylabel):        
         
         plt.figure(figsize = (9, 4))
-        plt.scatter(df[key1], df[key2]+0.35,s=45,c='#55ff33')
+        plt.style.use('dark_background')
+        plt.scatter(df[key1], df[key2]+0.10,s=45)
         title = ylabel+' vs '+xlabel
         plt.title(title)
         plt.xlabel(xlabel)

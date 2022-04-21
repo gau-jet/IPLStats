@@ -187,21 +187,21 @@ def app():
 
         input = input.replace(np.nan,0)
         
-        linear_score = str(linear_regressor.predict(input));
+        #linear_score = str(linear_regressor.predict(input));
         rdf_regressor_score = str(rdf_regressor.predict(input));
         dt_regressor_score = str(dt_regressor.predict(input));
         b="[]"
         for char in b:
-            linear_score = linear_score.replace(char, "")
+            #linear_score = linear_score.replace(char, "")
             rdf_regressor_score = rdf_regressor_score.replace(char, "")
             dt_regressor_score = dt_regressor_score.replace(char, "")
         
-        linear_score = linear_score.split(".")
+        #linear_score = linear_score.split(".")
         rdf_regressor_score = rdf_regressor_score.split(".")
         dt_regressor_score = dt_regressor_score.split(".")
         
         st.subheader(batting_team + " will score")
         st.text("Lasso Regression method:  Between " + str(round(my_prediction-10)) + " and " +str(round(my_prediction+5)))
-        st.text("Linear Regression method: " + str(linear_score[0]))
+        #st.text("Linear Regression method: " + str(linear_score[0]))
         st.text("Random Forest method: "+ rdf_regressor_score[0])
         st.text("Decision Tree method: " + dt_regressor_score[0])

@@ -68,7 +68,9 @@ def app():
     def plotPerformanceGraph(df,selected_player):        
         
         plt.figure(figsize = (12, 4))    
-        df.groupby(['bowling_team'])['batsman_runs'].sum().sort_values().plot(kind = 'barh', color = 'g')
+        plt.style.use('dark_background')
+        plt.tight_layout()
+        df.groupby(['bowling_team'])['batsman_runs'].sum().sort_values().plot(kind = 'barh')
               
         title = selected_player+ ' - against all teams'
         plt.title(title)
