@@ -85,11 +85,7 @@ def app():
         st.pyplot(plt)
     
     
-    def getSpecificDataFrame(df,bowler,start_year,end_year):
-        df = df[df['Season'].between(start_year, end_year)]
-        df = df[df.bowler == bowler]
-        return df 
-    
+      
     #st.text(df.columns)    
     #st.text(df.head())
     
@@ -107,7 +103,7 @@ def app():
     
     if bowler != DEFAULT:                
         comb_df['isBowlerWk'] = comb_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-        filtered_df = getSpecificDataFrame(comb_df,bowler,start_year,end_year)
+        filtered_df = utils.getSpecificDataFrame(comb_df,'bowler',bowler,start_year,end_year)
         
         if filtered_df.empty:
             st.subheader('No Data Found!')

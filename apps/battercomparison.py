@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     
-    st.title('Batter Comparison')    
+    st.title('Batter Matchups')    
     
     deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
     matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
@@ -32,45 +32,6 @@ def app():
     #st.write(comb_df.head(10))
     
                
-    def playerStatistics(df):    
-        
-        df['isDot'] = df['batsman_runs'].apply(lambda x: 1 if x == 0 else 0)
-        df['isOne'] = df['batsman_runs'].apply(lambda x: 1 if x == 1 else 0)
-        df['isTwo'] = df['batsman_runs'].apply(lambda x: 1 if x == 2 else 0)
-        df['isThree'] = df['batsman_runs'].apply(lambda x: 1 if x == 3 else 0)
-        df['isFour'] = df['batsman_runs'].apply(lambda x: 1 if x == 4 else 0)
-        df['isSix'] = df['batsman_runs'].apply(lambda x: 1 if x == 6 else 0)
-        
-        
-        runs = pd.DataFrame(df.groupby(['batsman'])['batsman_runs'].sum().reset_index()).groupby(['batsman'])['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'runs'})
-        innings = pd.DataFrame(df.groupby(['batsman'])['match_id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'innings'})
-        balls = pd.DataFrame(df.groupby(['batsman'])['match_id'].count()).reset_index().rename(columns = {'match_id':'balls'})
-        dismissals = pd.DataFrame(df.groupby(['batsman'])['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'dismissals'})
-        
-        dots = pd.DataFrame(df.groupby(['batsman'])['isDot'].sum()).reset_index().rename(columns = {'isDot':'dots'})
-        ones = pd.DataFrame(df.groupby(['batsman'])['isOne'].sum()).reset_index().rename(columns = {'isOne':'ones'})
-        twos = pd.DataFrame(df.groupby(['batsman'])['isTwo'].sum()).reset_index().rename(columns = {'isTwo':'twos'})
-        threes = pd.DataFrame(df.groupby(['batsman'])['isThree'].sum()).reset_index().rename(columns = {'isThree':'threes'})
-        fours = pd.DataFrame(df.groupby(['batsman'])['isFour'].sum()).reset_index().rename(columns = {'isFour':'fours'})
-        sixes = pd.DataFrame(df.groupby(['batsman'])['isSix'].sum()).reset_index().rename(columns = {'isSix':'sixes'})
-        
-               
-        df = pd.merge(innings, runs, on = ['batsman']).merge(balls, on = ['batsman']).merge(dismissals, on = ['batsman']).merge(dots, on = ['batsman']).merge(ones, on = ['batsman']).merge(twos, on = ['batsman']).merge(threes, on = ['batsman']).merge(fours, on = ['batsman']).merge(sixes, on = ['batsman'])
-        
-        #StrikeRate
-        df['SR'] = df.apply(lambda x: 100*(x['runs']/x['balls']), axis = 1)
-
-        #runs per innings
-        df['RPI'] = df.apply(lambda x: x['runs']/x['innings'], axis = 1)
-
-        #balls per dismissals
-        df['BPD'] = df.apply(lambda x: utils.balls_per_dismissal(x['balls'], x['dismissals']), axis = 1)
-
-        #balls per boundary
-        df['BPB'] = df.apply(lambda x: utils.balls_per_boundary(x['balls'], (x['fours'] + x['sixes'])), axis = 1)
-        
-        return df        
-    
     def plotScatterGraph(df,key1,key2,xlabel,ylabel):        
         
         plt.figure(figsize = (9, 4))
@@ -92,11 +53,7 @@ def app():
         st.pyplot(plt)
     
     
-    def getSpecificDataFrame(df,batting_type,start_year,end_year):
-        df = df[df['Season'].between(start_year, end_year)]
-        df = df[df.bowling_style == batting_type]
-        return df 
-        
+           
     def getMinBallsFilteredDataFrame(df,min_balls):        
         df = df[df.balls >= min_balls]
         return df
@@ -120,7 +77,7 @@ def app():
         
     if bowling_type != DEFAULT:       
         
-        filtered_df = getSpecificDataFrame(comb_df,bowling_type,start_year,end_year)      
+        filtered_df = utils.getSpecificDataFrame(comb_df,'bowling_style',bowling_type,start_year,end_year)      
         #st.write(filtered_df)
         #return
         if filtered_df.empty:
@@ -128,7 +85,8 @@ def app():
         if not filtered_df.empty:  
             
            # st.write(filtered_df)
-            player_df = playerStatistics(filtered_df)
+            grpbyList = 'batsman'
+            player_df = utils.playerBattingStatistics(filtered_df,grpbyList)
             player_df = getMinBallsFilteredDataFrame(player_df,min_balls)
             player_df.reset_index(drop=True,inplace=True)
             topSRbatsman_df = getTopRecordsDF(player_df,'runs',20)

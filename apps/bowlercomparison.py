@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     
-    st.title('Bowler Comparison')    
+    st.title('Bowler Matchups')    
     
     deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
     matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
@@ -95,11 +95,7 @@ def app():
         st.pyplot(plt)
     
     
-    def getSpecificDataFrame(df,batting_type,start_year,end_year):
-        df = df[df['Season'].between(start_year, end_year)]
-        df = df[df.batting_style == batting_type]
-        return df 
-        
+          
     def getMinBallsFilteredDataFrame(df,min_balls):        
         df = df[df.balls >= min_balls]
         return df
@@ -123,7 +119,7 @@ def app():
         
     if batting_type != DEFAULT:       
         comb_df['isBowlerWk'] = comb_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-        filtered_df = getSpecificDataFrame(comb_df,batting_type,start_year,end_year)      
+        filtered_df = utils.getSpecificDataFrame(comb_df,'batting_style',batting_type,start_year,end_year)      
         #st.write(filtered_df)
         #return
         if filtered_df.empty:

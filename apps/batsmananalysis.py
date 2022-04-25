@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     
-    st.title('Batsman Records')    
+    st.title('Batting Records')    
     
     deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
     matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
@@ -26,44 +26,6 @@ def app():
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
                 
-    def playerStatistics(df):    
-        
-        df['isDot'] = df['batsman_runs'].apply(lambda x: 1 if x == 0 else 0)
-        df['isOne'] = df['batsman_runs'].apply(lambda x: 1 if x == 1 else 0)
-        df['isTwo'] = df['batsman_runs'].apply(lambda x: 1 if x == 2 else 0)
-        df['isThree'] = df['batsman_runs'].apply(lambda x: 1 if x == 3 else 0)
-        df['isFour'] = df['batsman_runs'].apply(lambda x: 1 if x == 4 else 0)
-        df['isSix'] = df['batsman_runs'].apply(lambda x: 1 if x == 6 else 0)
-        df['phase'] = df['over'].apply(lambda x: utils.phase(x))
-        
-        runs = pd.DataFrame(df.groupby(['batsman','phase'])['batsman_runs'].sum().reset_index()).groupby(['batsman','phase'])['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'runs'})
-        innings = pd.DataFrame(df.groupby(['batsman','phase'])['match_id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'innings'})
-        balls = pd.DataFrame(df.groupby(['batsman','phase'])['match_id'].count()).reset_index().rename(columns = {'match_id':'balls'})
-        dismissals = pd.DataFrame(df.groupby(['batsman','phase'])['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'dismissals'})
-        
-        dots = pd.DataFrame(df.groupby(['batsman','phase'])['isDot'].sum()).reset_index().rename(columns = {'isDot':'dots'})
-        ones = pd.DataFrame(df.groupby(['batsman','phase'])['isOne'].sum()).reset_index().rename(columns = {'isOne':'ones'})
-        twos = pd.DataFrame(df.groupby(['batsman','phase'])['isTwo'].sum()).reset_index().rename(columns = {'isTwo':'twos'})
-        threes = pd.DataFrame(df.groupby(['batsman','phase'])['isThree'].sum()).reset_index().rename(columns = {'isThree':'threes'})
-        fours = pd.DataFrame(df.groupby(['batsman','phase'])['isFour'].sum()).reset_index().rename(columns = {'isFour':'fours'})
-        sixes = pd.DataFrame(df.groupby(['batsman','phase'])['isSix'].sum()).reset_index().rename(columns = {'isSix':'sixes'})
-        
-               
-        df = pd.merge(innings, runs, on = ['batsman','phase']).merge(balls, on = ['batsman','phase']).merge(dismissals, on = ['batsman','phase']).merge(dots, on = ['batsman','phase']).merge(ones, on = ['batsman','phase']).merge(twos, on = ['batsman','phase']).merge(threes, on = ['batsman','phase']).merge(fours, on = ['batsman','phase']).merge(sixes, on = ['batsman','phase'])
-        
-        #StrikeRate
-        df['SR'] = df.apply(lambda x: 100*(x['runs']/x['balls']), axis = 1)
-
-        #runs per innings
-        #df['RPI'] = df.apply(lambda x: x['runs']/x['innings'], axis = 1)
-
-        #balls per dismissals
-        df['BPD'] = df.apply(lambda x: utils.balls_per_dismissal(x['balls'], x['dismissals']), axis = 1)
-
-        #balls per boundary
-        df['BPB'] = df.apply(lambda x: utils.balls_per_boundary(x['balls'], (x['fours'] + x['sixes'])), axis = 1)
-        
-        return df        
     
     def plotPerformanceGraph(df,selected_player):        
         
@@ -96,13 +58,14 @@ def app():
     start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
     
     if batsman != DEFAULT:                
-        filtered_df = getSpecificDataFrame(comb_df,batsman,start_year,end_year)       
+        filtered_df = utils.getSpecificDataFrame(comb_df,'batsman',batsman,start_year,end_year)       
         if filtered_df.empty:
             st.subheader('No Data Found!')
         if not filtered_df.empty:  
             plotPerformanceGraph(filtered_df,batsman)
            # st.write(filtered_df)
-            player_df = playerStatistics(filtered_df)
+            grpbyList = ['batsman','phase']
+            player_df = utils.playerBattingStatistics(filtered_df,grpbyList)
             player_df.drop(['batsman'], axis=1, inplace=True)       
             # CSS to inject contained in a string
             hide_dataframe_row_index = """
