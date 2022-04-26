@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
-    
+    utils.header(st)
     st.title('Batting Records')    
     
     deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
@@ -65,8 +65,10 @@ def app():
             plotPerformanceGraph(filtered_df,batsman)
            # st.write(filtered_df)
             grpbyList = ['batsman','phase']
-            player_df = utils.playerBattingStatistics(filtered_df,grpbyList)
-            player_df.drop(['batsman'], axis=1, inplace=True)       
+            playerphase_df = utils.playerBattingStatistics(filtered_df,grpbyList)
+            player_df = utils.playerBattingStatistics(filtered_df,['batsman'])
+            playerphase_df.drop(['batsman'], axis=1, inplace=True)       
+            player_df.drop(['batsman'], axis=1, inplace=True)
             # CSS to inject contained in a string
             hide_dataframe_row_index = """
                         <style>
@@ -78,8 +80,9 @@ def app():
             # Inject CSS with Markdown
             
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
+            st.write("Innings:",player_df['innings'][0],'| Runs:',player_df['runs'][0],"| Balls:",player_df['balls'][0],"| SR:",(round(player_df['SR'][0],2)))
             st.subheader('Perfomance across different phases of a game')
-            st.table(player_df)
+            st.table(playerphase_df)
             st.text('* BPD -> Balls per dismissal')
             st.text('* BPB -> Balls per boundary')
     

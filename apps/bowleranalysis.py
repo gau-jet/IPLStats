@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
-    
+    utils.header(st)
     st.title('Bowling Records')    
     
     deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
@@ -110,9 +110,11 @@ def app():
         if not filtered_df.empty:  
             plotPerformanceGraph(filtered_df,bowler)
            # st.write(filtered_df)
-            player_df = playerStatistics(filtered_df)
-            player_df.drop(['bowler'], axis=1, inplace=True) 
-                  
+
+            playerphase_df = playerStatistics(filtered_df)
+            player_df = utils.playerBowlingStatistics(filtered_df)
+            playerphase_df.drop(['bowler'], axis=1, inplace=True) 
+            player_df.drop(['bowler'], axis=1, inplace=True)       
             # CSS to inject contained in a string
             hide_dataframe_row_index = """
                         <style>                        
@@ -124,7 +126,8 @@ def app():
 
             # Inject CSS with Markdown
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
+            st.write("Innings:",player_df['innings'][0],'| Runs:',player_df['runs'][0],"| Balls:",player_df['balls'][0],"| Wickets:",player_df['dismissals'][0],"| Dot %:",(round(player_df['Dot%'][0],2)),"| Boundary %:",(round(player_df['Boundary%'][0],2)))
             st.subheader('Perfomance across different phases of a game')            
             
-            st.table(player_df)
+            st.table(playerphase_df)
     

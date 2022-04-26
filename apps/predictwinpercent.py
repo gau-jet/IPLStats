@@ -1,8 +1,10 @@
 import streamlit as st
 import pickle
 import pandas as pd
+from apps import utils
 
 def app():
+    utils.header(st)
     teams = ['Sunrisers Hyderabad',
      'Mumbai Indians',
      'Royal Challengers Bangalore',

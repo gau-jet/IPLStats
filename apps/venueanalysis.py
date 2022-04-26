@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
-    
+    utils.header(st)
     st.title('Venue Records')    
     
     deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")

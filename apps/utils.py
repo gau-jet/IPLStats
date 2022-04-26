@@ -4,6 +4,14 @@ import pandas as pd
 import math
 from apps import utils
 
+def header(st):
+    snippet = """
+    <div style="display: flex; justify-content: space-between">
+        <div>🡠 Check the sidebar for more apps</div>        
+    </div>
+    """
+    st.markdown(snippet, unsafe_allow_html=True)
+
 def replaceTeamNames(df):
 
     team_name_mappings = {'Delhi Daredevils':'Delhi Capitals','Deccan Chargers':'Sunrisers Hyderabad','Gujarat Lions':'Gujarat Titans','Kings XI Punjab':'Punjab Kings','Rising Pune Supergiants':'Rising Pune Supergiant','Pune Warriors':'Rising Pune Supergiant'} 
@@ -175,5 +183,47 @@ def playerBattingStatistics(df,grpbyList):
 
         #balls per boundary
         df['BPB'] = df.apply(lambda x: utils.balls_per_boundary(x['balls'], (x['fours'] + x['sixes'])), axis = 1)
+        
+        return df
+        
+def playerBowlingStatistics(df):    
+        
+        df['isDot'] = df['batsman_runs'].apply(lambda x: 1 if x == 0 else 0)
+        #df['isOne'] = df['batsman_runs'].apply(lambda x: 1 if x == 1 else 0)
+        #df['isTwo'] = df['batsman_runs'].apply(lambda x: 1 if x == 2 else 0)
+        #df['isThree'] = df['batsman_runs'].apply(lambda x: 1 if x == 3 else 0)
+        df['isFour'] = df['batsman_runs'].apply(lambda x: 1 if x == 4 else 0)
+        df['isSix'] = df['batsman_runs'].apply(lambda x: 1 if x == 6 else 0)
+        
+              
+        runs = pd.DataFrame(df.groupby(['bowler','match_id'])['total_runs'].sum().reset_index()).groupby(['bowler'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'runs'})
+        innings = pd.DataFrame(df.groupby(['bowler'])['match_id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'innings'})
+        balls = pd.DataFrame(df.groupby(['bowler'])['match_id'].count()).reset_index().rename(columns = {'match_id':'balls'})
+        dismissals = pd.DataFrame(df.groupby(['bowler'])['isBowlerWk'].sum()).reset_index().rename(columns = {'isBowlerWk':'dismissals'})
+        
+        dots = pd.DataFrame(df.groupby(['bowler'])['isDot'].sum()).reset_index().rename(columns = {'isDot':'dots'})
+        #ones = pd.DataFrame(df.groupby(['bowler'])['isOne'].sum()).reset_index().rename(columns = {'isOne':'ones'})
+        #twos = pd.DataFrame(df.groupby(['bowler'])['isTwo'].sum()).reset_index().rename(columns = {'isTwo':'twos'})
+        #threes = pd.DataFrame(df.groupby(['bowler'])['isThree'].sum()).reset_index().rename(columns = {'isThree':'threes'})
+        fours = pd.DataFrame(df.groupby(['bowler'])['isFour'].sum()).reset_index().rename(columns = {'isFour':'fours'})
+        sixes = pd.DataFrame(df.groupby(['bowler'])['isSix'].sum()).reset_index().rename(columns = {'isSix':'sixes'})
+        
+        df = pd.merge(innings, runs, on = ['bowler']).merge(balls, on = ['bowler']).merge(dismissals, on = ['bowler']).merge(dots, on = ['bowler']).merge(fours, on = ['bowler']).merge(sixes, on = ['bowler'])
+        
+        # Dot Percentage = Number of dots in total deliveries
+        df['Dot%'] = df.apply(lambda x: utils.get_dot_percentage(x['dots'], x['balls'])*100, axis = 1)
+        
+        #boundary%
+        df['Boundary%'] = df.apply(lambda x: utils.boundary_per_ball(x['balls'], (x['fours'] + x['sixes']))*100, axis = 1)
+        
+        # Average = Runs per wicket
+        df['Avg'] = df.apply(lambda x: utils.runs_per_dismissal(x['runs'], x['dismissals']), axis = 1)
+        
+        # StrikeRate = Balls per wicket
+        df['SR'] = df.apply(lambda x: utils.balls_per_dismissal(x['balls'], x['dismissals']), axis = 1)
+
+        # Economy = runs per over
+        df['Eco'] = df.apply(lambda x: utils.runs_per_ball(x['balls'], x['runs'])*6, axis = 1)    
+        
         
         return df
