@@ -29,7 +29,7 @@ def app():
     with col1:
         batting_team = st.selectbox('Select the batting team',sorted(teams))
     with col2:
-        bowling_team = st.selectbox('Select the bowling team',sorted(teams))
+        bowling_team = st.selectbox('Select the bowling team',sorted(teams) ,index=1)
 
     selected_city = st.selectbox('Select Venue',sorted(cities))
 
