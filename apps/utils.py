@@ -283,6 +283,6 @@ def plotScatterGraph(df,key1,key2,xlabel,ylabel):
 
         for i, label in enumerate(annotations):
             #if label in selected_players:
-            plt.annotate(label, (df[key1][i], df[key2][i]))
+            plt.annotate(label, (df[key1][i], df[key2][i]),(df[key1][i]+.35, df[key2][i]))
         
         st.pyplot(plt)
