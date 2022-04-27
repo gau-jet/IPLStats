@@ -1,55 +1,23 @@
 import streamlit as st
-import math
+#import math
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+#import numpy as np
+#import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
     utils.header(st)
     st.title('Batting Records')    
     
-    deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
-    matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
-
-    # Make a copy
-    del_df = deliveres.copy()
-    match_df = matches.copy()
-
+    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
+    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
+    
     comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
     comb_df.rename(columns = {'id':'match_id'}, inplace = True)    
-    
           
     comb_df=utils.replaceTeamNames (comb_df)
 
-    #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
-    #comb_df = comb_df.replace(np.NaN, 0)
-    #st.write(comb_df.head(10))
-                
-    
-    def plotPerformanceGraph(df,selected_player):        
-        
-        plt.figure(figsize = (12, 4))    
-        plt.style.use('dark_background')
-        plt.tight_layout()
-        df.groupby(['bowling_team'])['batsman_runs'].sum().sort_values().plot(kind = 'barh')
-              
-        title = selected_player+ ' - against all teams'
-        plt.title(title)
-        plt.xlabel('Runs scored')
-        plt.ylabel('Opposition Teams')
-        
-        for i, v in enumerate(df.groupby(['bowling_team'])['batsman_runs'].sum().sort_values()):
-            plt.text(v+1 , i-.15 , str(v),
-                    color = 'blue', fontweight = 'bold')
-        st.pyplot(plt)
-    
-    
-    def getSpecificDataFrame(df,batsman,start_year,end_year):
-        df = df[df['Season'].between(start_year, end_year)]
-        df = df[df.batsman == batsman]
-        return df 
-    
+         
     batsman_list = comb_df['batsman'].unique()
     season_list = comb_df['Season'].unique()
     #st.write(comb_df)
@@ -62,13 +30,20 @@ def app():
         if filtered_df.empty:
             st.subheader('No Data Found!')
         if not filtered_df.empty:  
-            plotPerformanceGraph(filtered_df,batsman)
+           
+            grpbyList=['bowling_team']
+            title = batsman+ ' - against all teams'
+            xKey = 'batsman_runs'
+            xlabel = 'Runs scored'
+            ylabel = 'Opposition Teams'
+            
+            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
            # st.write(filtered_df)
+            
             grpbyList = ['batsman','phase']
-            playerphase_df = utils.playerBattingStatistics(filtered_df,grpbyList)
-            player_df = utils.playerBattingStatistics(filtered_df,['batsman'])
-            playerphase_df.drop(['batsman'], axis=1, inplace=True)       
-            player_df.drop(['batsman'], axis=1, inplace=True)
+            playerphase_df = utils.getPlayerStatistics(filtered_df,grpbyList)
+            player_df = utils.getPlayerStatistics(filtered_df,['batsman'])
+        
             # CSS to inject contained in a string
             hide_dataframe_row_index = """
                         <style>
@@ -80,9 +55,13 @@ def app():
             # Inject CSS with Markdown
             
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Innings:",player_df['innings'][0],'| Runs:',player_df['runs'][0],"| Balls:",player_df['balls'][0],"| SR:",(round(player_df['SR'][0],2)))
+            st.write("Innings:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],'| Outs:',player_df['Dismissals'][0],"| SR:",(round(player_df['SR'][0],2)))
             st.subheader('Perfomance across different phases of a game')
+           
+            #st.write(playerphase_df['SR'])
+            #return
+            playerphase_df.drop(['batsman'], axis=1, inplace=True)
             st.table(playerphase_df)
-            st.text('* BPD -> Balls per dismissal')
-            st.text('* BPB -> Balls per boundary')
+            st.write('* BPD -> Balls per dismissal \r\n * BPB -> Balls per boundary')
+            
     

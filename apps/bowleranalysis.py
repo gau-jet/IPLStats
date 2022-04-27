@@ -1,20 +1,16 @@
 import streamlit as st
-import math
+#import math
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
     utils.header(st)
     st.title('Bowling Records')    
     
-    deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
-    matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
-
-    # Make a copy
-    del_df = deliveres.copy()
-    match_df = matches.copy()
+    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
+    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
 
     comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
     comb_df.rename(columns = {'id':'match_id'}, inplace = True)    
@@ -68,32 +64,7 @@ def app():
         
         return df
     
-    def plotPerformanceGraph(df,selected_player):        
-        
-        plt.figure(figsize = (12, 4))    
-        plt.style.use('dark_background')
-        df.groupby(['batting_team'])['is_wicket'].sum().sort_values().plot(kind = 'barh')
-              
-        title = selected_player+ ' - against all teams'
-        plt.title(title)
-        plt.xlabel('Wickets Taken')
-        plt.ylabel('Opposition Teams')
-        
-        for i, v in enumerate(df.groupby(['batting_team'])['is_wicket'].sum().sort_values()):
-            plt.text(v+.05 , i , str(v),
-                    color = 'blue', fontweight = 'bold')
-        st.pyplot(plt)
-    
-    
-      
-    #st.text(df.columns)    
-    #st.text(df.head())
-    
        
-    
-
-
-    
     bowler_list = comb_df['bowler'].unique()
     season_list = comb_df['Season'].unique()
     #st.write(comb_df)
@@ -108,13 +79,20 @@ def app():
         if filtered_df.empty:
             st.subheader('No Data Found!')
         if not filtered_df.empty:  
-            plotPerformanceGraph(filtered_df,bowler)
+            
+            grpbyList=['batting_team']
+            title = bowler+ ' - against all teams'
+            xKey = 'is_wicket'
+            xlabel = 'Wickets taken'
+            ylabel = 'Opposition Teams'
+            
+            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
            # st.write(filtered_df)
 
             playerphase_df = playerStatistics(filtered_df)
-            player_df = utils.playerBowlingStatistics(filtered_df)
+            player_df = utils.getPlayerStatistics(filtered_df,['bowler'])
             playerphase_df.drop(['bowler'], axis=1, inplace=True) 
-            player_df.drop(['bowler'], axis=1, inplace=True)       
+            #player_df.drop(['bowler'], axis=1, inplace=True)       
             # CSS to inject contained in a string
             hide_dataframe_row_index = """
                         <style>                        
@@ -126,7 +104,7 @@ def app():
 
             # Inject CSS with Markdown
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Innings:",player_df['innings'][0],'| Runs:',player_df['runs'][0],"| Balls:",player_df['balls'][0],"| Wickets:",player_df['dismissals'][0],"| Dot %:",(round(player_df['Dot%'][0],2)),"| Boundary %:",(round(player_df['Boundary%'][0],2)))
+            st.write("Innings:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wickets:",player_df['Dismissals'][0],"| Dot %:",(round(player_df['Dot%'][0],2)),"| Boundary %:",(round(player_df['Boundary%'][0],2)))
             st.subheader('Perfomance across different phases of a game')            
             
             st.table(playerphase_df)

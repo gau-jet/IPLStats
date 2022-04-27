@@ -9,14 +9,10 @@ def app():
     utils.header(st)
     st.title('Batter Matchups')    
     
-    deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
-    matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
-    player = pd.read_csv("data/Player Profile.csv")
+    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
+    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
+    player_df = utils.return_df("data/Player Profile.csv")
     
-    # Make a copy
-    del_df = deliveres.copy()
-    match_df = matches.copy()
-    player_df = player.copy()
 
     merged_df = pd.merge(del_df, match_df, on = 'id', how='left')
     merged_df.rename(columns = {'id':'match_id'}, inplace = True)    
@@ -31,53 +27,28 @@ def app():
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
     
-               
-    def plotScatterGraph(df,key1,key2,xlabel,ylabel):        
-        
-        plt.figure(figsize = (9, 4))
-        plt.style.use('dark_background')
-        plt.scatter(df[key1], df[key2]+0.10,s=45)
-        title = ylabel+' vs '+xlabel
-        plt.title(title)
-        plt.xlabel(xlabel)
-        plt.ylabel(ylabel)
-
-
-        annotations=list(df['batsman'])
-        #selected_players = ['A Kumble', 'SL Malinga', 'A Mishra', 'Sohail Tanvir', 'DW Steyn']
-
-        for i, label in enumerate(annotations):
-            #if label in selected_players:
-            plt.annotate(label, (df[key1][i], df[key2][i]))
-        
-        st.pyplot(plt)
-    
-    
-           
-    def getMinBallsFilteredDataFrame(df,min_balls):        
-        df = df[df.balls >= min_balls]
-        return df
-
-    def getTopRecordsDF(df,key,maxrows):        
-        df = df.sort_values(key,ascending = False).head(maxrows).reset_index()
-        return df        
-        
-    #st.text(df.columns)    
-    #st.text(df.head())
        
     bowling_type = comb_df['bowling_style'].dropna().unique()
-    
+    batsman_list = comb_df['batsman'].unique()
     season_list = comb_df['Season'].unique()
     #st.write(comb_df)
     
+    DEFAULT_BATSMAN = 'Pick a player'
+    batsman = utils.selectbox_with_default(st,'Select batsman',sorted(batsman_list),DEFAULT_BATSMAN)
     DEFAULT = 'Pick a bowler type'
     bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type),DEFAULT)
-    start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
-    min_balls = st.number_input('Min. Balls',min_value=50,format='%d')
+    col1, col2 = st.columns(2)
+    with col1:
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+    with col2:    
+        min_balls = st.number_input('Min. Balls',min_value=10,value=20,format='%d')
         
-    if bowling_type != DEFAULT:       
-        
-        filtered_df = utils.getSpecificDataFrame(comb_df,'bowling_style',bowling_type,start_year,end_year)      
+    if batsman != DEFAULT_BATSMAN:       
+        filtered_df = utils.getSpecificDataFrame(comb_df,'batsman',batsman,start_year,end_year)
+        if bowling_type != DEFAULT:
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type,start_year,end_year)     
+        if not filtered_df.empty:
+            filtered_df = utils.getMinBallsFilteredDataFrame(filtered_df,min_balls)
         #st.write(filtered_df)
         #return
         if filtered_df.empty:
@@ -85,16 +56,26 @@ def app():
         if not filtered_df.empty:  
             
            # st.write(filtered_df)
-            grpbyList = 'batsman'
-            player_df = utils.playerBattingStatistics(filtered_df,grpbyList)
-            player_df = getMinBallsFilteredDataFrame(player_df,min_balls)
+            #grpbyList = 'bowler'
+            filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
+            player_df = utils.getPlayerStatistics(filtered_df,['bowler'])
+            #st.table(player_df);            
             player_df.reset_index(drop=True,inplace=True)
-            topSRbatsman_df = getTopRecordsDF(player_df,'runs',20)
-            #st.write(topSRbatsman_df)
-            #return
-            plotScatterGraph(topSRbatsman_df,'SR','RPI','StrikeRate','AVG Runs')
-            topbatsman_df = getTopRecordsDF(player_df,'fours',20)
-            plotScatterGraph(topbatsman_df,'BPD','BPB','Balls Per Dismissal','Balls per Boundary')
+            
+            if not player_df.empty:
+                sort_by_list = ['Runs']
+                sort_asc_order = [False]
+                topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
+                #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
+                
+                grpbyList=['bowler']
+                title = batsman+ ' - against bowlers'
+                xKey = 'Runs'
+                xlabel = 'Runs scored'
+                ylabel = 'Bowler'
+                #st.write(topSRbatsman_df)
+                utils.plotBarGraph(topSRbatsman_df,grpbyList,title,xKey,xlabel,ylabel)
+                #plotScatterGraph(topSRbatsman_df,'SR','Eco','StrikeRate','EconomyRate')            
             
             #player_df.drop(['batsman'], axis=1, inplace=True)       
             # CSS to inject contained in a string
@@ -107,8 +88,11 @@ def app():
 
             # Inject CSS with Markdown
             
-            st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.subheader('Batsman Comparison Stats')
-            st.dataframe(player_df.sort_values('runs',ascending = False))
+            st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)    
+            sort_by_list = ['Dismissals']
+            sort_asc_order = [False]
+            topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
+            topSRbatsman_df.drop(['index','fours','sixes'], axis=1, inplace=True)
+            st.table(topSRbatsman_df)
             
     
