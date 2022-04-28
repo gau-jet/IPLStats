@@ -92,6 +92,10 @@ def app():
             playerphase_df = playerStatistics(filtered_df)
             player_df = utils.getPlayerStatistics(filtered_df,['bowler'])
             playerphase_df.drop(['bowler'], axis=1, inplace=True) 
+            
+            noof4wks = utils.getNoof4Wickets(filtered_df)
+            noof5wks = utils.getNoof5Wickets(filtered_df)
+            #return
             #player_df.drop(['bowler'], axis=1, inplace=True)       
             # CSS to inject contained in a string
             hide_dataframe_row_index = """
@@ -104,7 +108,7 @@ def app():
 
             # Inject CSS with Markdown
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Innings:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wickets:",player_df['Dismissals'][0],"| Dot %:",(round(player_df['Dot%'][0],2)),"| Boundary %:",(round(player_df['Boundary%'][0],2)))
+            st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",(round(player_df['Dot%'][0],2)),"| Boundary %:",(round(player_df['Boundary%'][0],2)),"| 4W:",noof4wks,"| 5W:",noof5wks)
             st.subheader('Perfomance across different phases of a game')            
             
             st.table(playerphase_df)

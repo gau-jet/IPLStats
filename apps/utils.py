@@ -185,13 +185,34 @@ def getBowlingStatsforaVenue(df,venue):
 def getHighestScore(df):
     runs = pd.DataFrame(df.groupby(['batsman','match_id'])['batsman_runs'].sum().reset_index()).groupby(['batsman','match_id'])['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'Match_Runs'})
     return (runs.Match_Runs.max())
+
+def getNoofThirties(df):
+    
+    runs = pd.DataFrame(df.groupby(['match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
+    noofthirties= runs['Match_Runs'].apply(lambda x: 1 if x >=30 else 0).sum()
+    return (noofthirties)    
     
 def getNoofFifties(df):
     
-    runs = pd.DataFrame(df.groupby(['Season','match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
-    nooffifties = runs['Match_Runs'].apply(lambda x: 1 if x >=50 and x <100 else 0).sum()
-    
+    runs = pd.DataFrame(df.groupby(['match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
+    nooffifties = runs['Match_Runs'].apply(lambda x: 1 if x >=50 and x <100 else 0).sum()    
     return (nooffifties)
+    
+def getNoof4Wickets(df):
+    
+    df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','NA'])]
+    #df = df[df.venue == venue]     
+    dismissals = pd.DataFrame(df.groupby(['Season','match_id'])['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
+       
+    noof4wks = dismissals['Dismissals'].apply(lambda x: 1 if x == 4 else 0).sum()
+    return (noof4wks)
+    
+def getNoof5Wickets(df):
+    df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','NA'])]
+    dismissals = pd.DataFrame(df.groupby(['match_id'])['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
+        
+    noof5wks = dismissals['Dismissals'].apply(lambda x: 1 if x > 4 else 0).sum()
+    return (noof5wks)    
     
 def getNoofHundreds(df):
     
@@ -218,7 +239,9 @@ def getPlayerStatistics(df,grpbyList):
         
         innings = pd.DataFrame(df.groupby(grpbyList)['match_id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'Innings'})
         balls = pd.DataFrame(df.groupby(grpbyList)['match_id'].count()).reset_index().rename(columns = {'match_id':'Balls'})
-        dismissals = pd.DataFrame(df.groupby(grpbyList)['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
+        
+        bowler_dismissal_df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','NA'])]
+        dismissals = pd.DataFrame(bowler_dismissal_df.groupby(grpbyList)['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
         
         dots = pd.DataFrame(df.groupby(grpbyList)['isDot'].sum()).reset_index().rename(columns = {'isDot':'dots'})
         ones = pd.DataFrame(df.groupby(grpbyList)['isOne'].sum()).reset_index().rename(columns = {'isOne':'ones'})
