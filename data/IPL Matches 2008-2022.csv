@@ -149,17 +149,17 @@ id,city,date,Season,player_of_match,venue,neutral_venue,team1,team2,toss_winner,
 419138,Mumbai,03-04-2010,2010,AT Rayudu,Brabourne Stadium,0,Mumbai Indians,Deccan Chargers,Mumbai Indians,bat,Mumbai Indians,runs,63,N,NA,BR Doctrove,S Ravi
 419139,Kolkata,04-04-2010,2010,DPMD Jayawardene,Eden Gardens,0,Kolkata Knight Riders,Kings XI Punjab,Kolkata Knight Riders,bat,Kings XI Punjab,wickets,8,N,NA,S Asnani,DJ Harper
 419140,Delhi,04-04-2010,2010,PD Collingwood,Feroz Shah Kotla,0,Delhi Daredevils,Royal Challengers Bangalore,Delhi Daredevils,bat,Delhi Daredevils,runs,37,N,NA,BF Bowden,M Erasmus
-419141,Nagpur,05-04-2010,2010,SK Warne,"Vidarbha Cricket Association Stadium, Jamtha",0,Deccan Chargers,Rajasthan Royals,Rajasthan Royals,bat,Rajasthan Royals,runs,2,N,NA,HDPK Dharmasena,SJA Taufel
+419141,Nagpur,05-04-2010,2010,SK Warne,Vidarbha Cricket Association Stadium,0,Deccan Chargers,Rajasthan Royals,Rajasthan Royals,bat,Rajasthan Royals,runs,2,N,NA,HDPK Dharmasena,SJA Taufel
 419142,Chennai,06-04-2010,2010,SK Raina,MA Chidambaram Stadium,0,Chennai Super Kings,Mumbai Indians,Chennai Super Kings,bat,Chennai Super Kings,runs,24,N,NA,S Asnani,DJ Harper
 419143,Jaipur,07-04-2010,2010,MJ Lumb,Sawai Mansingh Stadium,0,Rajasthan Royals,Kings XI Punjab,Kings XI Punjab,bat,Rajasthan Royals,wickets,9,N,NA,S Ravi,SK Tarapore
 419144,Kolkata,07-04-2010,2010,SC Ganguly,Eden Gardens,0,Kolkata Knight Riders,Delhi Daredevils,Kolkata Knight Riders,bat,Kolkata Knight Riders,runs,14,N,NA,BG Jerling,RE Koertzen
 419145,Bangalore,08-04-2010,2010,TL Suman,M Chinnaswamy Stadium,0,Royal Challengers Bangalore,Deccan Chargers,Deccan Chargers,field,Deccan Chargers,wickets,7,N,NA,S Asnani,DJ Harper
 419146,Chandigarh,09-04-2010,2010,KC Sangakkara,Punjab Cricket Association IS Bindra Stadium,0,Kings XI Punjab,Mumbai Indians,Mumbai Indians,bat,Kings XI Punjab,wickets,6,N,NA,M Erasmus,AM Saheba
-419147,Nagpur,10-04-2010,2010,RJ Harris,"Vidarbha Cricket Association Stadium, Jamtha",0,Deccan Chargers,Chennai Super Kings,Chennai Super Kings,bat,Deccan Chargers,wickets,6,N,NA,HDPK Dharmasena,SJA Taufel
+419147,Nagpur,10-04-2010,2010,RJ Harris,Vidarbha Cricket Association Stadium,0,Deccan Chargers,Chennai Super Kings,Chennai Super Kings,bat,Deccan Chargers,wickets,6,N,NA,HDPK Dharmasena,SJA Taufel
 419148,Bangalore,10-04-2010,2010,R Vinay Kumar,M Chinnaswamy Stadium,0,Royal Challengers Bangalore,Kolkata Knight Riders,Royal Challengers Bangalore,field,Royal Challengers Bangalore,wickets,7,N,NA,K Hariharan,DJ Harper
 419149,Delhi,11-04-2010,2010,PP Chawla,Feroz Shah Kotla,0,Delhi Daredevils,Kings XI Punjab,Delhi Daredevils,bat,Kings XI Punjab,wickets,7,N,NA,BF Bowden,AM Saheba
 419150,Jaipur,11-04-2010,2010,SR Tendulkar,Sawai Mansingh Stadium,0,Rajasthan Royals,Mumbai Indians,Rajasthan Royals,field,Mumbai Indians,runs,37,N,NA,BR Doctrove,SK Tarapore
-419151,Nagpur,12-04-2010,2010,Harmeet Singh,"Vidarbha Cricket Association Stadium, Jamtha",0,Deccan Chargers,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Deccan Chargers,runs,13,N,NA,RE Koertzen,RB Tiffin
+419151,Nagpur,12-04-2010,2010,Harmeet Singh,Vidarbha Cricket Association Stadium,0,Deccan Chargers,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Deccan Chargers,runs,13,N,NA,RE Koertzen,RB Tiffin
 419152,Mumbai,13-04-2010,2010,KA Pollard,Brabourne Stadium,0,Mumbai Indians,Delhi Daredevils,Mumbai Indians,bat,Mumbai Indians,runs,39,N,NA,S Asnani,DJ Harper
 419153,Chennai,13-04-2010,2010,R Ashwin,MA Chidambaram Stadium,0,Chennai Super Kings,Kolkata Knight Riders,Kolkata Knight Riders,bat,Chennai Super Kings,wickets,9,N,NA,SS Hazare,SJA Taufel
 419154,Jaipur,14-04-2010,2010,KP Pietersen,Sawai Mansingh Stadium,0,Rajasthan Royals,Royal Challengers Bangalore,Rajasthan Royals,bat,Royal Challengers Bangalore,wickets,5,N,NA,BR Doctrove,S Ravi
@@ -874,19 +874,19 @@ id,city,date,Season,player_of_match,venue,neutral_venue,team1,team2,toss_winner,
 1254084,Delhi,01-05-2021,2021,KA Pollard,Arun Jaitley Stadium,0,Chennai Super Kings,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,4,N,NA,KN Ananthapadmanabhan,CK Nandan
 1254085,Delhi,02-05-2021,2021,JC Buttler,Arun Jaitley Stadium,0,Rajasthan Royals,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Rajasthan Royals,Runs,55,N,NA,C Shamshuddin,CB Gaffaney
 1254086,Ahmedabad,02-05-2021,2021,MA Agarwal,Narendra Modi Stadium,0,Punjab Kings,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,7,N,NA,AK Chaudhary,AY Dandekar
-1254087,Abu Dhabi,20-09-2021,2021,CV Varun,Zayed Cricket Stadium,1,Royal Challengers Bangalore,Kolkata Knight Riders,Royal Challengers Bangalore,bat,Kolkata Knight Riders,Wickets,9,N,NA,CB Gaffaney,S Ravi
-1254088,Abu Dhabi,08-10-2021,2021,Ishan Kishan,Zayed Cricket Stadium,1,Mumbai Indians,Sunrisers Hyderabad,Mumbai Indians,bat,Mumbai Indians,Runs,42,N,NA,Tapan Sharma,VK Sharma
-1254089,Abu Dhabi,02-10-2021,2021,RD Gaikwad,Zayed Cricket Stadium,1,Chennai Super Kings,Rajasthan Royals,Rajasthan Royals,field,Rajasthan Royals,Wickets,7,N,NA,CB Gaffaney,VK Sharma
+1254087,Abu Dhabi,20-09-2021,2021,CV Varun,Sheikh Zayed Stadium,1,Royal Challengers Bangalore,Kolkata Knight Riders,Royal Challengers Bangalore,bat,Kolkata Knight Riders,Wickets,9,N,NA,CB Gaffaney,S Ravi
+1254088,Abu Dhabi,08-10-2021,2021,Ishan Kishan,Sheikh Zayed Stadium,1,Mumbai Indians,Sunrisers Hyderabad,Mumbai Indians,bat,Mumbai Indians,Runs,42,N,NA,Tapan Sharma,VK Sharma
+1254089,Abu Dhabi,02-10-2021,2021,RD Gaikwad,Sheikh Zayed Stadium,1,Chennai Super Kings,Rajasthan Royals,Rajasthan Royals,field,Rajasthan Royals,Wickets,7,N,NA,CB Gaffaney,VK Sharma
 1254090,Sharjah,03-10-2021,2021,GJ Maxwell,Sharjah Cricket Stadium,1,Royal Challengers Bangalore,Punjab Kings,Royal Challengers Bangalore,bat,Royal Challengers Bangalore,Runs,6,N,NA,KN Ananthapadmanabhan,RK Illingworth
 1254091,Sharjah,30-09-2021,2021,JR Hazlewood,Sharjah Cricket Stadium,1,Sunrisers Hyderabad,Chennai Super Kings,Chennai Super Kings,field,Chennai Super Kings,Wickets,6,N,NA,Nitin Menon,YC Barde
 1254092,Sharjah,28-09-2021,2021,SP Narine,Sharjah Cricket Stadium,1,Delhi Capitals,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,3,N,NA,Nitin Menon,HAS Khalid
 1254093,Sharjah,05-10-2021,2021,NM Coulter-Nile,Sharjah Cricket Stadium,1,Rajasthan Royals,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,8,N,NA,AK Chaudhary,MA Gough
 1254094,Dubai,07-10-2021,2021,KL Rahul,Dubai International Cricket Stadium,1,Chennai Super Kings,Punjab Kings,Punjab Kings,field,Punjab Kings,Wickets,6,N,NA,K Srinivasan,RK Illingworth
-1254095,Abu Dhabi,06-10-2021,2021,KS Williamson,Zayed Cricket Stadium,1,Sunrisers Hyderabad,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Sunrisers Hyderabad,Runs,4,N,NA,S Ravi,UV Gandhe
-1254096,Abu Dhabi,23-09-2021,2021,SP Narine,Zayed Cricket Stadium,1,Mumbai Indians,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,7,N,NA,S Ravi,VK Sharma
-1254097,Abu Dhabi,25-09-2021,2021,SS Iyer,Zayed Cricket Stadium,1,Delhi Capitals,Rajasthan Royals,Rajasthan Royals,field,Delhi Capitals,Runs,33,N,NA,CB Gaffaney,UV Gandhe
-1254098,Abu Dhabi,26-09-2021,2021,RA Jadeja,Zayed Cricket Stadium,1,Kolkata Knight Riders,Chennai Super Kings,Kolkata Knight Riders,bat,Chennai Super Kings,Wickets,2,N,NA,CB Gaffaney,Tapan Sharma
-1254099,Abu Dhabi,28-09-2021,2021,KA Pollard,Zayed Cricket Stadium,1,Punjab Kings,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,6,N,NA,S Ravi,VK Sharma
+1254095,Abu Dhabi,06-10-2021,2021,KS Williamson,Sheikh Zayed Stadium,1,Sunrisers Hyderabad,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Sunrisers Hyderabad,Runs,4,N,NA,S Ravi,UV Gandhe
+1254096,Abu Dhabi,23-09-2021,2021,SP Narine,Sheikh Zayed Stadium,1,Mumbai Indians,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,7,N,NA,S Ravi,VK Sharma
+1254097,Abu Dhabi,25-09-2021,2021,SS Iyer,Sheikh Zayed Stadium,1,Delhi Capitals,Rajasthan Royals,Rajasthan Royals,field,Delhi Capitals,Runs,33,N,NA,CB Gaffaney,UV Gandhe
+1254098,Abu Dhabi,26-09-2021,2021,RA Jadeja,Sheikh Zayed Stadium,1,Kolkata Knight Riders,Chennai Super Kings,Kolkata Knight Riders,bat,Chennai Super Kings,Wickets,2,N,NA,CB Gaffaney,Tapan Sharma
+1254099,Abu Dhabi,28-09-2021,2021,KA Pollard,Sheikh Zayed Stadium,1,Punjab Kings,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,6,N,NA,S Ravi,VK Sharma
 1254100,Dubai,27-09-2021,2021,JJ Roy,Dubai International Cricket Stadium,1,Rajasthan Royals,Sunrisers Hyderabad,Rajasthan Royals,bat,Sunrisers Hyderabad,Wickets,7,N,NA,KN Ananthapadmanabhan,Navdeep Singh
 1254101,Dubai,08-10-2021,2021,KS Bharat,Dubai International Cricket Stadium,1,Delhi Capitals,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,7,N,NA,KN Ananthapadmanabhan,Nitin Menon
 1254102,Dubai,01-10-2021,2021,KL Rahul,Dubai International Cricket Stadium,1,Kolkata Knight Riders,Punjab Kings,Punjab Kings,field,Punjab Kings,Wickets,5,N,NA,KN Ananthapadmanabhan,RK Illingworth
