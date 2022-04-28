@@ -866,3 +866,42 @@ id,city,date,Season,player_of_match,venue,neutral_venue,team1,team2,toss_winner,
 1304074,Mumbai,17-04-2022,2022,Umran Malik,Dr DY Patil Sports Academy,1,Punjab Kings,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,7,N,NA,PG Pathak,R Pandit
 1304075,Pune,17-04-2022,2022,DA Miller,Maharashtra Cricket Association Stadium,1,Chennai Super Kings,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,3,N,NA,KN Ananthapadmanabhan,UV Gandhe
 1304076,Mumbai,18-04-2022,2022,YS Chahal,Brabourne Stadium,1,Rajasthan Royals,Kolkata Knight Riders,Kolkata Knight Riders,field,Rajasthan Royals,Runs,7,N,NA,GR Sadashiv Iyer,VK Sharma
+1254079,Ahmedabad,27-04-2021,2021,AB de Villiers,"Narendra Modi Stadium, Ahmedabad",0,Royal Challengers Bangalore,Delhi Capitals,Delhi Capitals,field,Royal Challengers Bangalore,Runs,1,N,NA,S Ravi,VK Sharma
+1254080,Delhi,28-04-2021,2021,RD Gaikwad,"Arun Jaitley Stadium, Delhi",0,Sunrisers Hyderabad,Chennai Super Kings,Sunrisers Hyderabad,bat,Chennai Super Kings,Wickets,7,N,NA,C Shamshuddin,CK Nandan
+1254081,Delhi,29-04-2021,2021,Q de Kock,"Arun Jaitley Stadium, Delhi",0,Rajasthan Royals,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,7,N,NA,CB Gaffaney,KN Ananthapadmanabhan
+1254082,Ahmedabad,29-04-2021,2021,PP Shaw,"Narendra Modi Stadium, Ahmedabad",0,Kolkata Knight Riders,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,7,N,NA,AK Chaudhary,YC Barde
+1254083,Ahmedabad,30-04-2021,2021,Harpreet Brar,"Narendra Modi Stadium, Ahmedabad",0,Punjab Kings,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Punjab Kings,Runs,34,N,NA,S Ravi,VK Sharma
+1254084,Delhi,01-05-2021,2021,KA Pollard,"Arun Jaitley Stadium, Delhi",0,Chennai Super Kings,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,4,N,NA,KN Ananthapadmanabhan,CK Nandan
+1254085,Delhi,02-05-2021,2021,JC Buttler,"Arun Jaitley Stadium, Delhi",0,Rajasthan Royals,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Rajasthan Royals,Runs,55,N,NA,C Shamshuddin,CB Gaffaney
+1254086,Ahmedabad,02-05-2021,2021,MA Agarwal,"Narendra Modi Stadium, Ahmedabad",0,Punjab Kings,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,7,N,NA,AK Chaudhary,AY Dandekar
+1254087,Abu Dhabi,20-09-2021,2021,CV Varun,"Zayed Cricket Stadium, Abu Dhabi",1,Royal Challengers Bangalore,Kolkata Knight Riders,Royal Challengers Bangalore,bat,Kolkata Knight Riders,Wickets,9,N,NA,CB Gaffaney,S Ravi
+1254088,Abu Dhabi,08-10-2021,2021,Ishan Kishan,"Zayed Cricket Stadium, Abu Dhabi",1,Mumbai Indians,Sunrisers Hyderabad,Mumbai Indians,bat,Mumbai Indians,Runs,42,N,NA,Tapan Sharma,VK Sharma
+1254089,Abu Dhabi,02-10-2021,2021,RD Gaikwad,"Zayed Cricket Stadium, Abu Dhabi",1,Chennai Super Kings,Rajasthan Royals,Rajasthan Royals,field,Rajasthan Royals,Wickets,7,N,NA,CB Gaffaney,VK Sharma
+1254090,Sharjah,03-10-2021,2021,GJ Maxwell,Sharjah Cricket Stadium,1,Royal Challengers Bangalore,Punjab Kings,Royal Challengers Bangalore,bat,Royal Challengers Bangalore,Runs,6,N,NA,KN Ananthapadmanabhan,RK Illingworth
+1254091,Sharjah,30-09-2021,2021,JR Hazlewood,Sharjah Cricket Stadium,1,Sunrisers Hyderabad,Chennai Super Kings,Chennai Super Kings,field,Chennai Super Kings,Wickets,6,N,NA,Nitin Menon,YC Barde
+1254092,Sharjah,28-09-2021,2021,SP Narine,Sharjah Cricket Stadium,1,Delhi Capitals,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,3,N,NA,Nitin Menon,HAS Khalid
+1254093,Sharjah,05-10-2021,2021,NM Coulter-Nile,Sharjah Cricket Stadium,1,Rajasthan Royals,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,8,N,NA,AK Chaudhary,MA Gough
+1254094,Dubai,07-10-2021,2021,KL Rahul,Dubai International Cricket Stadium,1,Chennai Super Kings,Punjab Kings,Punjab Kings,field,Punjab Kings,Wickets,6,N,NA,K Srinivasan,RK Illingworth
+1254095,Abu Dhabi,06-10-2021,2021,KS Williamson,"Zayed Cricket Stadium, Abu Dhabi",1,Sunrisers Hyderabad,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Sunrisers Hyderabad,Runs,4,N,NA,S Ravi,UV Gandhe
+1254096,Abu Dhabi,23-09-2021,2021,SP Narine,"Zayed Cricket Stadium, Abu Dhabi",1,Mumbai Indians,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,7,N,NA,S Ravi,VK Sharma
+1254097,Abu Dhabi,25-09-2021,2021,SS Iyer,"Zayed Cricket Stadium, Abu Dhabi",1,Delhi Capitals,Rajasthan Royals,Rajasthan Royals,field,Delhi Capitals,Runs,33,N,NA,CB Gaffaney,UV Gandhe
+1254098,Abu Dhabi,26-09-2021,2021,RA Jadeja,"Zayed Cricket Stadium, Abu Dhabi",1,Kolkata Knight Riders,Chennai Super Kings,Kolkata Knight Riders,bat,Chennai Super Kings,Wickets,2,N,NA,CB Gaffaney,Tapan Sharma
+1254099,Abu Dhabi,28-09-2021,2021,KA Pollard,"Zayed Cricket Stadium, Abu Dhabi",1,Punjab Kings,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,6,N,NA,S Ravi,VK Sharma
+1254100,Dubai,27-09-2021,2021,JJ Roy,Dubai International Cricket Stadium,1,Rajasthan Royals,Sunrisers Hyderabad,Rajasthan Royals,bat,Sunrisers Hyderabad,Wickets,7,N,NA,KN Ananthapadmanabhan,Navdeep Singh
+1254101,Dubai,08-10-2021,2021,KS Bharat,Dubai International Cricket Stadium,1,Delhi Capitals,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,7,N,NA,KN Ananthapadmanabhan,Nitin Menon
+1254102,Dubai,01-10-2021,2021,KL Rahul,Dubai International Cricket Stadium,1,Kolkata Knight Riders,Punjab Kings,Punjab Kings,field,Punjab Kings,Wickets,5,N,NA,KN Ananthapadmanabhan,RK Illingworth
+1254103,Dubai,29-09-2021,2021,YS Chahal,Dubai International Cricket Stadium,1,Rajasthan Royals,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,7,N,NA,AY Dandekar,KN Ananthapadmanabhan
+1254104,Dubai,19-09-2021,2021,RD Gaikwad,Dubai International Cricket Stadium,1,Chennai Super Kings,Mumbai Indians,Chennai Super Kings,bat,Chennai Super Kings,Runs,20,N,NA,Nitin Menon,RK Illingworth
+1254105,Dubai,22-09-2021,2021,A Nortje,Dubai International Cricket Stadium,1,Sunrisers Hyderabad,Delhi Capitals,Sunrisers Hyderabad,bat,Delhi Capitals,Wickets,8,N,NA,KN Ananthapadmanabhan,RK Illingworth
+1254106,Sharjah,07-10-2021,2021,Shivam Mavi,Sharjah Cricket Stadium,1,Kolkata Knight Riders,Rajasthan Royals,Rajasthan Royals,field,Kolkata Knight Riders,Runs,86,N,NA,MA Gough,HAS Khalid
+1254107,Sharjah,25-09-2021,2021,JO Holder,Sharjah Cricket Stadium,1,Punjab Kings,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Punjab Kings,Runs,5,N,NA,RK Illingworth,YC Barde
+1254108,Dubai,26-09-2021,2021,GJ Maxwell,Dubai International Cricket Stadium,1,Royal Challengers Bangalore,Mumbai Indians,Mumbai Indians,field,Royal Challengers Bangalore,Runs,54,N,NA,AK Chaudhary,MA Gough
+1254109,Dubai,03-10-2021,2021,Shubman Gill,Dubai International Cricket Stadium,1,Sunrisers Hyderabad,Kolkata Knight Riders,Sunrisers Hyderabad,bat,Kolkata Knight Riders,Wickets,6,N,NA,J Madanagopal,MA Gough
+1254110,Dubai,04-10-2021,2021,AR Patel,Dubai International Cricket Stadium,1,Chennai Super Kings,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,3,N,NA,AK Chaudhary,Nitin Menon
+1254111,Dubai,21-09-2021,2021,Kartik Tyagi,Dubai International Cricket Stadium,1,Rajasthan Royals,Punjab Kings,Punjab Kings,field,Rajasthan Royals,Runs,2,N,NA,AK Chaudhary,MA Gough
+1254112,Sharjah,02-10-2021,2021,AR Patel,Sharjah Cricket Stadium,1,Mumbai Indians,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,4,N,NA,AK Chaudhary,MA Gough
+1254113,Sharjah,24-09-2021,2021,DJ Bravo,Sharjah Cricket Stadium,1,Royal Challengers Bangalore,Chennai Super Kings,Chennai Super Kings,field,Chennai Super Kings,Wickets,6,N,NA,AK Chaudhary,Nitin Menon
+1254114,Dubai,10-10-2021,2021,RD Gaikwad,Dubai International Cricket Stadium,1,Delhi Capitals,Chennai Super Kings,Chennai Super Kings,field,Chennai Super Kings,Wickets,4,N,NA,Nitin Menon,RK Illingworth
+1254115,Sharjah,11-10-2021,2021,SP Narine,Sharjah Cricket Stadium,1,Royal Challengers Bangalore,Kolkata Knight Riders,Royal Challengers Bangalore,bat,Kolkata Knight Riders,Wickets,4,N,NA,CB Gaffaney,VK Sharma
+1254116,Sharjah,13-10-2021,2021,VR Iyer,Sharjah Cricket Stadium,1,Delhi Capitals,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,3,N,NA,KN Ananthapadmanabhan,MA Gough
+1254117,Dubai,15-10-2021,2021,F du Plessis,Dubai International Cricket Stadium,1,Chennai Super Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Chennai Super Kings,Runs,27,N,NA,Nitin Menon,RK Illingworth
