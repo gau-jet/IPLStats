@@ -181,6 +181,24 @@ def getBowlingStatsforaVenue(df,venue):
     df = df[df.venue == venue]
     new_df = utils.getBowlingStyleWiseStats(df)    
     return new_df.sort_values(by = 'BallsPerWicket', ascending = True) 
+
+def getHighestScore(df):
+    runs = pd.DataFrame(df.groupby(['batsman','match_id'])['batsman_runs'].sum().reset_index()).groupby(['batsman','match_id'])['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'Match_Runs'})
+    return (runs.Match_Runs.max())
+    
+def getNoofFifties(df):
+    
+    runs = pd.DataFrame(df.groupby(['Season','match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
+    nooffifties = runs['Match_Runs'].apply(lambda x: 1 if x >=50 and x <100 else 0).sum()
+    
+    return (nooffifties)
+    
+def getNoofHundreds(df):
+    
+    runs = pd.DataFrame(df.groupby(['Season','match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
+    noofhundreds = runs['Match_Runs'].apply(lambda x: 1 if x >=100 else 0).sum()
+    
+    return (noofhundreds)
     
 def getPlayerStatistics(df,grpbyList):    
         
@@ -197,6 +215,7 @@ def getPlayerStatistics(df,grpbyList):
          
             
         runs = pd.DataFrame(df.groupby(grpbyList)['batsman_runs'].sum().reset_index()).groupby(grpbyList)['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'Runs'})
+        
         innings = pd.DataFrame(df.groupby(grpbyList)['match_id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'Innings'})
         balls = pd.DataFrame(df.groupby(grpbyList)['match_id'].count()).reset_index().rename(columns = {'match_id':'Balls'})
         dismissals = pd.DataFrame(df.groupby(grpbyList)['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
@@ -207,8 +226,7 @@ def getPlayerStatistics(df,grpbyList):
         threes = pd.DataFrame(df.groupby(grpbyList)['isThree'].sum()).reset_index().rename(columns = {'isThree':'threes'})
         fours = pd.DataFrame(df.groupby(grpbyList)['isFour'].sum()).reset_index().rename(columns = {'isFour':'fours'})
         sixes = pd.DataFrame(df.groupby(grpbyList)['isSix'].sum()).reset_index().rename(columns = {'isSix':'sixes'})
-    
-           
+        
         df = pd.merge(innings, runs, on = grpbyList).merge(balls, on = grpbyList).merge(dismissals, on = grpbyList).merge(dots, on = grpbyList).merge(ones, on = grpbyList).merge(twos, on = grpbyList).merge(threes, on = grpbyList).merge(fours, on = grpbyList).merge(sixes, on = grpbyList)
         
         
