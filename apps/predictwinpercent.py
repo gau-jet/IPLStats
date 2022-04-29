@@ -22,7 +22,7 @@ def app():
            'Sharjah', 'Mohali', 'Bengaluru']
 
     pipe = pickle.load(open('pipe.pkl','rb'))
-    st.title('IPL Win Predictor')
+    st.title('Win Predictor')
 
     col1, col2 = st.columns(2)
 
