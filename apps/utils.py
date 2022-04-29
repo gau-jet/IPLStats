@@ -35,8 +35,9 @@ def selectbox_with_default(st,text, values, default, sidebar=False):
         func = st.sidebar.selectbox if sidebar else st.selectbox
         return func(text, np.insert(np.array(values, object), 0, default))
         
-def getSpecificDataFrame(df,key,value,start_year,end_year):
-        df = df[df['Season'].between(start_year, end_year)]
+def getSpecificDataFrame(df,key,value,start_year=None,end_year=None):
+        if start_year:
+            df = df[df['Season'].between(start_year, end_year)]
         df = df[df[key] == value]
         return df 
 
@@ -121,6 +122,10 @@ def getMinBallsFilteredDataFrame(df,min_balls):
             return df
         else:    
             return pd.DataFrame()            
+            
+def getMinBallsFilteredDF(df,min_balls):        
+        df = df[df.Balls >= min_balls]
+        return df
             
 def getVenueStats(df,venue):
     
@@ -308,9 +313,9 @@ def plotBarGraph(df,grpbyList,title,xKey,xlabel,ylabel):
                     color = 'blue', fontweight = 'bold')
         st.pyplot(plt)
 
-def plotScatterGraph(df,key1,key2,xlabel,ylabel):        
+def plotScatterGraph(df,key1,key2,xlabel,ylabel,player_type='batsman'):        
         
-        plt.figure(figsize = (9, 4))
+        plt.figure(figsize = (16, 10))
         plt.style.use('dark_background')
         plt.scatter(df[key1], df[key2],s=45)
         title = ylabel+' vs '+xlabel
@@ -319,11 +324,11 @@ def plotScatterGraph(df,key1,key2,xlabel,ylabel):
         plt.ylabel(ylabel)
 
 
-        annotations=list(df['batsman'])
+        annotations=list(df[player_type])
         #selected_players = ['A Kumble', 'SL Malinga', 'A Mishra', 'Sohail Tanvir', 'DW Steyn']
 
         for i, label in enumerate(annotations):
             #if label in selected_players:
-            plt.annotate(label, (df[key1][i], df[key2][i]),(df[key1][i]+.35, df[key2][i]))
+            plt.annotate(label, (df[key1][i], df[key2][i]),(df[key1][i]+.07, df[key2][i]))
         
         st.pyplot(plt)
