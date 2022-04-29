@@ -836,36 +836,6 @@ id,city,date,Season,player_of_match,venue,neutral_venue,team1,team2,toss_winner,
 1254076,Mumbai,25-04-2021,2021,RA Jadeja,Wankhede Stadium,0,Chennai Super Kings,Royal Challengers Bangalore,Chennai Super Kings,bat,Chennai Super Kings,runs,69,N,NA,AK Chaudhary,VK Sharma
 1254077,Chennai,25-04-2021,2021,PP Shaw,MA Chidambaram Stadium,0,Delhi Capitals,Sunrisers Hyderabad,Delhi Capitals,bat,Delhi Capitals,tie,NA,Y,NA,CB Gaffaney,KN Ananthapadmanabhan
 1254078,Ahmedabad,26-04-2021,2021,EJG Morgan,Narendra Modi Stadium,0,Punjab Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,wickets,5,N,NA,PR Reiffel,YC Barde
-1304047,Mumbai,26-03-2022,2022,UT Yadav,Wankhede Stadium,1,Chennai Super Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,6,N,NA,AK Chaudhary,Nitin Menon
-1304048,Mumbai,27-03-2022,2022,Kuldeep Yadav,Brabourne Stadium,1,Mumbai Indians,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,4,N,NA,RJ Tucker,HAS Khalid
-1304049,Mumbai,27-03-2022,2022,OF Smith,Dr DY Patil Sports Academy,1,Royal Challengers Bangalore,Punjab Kings,Punjab Kings,field,Punjab Kings,Wickets,5,N,NA,Nitin Menon,YC Barde
-1304050,Mumbai,28-03-2022,2022,Mohammed Shami,Wankhede Stadium,1,Lucknow Super Giants,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,5,N,NA,PG Pathak,VK Sharma
-1304051,Pune,29-03-2022,2022,SV Samson,Maharashtra Cricket Association Stadium,1,Rajasthan Royals,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Rajasthan Royals,Runs,61,N,NA,BNJ Oxenford,UV Gandhe
-1304052,Mumbai,30-03-2022,2022,PWH de Silva,Dr DY Patil Sports Academy,1,Kolkata Knight Riders,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,3,N,NA,J Madanagopal,Navdeep Singh
-1304053,Mumbai,31-03-2022,2022,E Lewis,Brabourne Stadium,1,Chennai Super Kings,Lucknow Super Giants,Lucknow Super Giants,field,Lucknow Super Giants,Wickets,6,N,NA,RJ Tucker,VK Sharma
-1304054,Mumbai,01-04-2022,2022,UT Yadav,Wankhede Stadium,1,Punjab Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,6,N,NA,AK Chaudhary,HAS Khalid
-1304055,Mumbai,02-04-2022,2022,JC Buttler,Dr DY Patil Sports Academy,1,Rajasthan Royals,Mumbai Indians,Mumbai Indians,field,Rajasthan Royals,Runs,23,N,NA,Nitin Menon,PG Pathak
-1304056,Pune,02-04-2022,2022,LH Ferguson,Maharashtra Cricket Association Stadium,1,Gujarat Titans,Delhi Capitals,Delhi Capitals,field,Gujarat Titans,Runs,14,N,NA,KN Ananthapadmanabhan,UV Gandhe
-1304057,Mumbai,03-04-2022,2022,LS Livingstone,Brabourne Stadium,1,Punjab Kings,Chennai Super Kings,Chennai Super Kings,field,Punjab Kings,Runs,54,N,NA,RJ Tucker,YC Barde
-1304058,Mumbai,04-04-2022,2022,Avesh Khan,Dr DY Patil Sports Academy,1,Lucknow Super Giants,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Lucknow Super Giants,Runs,12,N,NA,J Madanagopal,Navdeep Singh
-1304059,Mumbai,05-04-2022,2022,KD Karthik,Wankhede Stadium,1,Rajasthan Royals,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,4,N,NA,AK Chaudhary,HAS Khalid
-1304060,Pune,06-04-2022,2022,PJ Cummins,Maharashtra Cricket Association Stadium,1,Mumbai Indians,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,5,N,NA,BNJ Oxenford,KN Ananthapadmanabhan
-1304061,Mumbai,07-04-2022,2022,Q de Kock,Dr DY Patil Sports Academy,1,Delhi Capitals,Lucknow Super Giants,Lucknow Super Giants,field,Lucknow Super Giants,Wickets,6,N,NA,RJ Tucker,Tapan Sharma
-1304062,Mumbai,08-04-2022,2022,Shubman Gill,Brabourne Stadium,1,Punjab Kings,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,6,N,NA,AK Chaudhary,VK Sharma
-1304064,Pune,09-04-2022,2022,Anuj Rawat,Maharashtra Cricket Association Stadium,1,Mumbai Indians,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,7,N,NA,BNJ Oxenford,KN Ananthapadmanabhan
-1304063,Mumbai,09-04-2022,2022,Abhishek Sharma,Dr DY Patil Sports Academy,1,Chennai Super Kings,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,8,N,NA,Navdeep Singh,Nitin Menon
-1304066,Mumbai,10-04-2022,2022,YS Chahal,Wankhede Stadium,1,Rajasthan Royals,Lucknow Super Giants,Lucknow Super Giants,field,Rajasthan Royals,Runs,3,N,NA,AK Chaudhary,Tapan Sharma
-1304065,Mumbai,10-04-2022,2022,Kuldeep Yadav,Brabourne Stadium,1,Delhi Capitals,Kolkata Knight Riders,Kolkata Knight Riders,field,Delhi Capitals,Runs,44,N,NA,CB Gaffaney,J Madanagopal
-1304067,Mumbai,11-04-2022,2022,KS Williamson,Dr DY Patil Sports Academy,1,Gujarat Titans,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,8,N,NA,Chirra Ravikanthreddy,RJ Tucker
-1304068,Mumbai,12-04-2022,2022,S Dube,Dr DY Patil Sports Academy,1,Chennai Super Kings,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Chennai Super Kings,Runs,23,N,NA,Nitin Menon,N Pandit
-1304069,Pune,13-04-2022,2022,MA Agarwal,Maharashtra Cricket Association Stadium,1,Punjab Kings,Mumbai Indians,Mumbai Indians,field,Punjab Kings,Runs,12,N,NA,BNJ Oxenford,UV Gandhe
-1304070,Mumbai,14-04-2022,2022,HH Pandya,Dr DY Patil Sports Academy,1,Gujarat Titans,Rajasthan Royals,Rajasthan Royals,field,Gujarat Titans,Runs,37,N,NA,CB Gaffaney,R Pandit
-1304071,Mumbai,15-04-2022,2022,RA Tripathi,Brabourne Stadium,1,Kolkata Knight Riders,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,7,N,NA,GR Sadashiv Iyer,VK Sharma
-1304072,Mumbai,16-04-2022,2022,KL Rahul,Brabourne Stadium,1,Lucknow Super Giants,Mumbai Indians,Mumbai Indians,field,Lucknow Super Giants,Runs,18,N,NA,AK Chaudhary,NA Patwardhan
-1304073,Mumbai,16-04-2022,2022,KD Karthik,Wankhede Stadium,1,Royal Challengers Bangalore,Delhi Capitals,Delhi Capitals,field,Royal Challengers Bangalore,Runs,16,N,NA,Chirra Ravikanthreddy,J Madanagopal
-1304074,Mumbai,17-04-2022,2022,Umran Malik,Dr DY Patil Sports Academy,1,Punjab Kings,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,7,N,NA,PG Pathak,R Pandit
-1304075,Pune,17-04-2022,2022,DA Miller,Maharashtra Cricket Association Stadium,1,Chennai Super Kings,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,3,N,NA,KN Ananthapadmanabhan,UV Gandhe
-1304076,Mumbai,18-04-2022,2022,YS Chahal,Brabourne Stadium,1,Rajasthan Royals,Kolkata Knight Riders,Kolkata Knight Riders,field,Rajasthan Royals,Runs,7,N,NA,GR Sadashiv Iyer,VK Sharma
 1254079,Ahmedabad,27-04-2021,2021,AB de Villiers,Narendra Modi Stadium,0,Royal Challengers Bangalore,Delhi Capitals,Delhi Capitals,field,Royal Challengers Bangalore,Runs,1,N,NA,S Ravi,VK Sharma
 1254080,Delhi,28-04-2021,2021,RD Gaikwad,Arun Jaitley Stadium,0,Sunrisers Hyderabad,Chennai Super Kings,Sunrisers Hyderabad,bat,Chennai Super Kings,Wickets,7,N,NA,C Shamshuddin,CK Nandan
 1254081,Delhi,29-04-2021,2021,Q de Kock,Arun Jaitley Stadium,0,Rajasthan Royals,Mumbai Indians,Mumbai Indians,field,Mumbai Indians,Wickets,7,N,NA,CB Gaffaney,KN Ananthapadmanabhan
@@ -905,3 +875,42 @@ id,city,date,Season,player_of_match,venue,neutral_venue,team1,team2,toss_winner,
 1254115,Sharjah,11-10-2021,2021,SP Narine,Sharjah Cricket Stadium,1,Royal Challengers Bangalore,Kolkata Knight Riders,Royal Challengers Bangalore,bat,Kolkata Knight Riders,Wickets,4,N,NA,CB Gaffaney,VK Sharma
 1254116,Sharjah,13-10-2021,2021,VR Iyer,Sharjah Cricket Stadium,1,Delhi Capitals,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,3,N,NA,KN Ananthapadmanabhan,MA Gough
 1254117,Dubai,15-10-2021,2021,F du Plessis,Dubai International Cricket Stadium,1,Chennai Super Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Chennai Super Kings,Runs,27,N,NA,Nitin Menon,RK Illingworth
+1304047,Mumbai,26-03-2022,2022,UT Yadav,Wankhede Stadium,1,Chennai Super Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,6,N,NA,AK Chaudhary,Nitin Menon
+1304048,Mumbai,27-03-2022,2022,Kuldeep Yadav,Brabourne Stadium,1,Mumbai Indians,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,4,N,NA,RJ Tucker,HAS Khalid
+1304049,Mumbai,27-03-2022,2022,OF Smith,Dr DY Patil Sports Academy,1,Royal Challengers Bangalore,Punjab Kings,Punjab Kings,field,Punjab Kings,Wickets,5,N,NA,Nitin Menon,YC Barde
+1304050,Mumbai,28-03-2022,2022,Mohammed Shami,Wankhede Stadium,1,Lucknow Super Giants,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,5,N,NA,PG Pathak,VK Sharma
+1304051,Pune,29-03-2022,2022,SV Samson,Maharashtra Cricket Association Stadium,1,Rajasthan Royals,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Rajasthan Royals,Runs,61,N,NA,BNJ Oxenford,UV Gandhe
+1304052,Mumbai,30-03-2022,2022,PWH de Silva,Dr DY Patil Sports Academy,1,Kolkata Knight Riders,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,3,N,NA,J Madanagopal,Navdeep Singh
+1304053,Mumbai,31-03-2022,2022,E Lewis,Brabourne Stadium,1,Chennai Super Kings,Lucknow Super Giants,Lucknow Super Giants,field,Lucknow Super Giants,Wickets,6,N,NA,RJ Tucker,VK Sharma
+1304054,Mumbai,01-04-2022,2022,UT Yadav,Wankhede Stadium,1,Punjab Kings,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,6,N,NA,AK Chaudhary,HAS Khalid
+1304055,Mumbai,02-04-2022,2022,JC Buttler,Dr DY Patil Sports Academy,1,Rajasthan Royals,Mumbai Indians,Mumbai Indians,field,Rajasthan Royals,Runs,23,N,NA,Nitin Menon,PG Pathak
+1304056,Pune,02-04-2022,2022,LH Ferguson,Maharashtra Cricket Association Stadium,1,Gujarat Titans,Delhi Capitals,Delhi Capitals,field,Gujarat Titans,Runs,14,N,NA,KN Ananthapadmanabhan,UV Gandhe
+1304057,Mumbai,03-04-2022,2022,LS Livingstone,Brabourne Stadium,1,Punjab Kings,Chennai Super Kings,Chennai Super Kings,field,Punjab Kings,Runs,54,N,NA,RJ Tucker,YC Barde
+1304058,Mumbai,04-04-2022,2022,Avesh Khan,Dr DY Patil Sports Academy,1,Lucknow Super Giants,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Lucknow Super Giants,Runs,12,N,NA,J Madanagopal,Navdeep Singh
+1304059,Mumbai,05-04-2022,2022,KD Karthik,Wankhede Stadium,1,Rajasthan Royals,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,4,N,NA,AK Chaudhary,HAS Khalid
+1304060,Pune,06-04-2022,2022,PJ Cummins,Maharashtra Cricket Association Stadium,1,Mumbai Indians,Kolkata Knight Riders,Kolkata Knight Riders,field,Kolkata Knight Riders,Wickets,5,N,NA,BNJ Oxenford,KN Ananthapadmanabhan
+1304061,Mumbai,07-04-2022,2022,Q de Kock,Dr DY Patil Sports Academy,1,Delhi Capitals,Lucknow Super Giants,Lucknow Super Giants,field,Lucknow Super Giants,Wickets,6,N,NA,RJ Tucker,Tapan Sharma
+1304062,Mumbai,08-04-2022,2022,Shubman Gill,Brabourne Stadium,1,Punjab Kings,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,6,N,NA,AK Chaudhary,VK Sharma
+1304063,Mumbai,09-04-2022,2022,Abhishek Sharma,Dr DY Patil Sports Academy,1,Chennai Super Kings,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,8,N,NA,Navdeep Singh,Nitin Menon
+1304064,Pune,09-04-2022,2022,Anuj Rawat,Maharashtra Cricket Association Stadium,1,Mumbai Indians,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Royal Challengers Bangalore,Wickets,7,N,NA,BNJ Oxenford,KN Ananthapadmanabhan
+1304065,Mumbai,10-04-2022,2022,Kuldeep Yadav,Brabourne Stadium,1,Delhi Capitals,Kolkata Knight Riders,Kolkata Knight Riders,field,Delhi Capitals,Runs,44,N,NA,CB Gaffaney,J Madanagopal
+1304066,Mumbai,10-04-2022,2022,YS Chahal,Wankhede Stadium,1,Rajasthan Royals,Lucknow Super Giants,Lucknow Super Giants,field,Rajasthan Royals,Runs,3,N,NA,AK Chaudhary,Tapan Sharma
+1304067,Mumbai,11-04-2022,2022,KS Williamson,Dr DY Patil Sports Academy,1,Gujarat Titans,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,8,N,NA,Chirra Ravikanthreddy,RJ Tucker
+1304068,Mumbai,12-04-2022,2022,S Dube,Dr DY Patil Sports Academy,1,Chennai Super Kings,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Chennai Super Kings,Runs,23,N,NA,Nitin Menon,N Pandit
+1304069,Pune,13-04-2022,2022,MA Agarwal,Maharashtra Cricket Association Stadium,1,Punjab Kings,Mumbai Indians,Mumbai Indians,field,Punjab Kings,Runs,12,N,NA,BNJ Oxenford,UV Gandhe
+1304070,Mumbai,14-04-2022,2022,HH Pandya,Dr DY Patil Sports Academy,1,Gujarat Titans,Rajasthan Royals,Rajasthan Royals,field,Gujarat Titans,Runs,37,N,NA,CB Gaffaney,R Pandit
+1304071,Mumbai,15-04-2022,2022,RA Tripathi,Brabourne Stadium,1,Kolkata Knight Riders,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,7,N,NA,GR Sadashiv Iyer,VK Sharma
+1304072,Mumbai,16-04-2022,2022,KL Rahul,Brabourne Stadium,1,Lucknow Super Giants,Mumbai Indians,Mumbai Indians,field,Lucknow Super Giants,Runs,18,N,NA,AK Chaudhary,NA Patwardhan
+1304073,Mumbai,16-04-2022,2022,KD Karthik,Wankhede Stadium,1,Royal Challengers Bangalore,Delhi Capitals,Delhi Capitals,field,Royal Challengers Bangalore,Runs,16,N,NA,Chirra Ravikanthreddy,J Madanagopal
+1304074,Mumbai,17-04-2022,2022,Umran Malik,Dr DY Patil Sports Academy,1,Punjab Kings,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,7,N,NA,PG Pathak,R Pandit
+1304075,Pune,17-04-2022,2022,DA Miller,Maharashtra Cricket Association Stadium,1,Chennai Super Kings,Gujarat Titans,Gujarat Titans,field,Gujarat Titans,Wickets,3,N,NA,KN Ananthapadmanabhan,UV Gandhe
+1304076,Mumbai,18-04-2022,2022,YS Chahal,Brabourne Stadium,1,Rajasthan Royals,Kolkata Knight Riders,Kolkata Knight Riders,field,Rajasthan Royals,Runs,7,N,NA,GR Sadashiv Iyer,VK Sharma
+1304077,Mumbai,19-04-2022,2022,F du Plessis,"Dr DY Patil Sports Academy, Mumbai",1,Royal Challengers Bangalore,Lucknow Super Giants,Lucknow Super Giants,field,Royal Challengers Bangalore,Runs,18,N,NA,CB Gaffaney,N Pandit
+1304078,Mumbai,20-04-2022,2022,Kuldeep Yadav,"Brabourne Stadium, Mumbai",1,Punjab Kings,Delhi Capitals,Delhi Capitals,field,Delhi Capitals,Wickets,9,N,NA,RJ Tucker,Tapan Sharma
+1304079,Navi Mumbai,21-04-2022,2022,Mukesh Choudhary,"Dr DY Patil Sports Academy, Mumbai",1,Mumbai Indians,Chennai Super Kings,Chennai Super Kings,field,Chennai Super Kings,Wickets,3,N,NA,BNJ Oxenford,UV Gandhe
+1304080,Mumbai,22-04-2022,2022,JC Buttler,"Wankhede Stadium, Mumbai",1,Rajasthan Royals,Delhi Capitals,Delhi Capitals,field,Rajasthan Royals,Runs,15,N,NA,NA Patwardhan,Nitin Menon
+1304081,Navi Mumbai,23-04-2022,2022,Rashid Khan,"Dr DY Patil Sports Academy, Mumbai",1,Gujarat Titans,Kolkata Knight Riders,Gujarat Titans,bat,Gujarat Titans,Runs,8,N,NA,KN Ananthapadmanabhan,UV Gandhe
+1304082,Mumbai,23-04-2022,2022,M Jansen,"Brabourne Stadium, Mumbai",1,Royal Challengers Bangalore,Sunrisers Hyderabad,Sunrisers Hyderabad,field,Sunrisers Hyderabad,Wickets,9,N,NA,Chirra Ravikanthreddy,J Madanagopal
+1304083,Mumbai,24-04-2022,2022,KL Rahul,"Wankhede Stadium, Mumbai",1,Lucknow Super Giants,Mumbai Indians,Mumbai Indians,field,Lucknow Super Giants,Runs,36,N,NA,M Erasmus,HAS Khalid
+1304084,Mumbai,25-04-2022,2022,S Dhawan,"Wankhede Stadium, Mumbai",1,Punjab Kings,Chennai Super Kings,Chennai Super Kings,field,Punjab Kings,Runs,11,N,NA,M Erasmus,Tapan Sharma
+1304085,Pune,26-04-2022,2022,R Parag,"Maharashtra Cricket Association Stadium, Pune",1,Rajasthan Royals,Royal Challengers Bangalore,Royal Challengers Bangalore,field,Rajasthan Royals,Runs,29,N,NA,BNJ Oxenford,KN Ananthapadmanabhan
