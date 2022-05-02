@@ -160,8 +160,13 @@ def getVenueStats(df,venue):
     avg_wk_per_match_transposed[0]['AvgWkts'] = (round(avg_wk_per_match_transposed[0]['AvgWkts'],2))
     avg_wk_per_match_transposed[1]['AvgWkts'] = (round(avg_wk_per_match_transposed[1]['AvgWkts'],2))
     
+   
+    matches = pd.DataFrame(df.groupby('venue')['id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'id':'NoofMatches'})
+    matches.drop(['venue'], axis=1, inplace=True) 
+    
     innings_stats_df = {
         'venue':[venue],
+        'Matches': matches['NoofMatches'][0],
         'Avg Runs - 1st Innings': [avg_run_per_match_transposed[0]['AvgRuns']],
         'Avg Runs - 2nd Innings': [avg_run_per_match_transposed[1]['AvgRuns']],
         'Avg Wickets - 1st Innings': [avg_wk_per_match_transposed[0]['AvgWkts']],
