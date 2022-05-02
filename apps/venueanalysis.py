@@ -46,13 +46,13 @@ def app():
         # Inject CSS with Markdown
         
         st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-        st.table(WinPercentageDF.astype(str))
+        st.table(WinPercentageDF.style.set_precision(2))
         
         comb_df = pd.merge(comb_df, player_df[['Player_Name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
         comb_df.drop(['Player_Name'], axis=1, inplace=True)
         
         bowlingstats_df = utils.getBowlingStatsforaVenue(comb_df,venue)        
         st.subheader('Bowling Style Comparison')
-        st.table(bowlingstats_df.astype(str))
+        st.table(bowlingstats_df.style.set_precision(2))
      
     

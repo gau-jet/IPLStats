@@ -5,6 +5,7 @@ import pandas as pd
 #import matplotlib.pyplot as plt
 from apps import utils
 
+
 def app():
     utils.header(st)
     st.title('Batting Records')    
@@ -31,13 +32,7 @@ def app():
             st.subheader('No Data Found!')
         if not filtered_df.empty:  
            
-            grpbyList=['bowling_team']
-            title = batsman+ ' - against all teams'
-            xKey = 'batsman_runs'
-            xlabel = 'Runs scored'
-            ylabel = 'Opposition Teams'
             
-            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
            # st.write(filtered_df)
             
             grpbyList = ['batsman','phase']
@@ -54,19 +49,28 @@ def app():
                         <style>
                         .row_heading.level0 {display:none}
                         .blank {display:none}
+                        
                         </style>
                         """
 
             # Inject CSS with Markdown
             
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Innings:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],'| Outs:',player_df['Dismissals'][0],"| SR:",player_df['SR'][0],"| HS:",highestscore,"| 30s:",noof30s,"| 50s:",noof50s,"| 100s:",noof100s)
+            st.write("Innings:",player_df['Innings'][0],'| Runs:',player_df['Runs'][0],'| Outs:',player_df['Dismissals'][0],"| Avg:",player_df['Avg'][0],"| SR:",player_df['SR'][0],"| HS:",highestscore,"| 30s:",noof30s,"| 50s:",noof50s,"| 100s:",noof100s)
             st.subheader('Perfomance across different phases of a game')
            
             #st.write(playerphase_df['SR'])
             #return
             playerphase_df.drop(['batsman'], axis=1, inplace=True)
-            st.table(playerphase_df.astype(str))
+                     
+            st.table(playerphase_df.style.set_precision(2))
+            #st.table(playerphase_df.style.set_properties(**{'text-align': 'right'}, axis=1)) ## doesnot work
             st.write('* BPD -> Balls per dismissal \r\n * BPB -> Balls per boundary')
             
-    
+            grpbyList=['bowling_team']
+            title = batsman+ ' - against all teams'
+            xKey = 'batsman_runs'
+            xlabel = 'Runs scored'
+            ylabel = 'Opposition Teams'
+            
+            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)

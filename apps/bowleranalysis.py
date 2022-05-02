@@ -110,5 +110,5 @@ def app():
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
             st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",player_df['Dot%'][0],"| Boundary %:",player_df['Boundary%'][0],"| 4W:",noof4wks,"| 5W:",noof5wks)
             st.subheader('Perfomance across different phases of a game')            
-            st.table(playerphase_df.astype(str))
+            st.table(playerphase_df.style.set_precision(2))
     
