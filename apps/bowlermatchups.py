@@ -87,13 +87,13 @@ def app():
             
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
             #st.subheader('Bowler Comparison Stats')
-            topSRbowlers_df.drop(['index','fours','sixes'], axis=1, inplace=True)
+            topSRbowlers_df.drop(['index'], axis=1, inplace=True)
             st.subheader('Batsman dismissed most by bowler')
-            st.table(topSRbowlers_df.head(10).astype(str))
+            st.table(topSRbowlers_df.head(10).style.set_precision(2))
             sort_by_list = ['Runs']
             sort_asc_order = [False]
             st.subheader('Players who have scored most runs against bowler')
             topRunsbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
-            topRunsbatsman_df.drop(['index','fours','sixes'], axis=1, inplace=True)
-            st.table(topRunsbatsman_df.astype(str))
+            topRunsbatsman_df.drop(['index'], axis=1, inplace=True)
+            st.table(topRunsbatsman_df.style.set_precision(2))
     

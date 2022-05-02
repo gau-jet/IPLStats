@@ -258,8 +258,8 @@ def getPlayerStatistics(df,grpbyList):
         ones = pd.DataFrame(df.groupby(grpbyList)['isOne'].sum()).reset_index().rename(columns = {'isOne':'ones'})
         twos = pd.DataFrame(df.groupby(grpbyList)['isTwo'].sum()).reset_index().rename(columns = {'isTwo':'twos'})
         threes = pd.DataFrame(df.groupby(grpbyList)['isThree'].sum()).reset_index().rename(columns = {'isThree':'threes'})
-        fours = pd.DataFrame(df.groupby(grpbyList)['isFour'].sum()).reset_index().rename(columns = {'isFour':'fours'})
-        sixes = pd.DataFrame(df.groupby(grpbyList)['isSix'].sum()).reset_index().rename(columns = {'isSix':'sixes'})
+        fours = pd.DataFrame(df.groupby(grpbyList)['isFour'].sum()).reset_index().rename(columns = {'isFour':'Fours'})
+        sixes = pd.DataFrame(df.groupby(grpbyList)['isSix'].sum()).reset_index().rename(columns = {'isSix':'Sixes'})
         
         df = pd.merge(innings, runs, on = grpbyList).merge(balls, on = grpbyList).merge(dismissals, on = grpbyList).merge(dots, on = grpbyList).merge(ones, on = grpbyList).merge(twos, on = grpbyList).merge(threes, on = grpbyList).merge(fours, on = grpbyList).merge(sixes, on = grpbyList)
         
@@ -278,12 +278,11 @@ def getPlayerStatistics(df,grpbyList):
             df['BPD'] = (round(df.apply(lambda x: utils.balls_per_dismissal(x['Balls'], x['Dismissals']), axis = 1),2))
 
             #balls per boundary
-            df['BPB'] = (round(df.apply(lambda x: utils.balls_per_boundary(x['Balls'], (x['fours'] + x['sixes'])), axis = 1),2))
+            df['BPB'] = (round(df.apply(lambda x: utils.balls_per_boundary(x['Balls'], (x['Fours'] + x['Sixes'])), axis = 1),2))
 
         if 'bowler' in df.columns:    
             
-            # Average = Runs per wicket
-            df['Avg'] = (round(df.apply(lambda x: utils.runs_per_dismissal(x['Runs'], x['Dismissals']), axis = 1),2))
+            
            
             # StrikeRate = Balls per wicket
             df['SR'] = (round(df.apply(lambda x: utils.balls_per_dismissal(x['Balls'], x['Dismissals']), axis = 1),2))
@@ -291,11 +290,13 @@ def getPlayerStatistics(df,grpbyList):
             # Economy = runs per over
             df['Eco'] = (round(df.apply(lambda x: utils.runs_per_ball(x['Balls'], x['Runs'])*6, axis = 1),2))
         
+        # Average = Runs per wicket
+        df['Avg'] = (round(df.apply(lambda x: utils.runs_per_dismissal(x['Runs'], x['Dismissals']), axis = 1),2))
         #boundary%
-        df['Boundary%'] = (round(df.apply(lambda x: utils.boundary_per_ball(x['Balls'], (x['fours'] + x['sixes']))*100, axis = 1),2))
+        df['Boundary%'] = (round(df.apply(lambda x: utils.boundary_per_ball(x['Balls'], (x['Fours'] + x['Sixes']))*100, axis = 1),2))
         df['Dot%'] = (round(df.apply(lambda x: utils.get_dot_percentage(x['dots'], x['Balls'])*100, axis = 1),2))
         
-        df.drop(['dots','ones','twos','threes'], axis=1, inplace=True)
+        df.drop(['dots','ones','twos','threes','Fours','Sixes'], axis=1, inplace=True)
         #df.drop(['dots','fours','sixes'], axis=1, inplace=True)    
               
         
