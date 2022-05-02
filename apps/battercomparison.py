@@ -36,8 +36,10 @@ def app():
     bowling_type_list = comb_df['bowling_style'].dropna().unique()
     batting_style_list = comb_df['batting_style'].unique()
     season_list = comb_df['Season'].unique()
-    #st.write(comb_df)
-    
+    #st.table(batting_style_list)
+    #comb_df = comb_df[comb_df['batting_style'].isnull()]
+    #st.table(comb_df.head(10))
+
     #DEFAULT_BATSMAN = 'Pick a style'
     DEFAULT = 'Pick a style'
     batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT)    

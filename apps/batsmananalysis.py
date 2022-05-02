@@ -60,13 +60,13 @@ def app():
             # Inject CSS with Markdown
             
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Innings:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],'| Outs:',player_df['Dismissals'][0],"| SR:",(round(player_df['SR'][0],2)),"| HS:",highestscore,"| 30s:",noof30s,"| 50s:",noof50s,"| 100s:",noof100s)
+            st.write("Innings:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],'| Outs:',player_df['Dismissals'][0],"| SR:",player_df['SR'][0],"| HS:",highestscore,"| 30s:",noof30s,"| 50s:",noof50s,"| 100s:",noof100s)
             st.subheader('Perfomance across different phases of a game')
            
             #st.write(playerphase_df['SR'])
             #return
             playerphase_df.drop(['batsman'], axis=1, inplace=True)
-            st.table(playerphase_df)
+            st.table(playerphase_df.astype(str))
             st.write('* BPD -> Balls per dismissal \r\n * BPB -> Balls per boundary')
             
     

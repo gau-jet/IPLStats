@@ -47,19 +47,19 @@ def app():
         df = pd.merge(innings, runs, on = ['bowler', 'phase']).merge(balls, on = ['bowler', 'phase']).merge(dismissals, on = ['bowler', 'phase']).merge(dots, on = ['bowler', 'phase']).merge(fours, on = ['bowler', 'phase']).merge(sixes, on = ['bowler', 'phase'])
         
         # Dot Percentage = Number of dots in total deliveries
-        df['Dot%'] = df.apply(lambda x: utils.get_dot_percentage(x['dots'], x['balls'])*100, axis = 1)
+        df['Dot%'] = (round(df.apply(lambda x: utils.get_dot_percentage(x['dots'], x['balls'])*100, axis = 1),2))
         
         #boundary%
-        df['Boundary%'] = df.apply(lambda x: utils.boundary_per_ball(x['balls'], (x['fours'] + x['sixes']))*100, axis = 1)
+        df['Boundary%'] = (round(df.apply(lambda x: utils.boundary_per_ball(x['balls'], (x['fours'] + x['sixes']))*100, axis = 1),2))
         
         # Average = Runs per wicket
-        df['Avg'] = df.apply(lambda x: utils.runs_per_dismissal(x['runs'], x['dismissals']), axis = 1)
+        df['Avg'] = (round(df.apply(lambda x: utils.runs_per_dismissal(x['runs'], x['dismissals']), axis = 1),2))
         
         # StrikeRate = Balls per wicket
-        df['SR'] = df.apply(lambda x: utils.balls_per_dismissal(x['balls'], x['dismissals']), axis = 1)
+        df['SR'] = (round(df.apply(lambda x: utils.balls_per_dismissal(x['balls'], x['dismissals']), axis = 1),2))
 
         # Economy = runs per over
-        df['Eco'] = df.apply(lambda x: utils.runs_per_ball(x['balls'], x['runs'])*6, axis = 1)    
+        df['Eco'] = (round(df.apply(lambda x: utils.runs_per_ball(x['balls'], x['runs'])*6, axis = 1),2))
         
         
         return df
@@ -108,8 +108,7 @@ def app():
 
             # Inject CSS with Markdown
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",(round(player_df['Dot%'][0],2)),"| Boundary %:",(round(player_df['Boundary%'][0],2)),"| 4W:",noof4wks,"| 5W:",noof5wks)
+            st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",player_df['Dot%'][0],"| Boundary %:",player_df['Boundary%'][0],"| 4W:",noof4wks,"| 5W:",noof5wks)
             st.subheader('Perfomance across different phases of a game')            
-            
-            st.table(playerphase_df)
+            st.table(playerphase_df.astype(str))
     

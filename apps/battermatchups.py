@@ -93,12 +93,12 @@ def app():
             sort_asc_order = [False]
             topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
             topSRbatsman_df.drop(['index','fours','sixes'], axis=1, inplace=True)
-            st.subheader('Players who have dimissed the batsman most')
-            st.table(topSRbatsman_df)
+            st.subheader('Players who have dismissed the batsman most')
+            st.table(topSRbatsman_df.astype(str))
             
             sort_by_list = ['Runs']
             sort_asc_order = [False]
             st.subheader('Players against which the batsman has scored most')
             topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
             topSRbatsman_df.drop(['index','fours','sixes'], axis=1, inplace=True)
-            st.table(topSRbatsman_df)
+            st.table(topSRbatsman_df.astype(str))
