@@ -33,10 +33,12 @@ def app():
         if not filtered_df.empty:  
            
             
-           # st.write(filtered_df)
-            
+            #st.write(filtered_df)
+            #return
             grpbyList = ['batsman','phase']
             playerphase_df = utils.getPlayerStatistics(filtered_df,grpbyList)
+            grpbyList = ['batsman','inning']
+            playerinning_df = utils.getPlayerStatistics(filtered_df,grpbyList)
             player_df = utils.getPlayerStatistics(filtered_df,['batsman'])
             
             highestscore = utils.getHighestScore(filtered_df)
@@ -63,7 +65,16 @@ def app():
             #return
             playerphase_df.drop(['batsman'], axis=1, inplace=True)
                      
-            st.table(playerphase_df.style.set_precision(2))
+            st.table(playerphase_df.style.format(precision=2))
+            
+            st.subheader('Perfomance across Innings of a game')
+           
+            #st.write(playerphase_df['SR'])
+            #return
+            playerinning_df.drop(['batsman','Innings'], axis=1, inplace=True)
+                     
+            st.table(playerinning_df.style.format(precision=2))
+            
             #st.table(playerphase_df.style.set_properties(**{'text-align': 'right'}, axis=1)) ## doesnot work
             st.write('* BPD -> Balls per dismissal \r\n * BPB -> Balls per boundary')
             
