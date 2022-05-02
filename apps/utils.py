@@ -18,6 +18,21 @@ def return_df(f):
     df = pd.read_csv(f)
     return df.copy()    
 
+@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+def getBatsmanList(df):
+    batsman_list = df['batsman'].unique()
+    return sorted(batsman_list)
+
+@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+def getBowlerList(df):
+    bowler_list = df['bowler'].unique()
+    return sorted(bowler_list)
+
+@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+def getSeasonList(df):
+    return(df['Season'].unique())
+        
+    
 def replaceTeamNames(df):
 
     team_name_mappings = {'Delhi Daredevils':'Delhi Capitals','Deccan Chargers':'Sunrisers Hyderabad','Gujarat Lions':'Gujarat Titans','Kings XI Punjab':'Punjab Kings','Rising Pune Supergiants':'Rising Pune Supergiant','Pune Warriors':'Rising Pune Supergiant'} 

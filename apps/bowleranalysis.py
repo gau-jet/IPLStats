@@ -65,11 +65,11 @@ def app():
         return df
     
        
-    bowler_list = comb_df['bowler'].unique()
-    season_list = comb_df['Season'].unique()
+    bowler_list = utils.getBowlerList(comb_df)
+    season_list = utils.getSeasonList(comb_df)
     #st.write(comb_df)
     DEFAULT = 'Pick a player'
-    bowler = utils.selectbox_with_default(st,'Select bowler',sorted(bowler_list),DEFAULT)
+    bowler = utils.selectbox_with_default(st,'Select bowler',bowler_list,DEFAULT)
     start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
     
     if bowler != DEFAULT:                

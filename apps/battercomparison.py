@@ -35,7 +35,7 @@ def app():
        
     bowling_type_list = comb_df['bowling_style'].dropna().unique()
     batting_style_list = comb_df['batting_style'].unique()
-    season_list = comb_df['Season'].unique()
+    season_list = utils.getSeasonList(comb_df)
     #st.table(batting_style_list)
     #comb_df = comb_df[comb_df['batting_style'].isnull()]
     #st.table(comb_df.head(10))
@@ -58,8 +58,6 @@ def app():
         if bowling_type != DEFAULT:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type,start_year,end_year)             
        
-        if filtered_df.empty:
-            st.subheader('No Data Found!')
         if not filtered_df.empty:  
             
            # st.write(filtered_df)
@@ -82,6 +80,9 @@ def app():
                       
             #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
             #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
-            utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
-            utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
-           
+                utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
+                utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
+            else:
+                st.subheader('No Data Found!')
+        else:
+            st.subheader('No Data Found!')    

@@ -32,8 +32,8 @@ def app():
     #st.text(df.head())
        
     batting_type = comb_df['batting_style'].dropna().unique()
-    bowler_list = comb_df['bowler'].unique()
-    season_list = comb_df['Season'].unique()
+    bowler_list = utils.getBatsmanList(comb_df)    
+    season_list = utils.getSeasonList(comb_df)
     #st.write(comb_df)
     
     DEFAULT_BOWLER = 'Pick a player'

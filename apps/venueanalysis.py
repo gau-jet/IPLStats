@@ -10,15 +10,9 @@ def app():
     utils.header(st)
     st.title('Venue Records')    
     
-    deliveres = pd.read_csv("data/IPL Ball-by-Ball 2008-2022.csv")
-    matches = pd.read_csv("data/IPL Matches 2008-2022.csv")
-    player = pd.read_csv("data/Player Profile.csv")
-    
-    # Make a copy
-    del_df = deliveres.copy()
-    match_df = matches.copy()
-    player_df = player.copy()
-    
+    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
+    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
+    player_df = utils.return_df("data/Player Profile.csv")
     comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
           
     comb_df=utils.replaceTeamNames (comb_df)
@@ -28,8 +22,7 @@ def app():
     #st.write(comb_df.head(10))
     
     
-    venue_list = match_df['venue'].unique()
-    
+    venue_list = match_df['venue'].unique()    
     venue = st.selectbox('Select Venue',sorted(venue_list))
     
     

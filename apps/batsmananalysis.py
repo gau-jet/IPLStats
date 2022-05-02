@@ -16,14 +16,14 @@ def app():
     comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
     comb_df.rename(columns = {'id':'match_id'}, inplace = True)    
           
-    comb_df=utils.replaceTeamNames (comb_df)
+    comb_df=utils.replaceTeamNames(comb_df)
 
          
-    batsman_list = comb_df['batsman'].unique()
-    season_list = comb_df['Season'].unique()
+    batsman_list = utils.getBatsmanList(comb_df)
+    season_list = utils.getSeasonList(comb_df)
     #st.write(comb_df)
     DEFAULT = 'Pick a player'
-    batsman = utils.selectbox_with_default(st,'Select batsman',sorted(batsman_list),DEFAULT)
+    batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT)
     start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
     
     if batsman != DEFAULT:                
