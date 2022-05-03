@@ -75,20 +75,14 @@ def app():
     if bowler != DEFAULT:                
         comb_df['isBowlerWk'] = comb_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
         filtered_df = utils.getSpecificDataFrame(comb_df,'bowler',bowler,start_year,end_year)
-        
-        if filtered_df.empty:
-            st.subheader('No Data Found!')
+     
         if not filtered_df.empty:  
             
-            grpbyList=['batting_team']
-            title = bowler+ ' - against all teams'
-            xKey = 'is_wicket'
-            xlabel = 'Wickets taken'
-            ylabel = 'Opposition Teams'
             
-            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
            # st.write(filtered_df)
-
+            grpbyList = ['bowler','inning']
+            playerinning_df = utils.getPlayerStatistics(filtered_df,grpbyList)
+            
             playerphase_df = playerStatistics(filtered_df)
             player_df = utils.getPlayerStatistics(filtered_df,['bowler'])
             playerphase_df.drop(['bowler'], axis=1, inplace=True) 
@@ -111,4 +105,20 @@ def app():
             st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",player_df['Dot%'][0],"| Boundary %:",player_df['Boundary%'][0],"| 4W:",noof4wks,"| 5W:",noof5wks)
             st.subheader('Perfomance across different phases of a game')            
             st.table(playerphase_df.style.format(precision=2))
-    
+            
+            st.subheader('Perfomance across Innings of a game')
+           
+            playerinning_df.drop(['bowler','Innings'], axis=1, inplace=True)
+                     
+            st.table(playerinning_df.style.format(precision=2))
+            
+            grpbyList=['batting_team']
+            title = bowler+ ' - against all teams'
+            xKey = 'is_wicket'
+            xlabel = 'Wickets taken'
+            ylabel = 'Opposition Teams'
+            
+            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
+            
+        else:
+            st.subheader('No Data Found!')
