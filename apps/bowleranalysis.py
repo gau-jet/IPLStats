@@ -74,11 +74,12 @@ def app():
     
     if bowler != DEFAULT:                
         comb_df['isBowlerWk'] = comb_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-        filtered_df = utils.getSpecificDataFrame(comb_df,'bowler',bowler,start_year,end_year)
-     
+        
+        filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
+        filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)    
+             
         if not filtered_df.empty:  
-            
-            
+                    
            # st.write(filtered_df)
             grpbyList = ['bowler','inning']
             playerinning_df = utils.getPlayerStatistics(filtered_df,grpbyList)

@@ -51,7 +51,8 @@ def app():
         min_balls = st.number_input('Min. Balls',min_value=20,value=100,format='%d')
         
     if bowling_type != DEFAULT:       
-        filtered_df = utils.getSpecificDataFrame(comb_df,'bowling_style',bowling_type,start_year,end_year)
+        filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
+        filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type) 
         
         if batting_style != DEFAULT:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style,start_year,end_year)             

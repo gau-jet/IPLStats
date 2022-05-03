@@ -27,7 +27,8 @@ def app():
     start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
     
     if batsman != DEFAULT:                
-        filtered_df = utils.getSpecificDataFrame(comb_df,'batsman',batsman,start_year,end_year)       
+        filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
+        filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)       
         if filtered_df.empty:
             st.subheader('No Data Found!')
         if not filtered_df.empty:  

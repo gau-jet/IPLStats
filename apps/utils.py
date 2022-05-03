@@ -50,10 +50,18 @@ def selectbox_with_default(st,text, values, default, sidebar=False):
         func = st.sidebar.selectbox if sidebar else st.selectbox
         return func(text, np.insert(np.array(values, object), 0, default))
         
-def getSpecificDataFrame(df,key,value,start_year=None,end_year=None):
+def getSpecificDataFrame(df,key,value):
+        if key:
+            df = df[df[key] == value]
+        else:
+            st.error('No Key Passed in getSpecificDataFrame method')
+        return df 
+
+def getSeasonDataFrame(df,start_year=None,end_year=None):
         if start_year:
             df = df[df['Season'].between(start_year, end_year)]
-        df = df[df[key] == value]
+        else:
+            st.error('Incorrect Start Year')
         return df 
 
 def getTopRecordsDF(df,key,order,maxrows):        
@@ -346,7 +354,7 @@ def getNoofTeamWins(df,team):
     else:
         return 0
         
-def getTeamRecords(df,team1,team2,venue=None):
+def getTeamMatchupRecords(df,team1,team2,venue=None):
     
     team_records_df = df[((df.team1 == team1)&
                                (df.team2 == team2)) |
@@ -373,12 +381,24 @@ def getTeamRecords(df,team1,team2,venue=None):
         teamstats_df =  pd.DataFrame()
         
     return teamstats_df
-       
+    
+def getTeamDF(df,team,start_year,end_year,venue=None):
+    df = df[df['Season'].between(start_year, end_year)]
+    team_records_df = df[((df.team1 == team) | (df.team2 == team))]
+    if venue:
+        team_records_df = team_records_df[(team_records_df.venue == venue)]
+        
+    if team_records_df.empty:         
+        team_records_df =  pd.DataFrame()
+    return team_records_df
+    
 def plotBarGraph(df,grpbyList,title,xKey,xlabel,ylabel):        
         
         plt.figure(figsize = (12, 4))    
         plt.style.use('dark_background')
         plt.tight_layout()
+        if xKey == 'is_wicket':
+            df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','NA'])]    
         df.groupby(grpbyList)[xKey].sum().sort_values().plot(kind = 'barh')
               
         
@@ -411,4 +431,36 @@ def plotScatterGraph(df,key1,key2,xlabel,ylabel,player_type='batsman'):
             #if label in selected_players:
             plt.annotate(label, (df[key1][i], df[key2][i]),(df[key1][i]+.07, df[key2][i]))
         
+        st.pyplot(plt)
+
+def plotStackBarGraph(df,title,xKey,xlabel,ylabel):        
+        
+        plt.figure(figsize = (16, 10))    
+        plt.style.use('dark_background')
+        fig, ax = plt.subplots()
+        labels = df[xKey]
+        
+        XValues = df[xlabel]
+        YValues = df[ylabel]
+        
+               
+        
+        x = np.arange(len(labels))  # the label locations
+        width = 0.15  # the width of the bars
+
+        fig, ax = plt.subplots()
+        rects1 = ax.bar(x - width/2, XValues, width, label=xlabel)
+        rects2 = ax.bar(x + width/2, YValues, width, label=ylabel)
+
+        # Add some text for labels, title and custom x-axis tick labels, etc.
+        #ax.set_ylabel('Scores')
+        ax.set_title(title)
+        ax.set_xticks(x, labels)
+        ax.legend()
+
+        ax.bar_label(rects1, padding=3)
+        ax.bar_label(rects2, padding=3)
+
+        fig.tight_layout()
+
         st.pyplot(plt)

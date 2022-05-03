@@ -48,10 +48,11 @@ def app():
         
     if bowler != DEFAULT_BOWLER:       
         
-        filtered_df = utils.getSpecificDataFrame(comb_df,'bowler',bowler,start_year,end_year)
+        filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
+        filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)            
         
         if batting_type != DEFAULT:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_type,start_year,end_year)
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_type)
         if not filtered_df.empty:
             filtered_df = utils.getMinBallsFilteredDataFrame(filtered_df,min_balls)      
         #st.write(filtered_df)
