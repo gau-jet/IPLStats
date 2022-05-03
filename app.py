@@ -1,6 +1,6 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import  home,batsmananalysis,bowleranalysis,venueanalysis,battercomparison,bowlercomparison,battermatchups,bowlermatchups,predictwinpercent,scorepredictor # import your app modules here
+from apps import  home,batsmananalysis,bowleranalysis,teamanalysis,venueanalysis,battercomparison,bowlercomparison,battermatchups,bowlermatchups,predictwinpercent,scorepredictor # import your app modules here
 
 app = MultiApp()
 
@@ -8,6 +8,7 @@ app = MultiApp()
 app.add_app("Home", home.app)
 app.add_app("Batting Records", batsmananalysis.app)
 app.add_app("Bowling Records", bowleranalysis.app)
+app.add_app("Team Analysis", teamanalysis.app)
 app.add_app("Venue Analysis", venueanalysis.app)
 app.add_app("Batter Comparison", battercomparison.app)
 app.add_app("Bowler Comparison", bowlercomparison.app)

@@ -216,6 +216,22 @@ def getBowlingStatsforaVenue(df,venue):
 def getHighestScore(df):
     runs = pd.DataFrame(df.groupby(['batsman','match_id'])['batsman_runs'].sum().reset_index()).groupby(['batsman','match_id'])['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'Match_Runs'})
     return (runs.Match_Runs.max())
+    
+def getTeamHighestScore(df,team):
+    
+    df = df[df.batting_team == team]
+    
+    runs = pd.DataFrame(df.groupby(['batting_team','id'])['total_runs'].sum().reset_index()).groupby(['batting_team','id'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'Match_Runs'})
+    
+    return (runs.Match_Runs.max())
+
+def getTeamLowestScore(df,team):
+    
+    df = df[df.batting_team == team]
+    st.write(df.head())
+    runs = pd.DataFrame(df.groupby(['batting_team','id'])['total_runs'].sum().reset_index()).groupby(['batting_team','id'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'Match_Runs'})
+    st.write(runs)
+    return (runs.Match_Runs.min())
 
 def getNoofThirties(df):
     
@@ -322,6 +338,41 @@ def getPlayerStatistics(df,grpbyList):
         
         return df
         
+def getNoofTeamWins(df,team):
+    
+    df = df[df.winner == team]
+    if not df.empty:
+        return len(pd.unique(df['id']))
+    else:
+        return 0
+        
+def getTeamRecords(df,team1,team2,venue=None):
+    
+    team_records_df = df[((df.team1 == team1)&
+                               (df.team2 == team2)) |
+                              ((df.team1 == team2)&
+                              (df.team2 == team1))]
+    
+    if venue:
+        team_records_df = team_records_df[(team_records_df.venue == venue)]
+    
+    if not team_records_df.empty:     
+        
+        team1_win_count = getNoofTeamWins(team_records_df,team1)
+        team2_win_count = getNoofTeamWins(team_records_df,team2)
+        team1_max_runs = getTeamHighestScore(team_records_df,team1)
+        team2_max_runs = getTeamHighestScore(team_records_df,team2)
+        #team1_min_runs = getTeamLowestScore(team_records_df,team1)
+        
+        data = [
+            ['Matches won',team1_win_count,team2_win_count],
+            ['Highest Score',team1_max_runs,team2_max_runs]
+        ]
+        teamstats_df = pd.DataFrame(data, columns = ['Team Name', team1,team2])  
+    else:
+        teamstats_df =  pd.DataFrame()
+        
+    return teamstats_df
        
 def plotBarGraph(df,grpbyList,title,xKey,xlabel,ylabel):        
         
