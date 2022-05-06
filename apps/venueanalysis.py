@@ -27,7 +27,12 @@ def app():
     
     
     if st.button('Show Stats'):
-        WinPercentageDF = utils.getVenueStats(comb_df,venue)
+        InningsWinDF = utils.getPerInningsWinCount(match_df,venue)        
+        VenueStatsDF = utils.getVenueStats(comb_df,venue)
+                
+        final_df = pd.merge(VenueStatsDF , InningsWinDF, on = 'venue')
+        final_df.drop(['venue'], axis=1, inplace=True) 
+        
         # CSS to inject contained in a string
         hide_dataframe_row_index = """
                     <style>
@@ -39,7 +44,7 @@ def app():
         # Inject CSS with Markdown
         
         st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-        st.table(WinPercentageDF.style.format(precision=2))
+        st.table(final_df.style.format(precision=2))
         
         comb_df = pd.merge(comb_df, player_df[['Player_Name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
         comb_df.drop(['Player_Name'], axis=1, inplace=True)
