@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd 
 import math
 import matplotlib.pyplot as plt
-from apps import utils
+
 
 def header(st):
     snippet = """
@@ -15,7 +15,12 @@ def header(st):
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)    
 def return_df(f):    
-    df = pd.read_csv(f)
+    try:
+        df = pd.read_csv(f)
+    except:
+        st.write("Could not read file"+f)
+        e = sys.exc_info()
+        st.error(e)
     return df.copy()    
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
@@ -149,24 +154,29 @@ def getMinBallsFilteredDataFrame(df,min_balls):
 def getMinBallsFilteredDF(df,min_balls):        
         df = df[df.Balls >= min_balls]
         return df
+
+def getPerInningsWinCount(df,venue):
+    df = df[df.venue == venue]    
+    df['TossWinnerIsWinner'] = df.apply(lambda x: x['toss_winner'] == x['winner'], axis=1)    
+    
+    df['TeamBattingFirst'] = df.apply(lambda x: getTeamBattingFirst(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
+    df['TeamBattingSecond'] = df.apply(lambda x: getTeamBattingSecond(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
+    
+    TeamBattingFirstCount = df.apply( lambda x : 1 if x['TeamBattingFirst'] == x['winner']  else 0 , axis=1).sum()  
+    TeamBattingSecondCount = df.apply( lambda x : 1 if x['TeamBattingSecond'] == x['winner'] else 0 , axis=1).sum()    
+    
+    venue_stats_df = {
+        'venue':[venue],        
+        'Batting 1st-Wins': TeamBattingFirstCount,
+        'Batting 2nd-Wins': TeamBattingSecondCount       
+      }
+    final_df = pd.DataFrame(data=venue_stats_df)  
+    return final_df
+    #st.write(df['TeamBattingFirstWins'])
             
 def getVenueStats(df,venue):
     
     df = df[df.venue == venue]    
-    df['TossWinnerIsWinner'] = df.apply(lambda x: x['toss_winner'] == x['winner'], axis=1)    
-    
-    df['TeamBattingFirst'] = df.apply(lambda x: utils.getTeamBattingFirst(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
-    df['TeamBattingSecond'] = df.apply(lambda x: utils.getTeamBattingSecond(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
-    
-    df['TeamBattingFirstWins'] = df.apply( lambda x : 1 if x['TeamBattingFirst'] == x['winner']  else 0 , axis=1)    
-    df['TeamBattingSecondWins'] = df.apply( lambda x : 1 if x['TeamBattingSecond'] == x['winner'] else 0 , axis=1)    
-    
-    
-    WinPercentage = pd.DataFrame(100 * df.groupby('venue')['TeamBattingFirstWins'].sum() / df.groupby('venue')['TeamBattingFirstWins'].count()).reset_index()
-    #st.write(WinPercentage)
-    WinPercentage.columns = ['venue', 'BattingFirst Win%']
-    WinPercentage['BattingSecond Win%'] = (round(100 - WinPercentage['BattingFirst Win%'],2))
-    WinPercentage['BattingFirst Win%'] = (round(WinPercentage['BattingFirst Win%'],2))
     
     avg_run_per_match = pd.DataFrame(df.groupby(['venue','inning']).total_runs.sum() / df.groupby('venue').id.nunique()).reset_index()
     avg_run_per_match.columns = ['venue', 'Inning','AvgRuns']
@@ -200,8 +210,8 @@ def getVenueStats(df,venue):
     
     #final_df = pd.merge(avg_run_per_match , avg_wkt_per_match, on = 'venue')
     
-    final_df = pd.merge(final_df , WinPercentage, on = 'venue')
-    final_df.drop(['venue'], axis=1, inplace=True) 
+    #final_df = pd.merge(final_df , WinPercentage, on = 'venue')
+    #final_df.drop(['venue'], axis=1, inplace=True) 
     
     return final_df
 
@@ -218,7 +228,7 @@ def getBowlingStyleWiseStats(df):
     
 def getBowlingStatsforaVenue(df,venue):
     df = df[df.venue == venue]
-    new_df = utils.getBowlingStyleWiseStats(df)    
+    new_df = getBowlingStyleWiseStats(df)    
     return new_df.sort_values(by = 'BallsPerWicket', ascending = True) 
 
 def getHighestScore(df):
@@ -287,7 +297,7 @@ def getPlayerStatistics(df,grpbyList):
         
       
         if ('phase' in grpbyList):
-            df['phase'] = df['over'].apply(lambda x: utils.phase(x))
+            df['phase'] = df['over'].apply(lambda x: phase(x))
          
             
         runs = pd.DataFrame(df.groupby(grpbyList)['batsman_runs'].sum().reset_index()).groupby(grpbyList)['batsman_runs'].sum().reset_index().rename(columns={'batsman_runs':'Runs'})
@@ -319,26 +329,26 @@ def getPlayerStatistics(df,grpbyList):
             df['RPI'] = (round(df.apply(lambda x: x['Runs']/x['Innings'], axis = 1),2))
 
             #balls per dismissals
-            df['BPD'] = (round(df.apply(lambda x: utils.balls_per_dismissal(x['Balls'], x['Dismissals']), axis = 1),2))
+            df['BPD'] = (round(df.apply(lambda x: balls_per_dismissal(x['Balls'], x['Dismissals']), axis = 1),2))
 
             #balls per boundary
-            df['BPB'] = (round(df.apply(lambda x: utils.balls_per_boundary(x['Balls'], (x['Fours'] + x['Sixes'])), axis = 1),2))
+            df['BPB'] = (round(df.apply(lambda x: balls_per_boundary(x['Balls'], (x['Fours'] + x['Sixes'])), axis = 1),2))
 
         if 'bowler' in df.columns:    
             
             
            
             # StrikeRate = Balls per wicket
-            df['SR'] = (round(df.apply(lambda x: utils.balls_per_dismissal(x['Balls'], x['Dismissals']), axis = 1),2))
+            df['SR'] = (round(df.apply(lambda x: balls_per_dismissal(x['Balls'], x['Dismissals']), axis = 1),2))
 
             # Economy = runs per over
-            df['Eco'] = (round(df.apply(lambda x: utils.runs_per_ball(x['Balls'], x['Runs'])*6, axis = 1),2))
+            df['Eco'] = (round(df.apply(lambda x: runs_per_ball(x['Balls'], x['Runs'])*6, axis = 1),2))
         
         # Average = Runs per wicket
-        df['Avg'] = (round(df.apply(lambda x: utils.runs_per_dismissal(x['Runs'], x['Dismissals']), axis = 1),2))
+        df['Avg'] = (round(df.apply(lambda x: runs_per_dismissal(x['Runs'], x['Dismissals']), axis = 1),2))
         #boundary%
-        df['Boundary%'] = (round(df.apply(lambda x: utils.boundary_per_ball(x['Balls'], (x['Fours'] + x['Sixes']))*100, axis = 1),2))
-        df['Dot%'] = (round(df.apply(lambda x: utils.get_dot_percentage(x['dots'], x['Balls'])*100, axis = 1),2))
+        df['Boundary%'] = (round(df.apply(lambda x: boundary_per_ball(x['Balls'], (x['Fours'] + x['Sixes']))*100, axis = 1),2))
+        df['Dot%'] = (round(df.apply(lambda x: get_dot_percentage(x['dots'], x['Balls'])*100, axis = 1),2))
         
         df.drop(['dots','ones','twos','threes','Fours','Sixes'], axis=1, inplace=True)
         #df.drop(['dots','fours','sixes'], axis=1, inplace=True)    
@@ -433,34 +443,25 @@ def plotScatterGraph(df,key1,key2,xlabel,ylabel,player_type='batsman'):
         
         st.pyplot(plt)
 
-def plotStackBarGraph(df,title,xKey,xlabel,ylabel):        
+def plotStackBarGraph(df,grpbyList,title,xKey,x2Key,xlabel,ylabel):        
         
-        plt.figure(figsize = (16, 10))    
+        
         plt.style.use('dark_background')
-        fig, ax = plt.subplots()
-        labels = df[xKey]
+        plt.tight_layout()
+        Runs = pd.DataFrame(df.groupby(grpbyList)[xKey].sum().reset_index()).rename(columns = {'batsman_runs':'Runs'})
+        innings = pd.DataFrame(df.groupby(grpbyList)[x2Key].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'Innings'})
+        final_df = pd.merge(innings,Runs,on = grpbyList)
         
-        XValues = df[xlabel]
-        YValues = df[ylabel]
-        
-               
-        
-        x = np.arange(len(labels))  # the label locations
-        width = 0.15  # the width of the bars
-
-        fig, ax = plt.subplots()
-        rects1 = ax.bar(x - width/2, XValues, width, label=xlabel)
-        rects2 = ax.bar(x + width/2, YValues, width, label=ylabel)
-
-        # Add some text for labels, title and custom x-axis tick labels, etc.
-        #ax.set_ylabel('Scores')
-        ax.set_title(title)
-        ax.set_xticks(x, labels)
-        ax.legend()
-
-        ax.bar_label(rects1, padding=3)
-        ax.bar_label(rects2, padding=3)
-
-        fig.tight_layout()
+        #st.write(Runs)
+        #st.write(final_df.sort_values(by='Runs', ascending=True))
+        fig, ax = plt.subplots(figsize=(12, 4))
+        final_df.sort_values(by='Runs', ascending=True).plot(ax=ax,x='bowling_team', kind='barh', color='yg',stacked=True,title=title)
+        ax.set_ylabel(ylabel)
+        ax.set_xlabel(xlabel)
+        for c in ax.containers:
+            ax.bar_label(c, label_type='edge')
+            
+        ax.legend(title='Legend', bbox_to_anchor=(1.05, 1), loc='upper left')
 
         st.pyplot(plt)
+        
