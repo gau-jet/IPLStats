@@ -55,7 +55,8 @@ def app():
         filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type) 
         
         if batting_style != DEFAULT:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style,start_year,end_year)             
+            filtered_df = utils.getSeasonDataFrame(filtered_df,start_year,end_year)
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style)             
        
         if not filtered_df.empty:  
             
