@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     utils.header(st)
-    st.title('Bowler Comparison')    
+    #st.title('Bowler Comparison')    
     
     phase_list = ['Powerplay',
      'Middle',
@@ -39,6 +39,7 @@ def app():
     #st.write(comb_df)
     
     with st.form("my_form"):
+        st.markdown("<h3 style='text-align: center; color: white;'>Bowler Comparison</h3>", unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
         bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT)    
