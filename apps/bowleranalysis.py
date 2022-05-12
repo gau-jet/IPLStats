@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     utils.header(st)
-    st.title('Bowling Records')    
+    #st.title('Bowling Records')    
     
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
@@ -64,24 +64,31 @@ def app():
         
         return df
     
-       
-    bowler_list = utils.getBowlerList(comb_df)
-    season_list = utils.getSeasonList(comb_df)
-    venue_list = utils.getVenueList(comb_df)
-    
-    #st.write(comb_df)
-    DEFAULT = 'Pick a player'
-    DEFAULT_VENUE = 'Pick a venue'
-    bowler = utils.selectbox_with_default(st,'Select bowler',bowler_list,DEFAULT)
-    venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
-    start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
-    
-    if bowler != DEFAULT:                
+    with st.form("my_form"):   
+        st.markdown("<h3 style='text-align: center; color: white;'>Bowling Records</h3>", unsafe_allow_html=True)
+        bowler_list = utils.getBowlerList(comb_df)
+        season_list = utils.getSeasonList(comb_df)
+        venue_list = utils.getVenueList(comb_df)
+        
+        #st.write(comb_df)
+        DEFAULT = 'Pick a player'
+        DEFAULT_VENUE = 'Pick a venue'
+        bowler = utils.selectbox_with_default(st,'Select bowler',bowler_list,DEFAULT)
+        venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        submitted = st.form_submit_button("Show Stats")
+        title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
+        st.markdown(title_alignment, unsafe_allow_html=True)
+        
+    if submitted:                
         comb_df['isBowlerWk'] = comb_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
         
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
-        filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)    
-             
+        if bowler != DEFAULT:
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)    
+        else:
+             st.error('Please select bowler')
+             return
         if not filtered_df.empty:  
             if venue != DEFAULT_VENUE: 
                 filtered_df = utils.getSpecificDataFrame(filtered_df,'venue',venue)

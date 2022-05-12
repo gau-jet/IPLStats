@@ -5,7 +5,7 @@ from apps import utils
 
 def app():
     utils.header(st)
-    st.title('Batting Records')    
+    #st.title('Batting Records')    
     
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
@@ -15,23 +15,32 @@ def app():
           
     comb_df=utils.replaceTeamNames(comb_df)
 
-         
-    batsman_list = utils.getBatsmanList(comb_df)
-    season_list = utils.getSeasonList(comb_df)
-    venue_list = utils.getVenueList(comb_df)
-    
-    
-    #st.write(comb_df)
-    DEFAULT = 'Pick a player'
-    DEFAULT_VENUE = 'Pick a venue'
-    batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT)
-    venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
-    start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
-    
-    if batsman != DEFAULT: 
+    with st.form("my_form"):     
+        st.markdown("<h3 style='text-align: center; color: white;'>Batting Records</h3>", unsafe_allow_html=True)
+        batsman_list = utils.getBatsmanList(comb_df)
+        season_list = utils.getSeasonList(comb_df)
+        venue_list = utils.getVenueList(comb_df)
+        
+        
+        #st.write(comb_df)
+        DEFAULT = 'Pick a player'
+        DEFAULT_VENUE = 'Pick a venue'
+        batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT)
+        venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        submitted = st.form_submit_button("Show Stats")
+        title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
+        st.markdown(title_alignment, unsafe_allow_html=True)
+        
+    if submitted: 
         
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
-        filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)       
+        if batsman != DEFAULT:
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)       
+        else:
+            st.error('Please select batsman')
+            return
+            
         if filtered_df.empty:
             st.subheader('No Data Found!')
         if not filtered_df.empty:  

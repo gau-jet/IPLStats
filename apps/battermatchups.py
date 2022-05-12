@@ -26,27 +26,33 @@ def app():
     #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
-    
-       
-    bowling_type = comb_df['bowling_style'].dropna().unique()
-    batsman_list = utils.getBatsmanList(comb_df)
-    season_list = utils.getSeasonList(comb_df)
-    #st.write(comb_df)
-    
-    DEFAULT_BATSMAN = 'Pick a player'
-    batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT_BATSMAN)
-    DEFAULT = 'Pick a bowler type'
-    bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type),DEFAULT)
-    col1, col2 = st.columns(2)
-    with col1:
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
-    with col2:    
-        min_balls = st.number_input('Min. Balls',min_value=10,value=20,format='%d')
+    with st.form("my_form"): 
+        st.markdown("<h3 style='text-align: center; color: white;'>Batsman Matchups</h3>", unsafe_allow_html=True)
+        bowling_type = comb_df['bowling_style'].dropna().unique()
+        batsman_list = utils.getBatsmanList(comb_df)
+        season_list = utils.getSeasonList(comb_df)
+        #st.write(comb_df)
         
-    if batsman != DEFAULT_BATSMAN:       
+        DEFAULT_BATSMAN = 'Pick a player'
+        batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT_BATSMAN)
+        DEFAULT = 'Pick a bowler type'
+        bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type),DEFAULT)
+        col1, col2 = st.columns(2)
+        with col1:
+            start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        with col2:    
+            min_balls = st.number_input('Min. Balls',min_value=10,value=20,format='%d')
+        submitted = st.form_submit_button("Show Stats")
+        title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
+        st.markdown(title_alignment, unsafe_allow_html=True)
+        
+    if submitted:       
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
-        filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)    
-        
+        if batsman != DEFAULT_BATSMAN:
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)    
+        else:
+            st.error('Please select batsman')
+            return
         if bowling_type != DEFAULT:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type)     
         if not filtered_df.empty:
