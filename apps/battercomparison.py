@@ -7,8 +7,7 @@ from apps import utils
 
 def app():
     utils.header(st)
-    st.title('Batsman Comparison')    
-    
+        
     phase_list = ['Powerplay',
      'Middle',
      'Death'    
@@ -41,6 +40,7 @@ def app():
     #st.table(comb_df.head(10))
 
     with st.form("my_form"):
+        st.markdown("<h3 style='text-align: center; color: white;'>Batsman Comparison</h3>", unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
         batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT)    
