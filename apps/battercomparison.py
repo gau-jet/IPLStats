@@ -40,22 +40,29 @@ def app():
     #comb_df = comb_df[comb_df['batting_style'].isnull()]
     #st.table(comb_df.head(10))
 
-    #DEFAULT_BATSMAN = 'Pick a style'
-    DEFAULT = 'Pick a style'
-    batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT)    
-    phase = st.selectbox('Select phase',phase_list)
-    bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT)
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
-    with col2:    
-        min_balls = st.number_input('Min. Balls',min_value=20,value=40,format='%d')
+    with st.form("my_form"):
+        #DEFAULT_BATSMAN = 'Pick a style'
+        DEFAULT = 'Pick a style'
+        batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT)    
+        phase = st.selectbox('Select phase',phase_list)
+        bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT)
         
-    if batting_style != DEFAULT:       
+        col1, col2 = st.columns(2)
+        with col1:
+            start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        with col2:    
+            min_balls = st.number_input('Min. Balls',min_value=20,value=40,format='%d')
+        submitted = st.form_submit_button("Show Stats")
+        title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
+        st.markdown(title_alignment, unsafe_allow_html=True)
+        
+    if submitted:       
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
-        filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style)    
-                
+        if batting_style != DEFAULT:
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style)
+        else:
+            st.warning('Please select batting style')      
+            return    
         if bowling_type != DEFAULT:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type)             
        

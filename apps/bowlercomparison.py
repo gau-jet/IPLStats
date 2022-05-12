@@ -59,7 +59,8 @@ def app():
         if bowling_type != DEFAULT:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type) 
         else:
-            st.warning('Please select bowler type')
+            st.error('Please select bowler type')
+            return
         if batting_style != DEFAULT:
             filtered_df = utils.getSeasonDataFrame(filtered_df,start_year,end_year)
             filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style)             
