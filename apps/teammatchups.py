@@ -21,7 +21,7 @@ def app():
     
     team_list = sorted(comb_df['team1'].unique())
     venue_list = utils.getVenueList(comb_df)    
-    
+    season_list = utils.getSeasonList(comb_df)
     with st.form("my_form"):
         #st.title('Team Matchups')
         st.markdown("<h3 style='text-align: center; color: white;'>Team Matchups</h3>", unsafe_allow_html=True)
@@ -30,13 +30,15 @@ def app():
         
         DEFAULT = 'Pick a venue'
         venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)
     if submitted:
+        filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
         if venue == DEFAULT:
             venue = None
-        teamstats_df = utils.getTeamMatchupRecords(comb_df,team1,team2,venue)
+        teamstats_df = utils.getTeamMatchupRecords(filtered_df,team1,team2,venue)
         if not teamstats_df.empty: 
             hide_dataframe_row_index = """
                         <style>
@@ -46,7 +48,7 @@ def app():
                         """
 
             # Inject CSS with Markdown
-            
+            st.subheader('Head to Head Stats')
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
             st.table(teamstats_df.style.format(precision=2))
         else:
