@@ -19,7 +19,9 @@ def app():
      'Lucknow Super Giants'     
      ]
     
-    deliveres = pd.read_csv("data/IPL Matches 2008-2022.csv")
+    #deliveres = pd.read_csv("data/IPL Matches 2008-2022.csv")
+    deliveres = utils.return_df("data/matches.csv")
+    
 
 
     venue = deliveres['venue'].unique()
