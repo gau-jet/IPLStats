@@ -35,7 +35,11 @@ def getBowlerList(df):
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
 def getSeasonList(df):
-    return(df['Season'].unique())
+    return sorted(df['season'].unique())
+        
+@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+def getVenueList(df):
+    return sorted(df['venue'].unique())
         
     
 def replaceTeamNames(df):
@@ -64,7 +68,7 @@ def getSpecificDataFrame(df,key,value):
 
 def getSeasonDataFrame(df,start_year=None,end_year=None):
         if start_year:
-            df = df[df['Season'].between(start_year, end_year)]
+            df = df[df['season'].between(start_year, end_year)]
         else:
             st.error('Incorrect Start Year')
         return df 
@@ -267,7 +271,7 @@ def getNoof4Wickets(df):
     
     df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','NA'])]
     #df = df[df.venue == venue]     
-    dismissals = pd.DataFrame(df.groupby(['Season','match_id'])['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
+    dismissals = pd.DataFrame(df.groupby(['season','match_id'])['player_dismissed'].count()).reset_index().rename(columns = {'player_dismissed':'Dismissals'})
        
     noof4wks = dismissals['Dismissals'].apply(lambda x: 1 if x == 4 else 0).sum()
     return (noof4wks)
@@ -281,7 +285,7 @@ def getNoof5Wickets(df):
     
 def getNoofHundreds(df):
     
-    runs = pd.DataFrame(df.groupby(['Season','match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
+    runs = pd.DataFrame(df.groupby(['season','match_id'])['batsman_runs'].sum().reset_index()).rename(columns={'batsman_runs':'Match_Runs'})
     noofhundreds = runs['Match_Runs'].apply(lambda x: 1 if x >=100 else 0).sum()
     
     return (noofhundreds)
@@ -393,7 +397,7 @@ def getTeamMatchupRecords(df,team1,team2,venue=None):
     return teamstats_df
     
 def getTeamDF(df,team,start_year,end_year,venue=None):
-    df = df[df['Season'].between(start_year, end_year)]
+    df = df[df['season'].between(start_year, end_year)]
     team_records_df = df[((df.team1 == team) | (df.team2 == team))]
     if venue:
         team_records_df = team_records_df[(team_records_df.venue == venue)]
