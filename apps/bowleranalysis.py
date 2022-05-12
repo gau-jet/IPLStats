@@ -9,8 +9,8 @@ def app():
     utils.header(st)
     st.title('Bowling Records')    
     
-    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
-    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
+    del_df = utils.return_df("data/deliveries.csv")
+    match_df = utils.return_df("data/matches.csv")
 
     comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
     comb_df.rename(columns = {'id':'match_id'}, inplace = True)    
@@ -67,9 +67,13 @@ def app():
        
     bowler_list = utils.getBowlerList(comb_df)
     season_list = utils.getSeasonList(comb_df)
+    venue_list = utils.getVenueList(comb_df)
+    
     #st.write(comb_df)
     DEFAULT = 'Pick a player'
+    DEFAULT_VENUE = 'Pick a venue'
     bowler = utils.selectbox_with_default(st,'Select bowler',bowler_list,DEFAULT)
+    venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
     start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
     
     if bowler != DEFAULT:                
@@ -79,47 +83,51 @@ def app():
         filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)    
              
         if not filtered_df.empty:  
-                    
-           # st.write(filtered_df)
-            grpbyList = ['bowler','inning']
-            playerinning_df = utils.getPlayerStatistics(filtered_df,grpbyList)
-            
-            playerphase_df = playerStatistics(filtered_df)
-            player_df = utils.getPlayerStatistics(filtered_df,['bowler'])
-            playerphase_df.drop(['bowler'], axis=1, inplace=True) 
-            
-            noof4wks = utils.getNoof4Wickets(filtered_df)
-            noof5wks = utils.getNoof5Wickets(filtered_df)
-            #return
-            #player_df.drop(['bowler'], axis=1, inplace=True)       
-            # CSS to inject contained in a string
-            hide_dataframe_row_index = """
-                        <style>                        
-                        .row_heading.level0 {display:none}
-                        .blank {display:none}
-                        
-                        </style>
-                        """
+            if venue != DEFAULT_VENUE: 
+                filtered_df = utils.getSpecificDataFrame(filtered_df,'venue',venue)
+            if not filtered_df.empty:
+               # st.write(filtered_df)
+                grpbyList = ['bowler','inning']
+                playerinning_df = utils.getPlayerStatistics(filtered_df,grpbyList)
+                
+                playerphase_df = playerStatistics(filtered_df)
+                player_df = utils.getPlayerStatistics(filtered_df,['bowler'])
+                playerphase_df.drop(['bowler'], axis=1, inplace=True) 
+                
+                noof4wks = utils.getNoof4Wickets(filtered_df)
+                noof5wks = utils.getNoof5Wickets(filtered_df)
+                #return
+                #player_df.drop(['bowler'], axis=1, inplace=True)       
+                # CSS to inject contained in a string
+                hide_dataframe_row_index = """
+                            <style>                        
+                            .row_heading.level0 {display:none}
+                            .blank {display:none}
+                            
+                            </style>
+                            """
 
-            # Inject CSS with Markdown
-            st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
-            st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",player_df['Dot%'][0],"| Boundary %:",player_df['Boundary%'][0],"| 4W:",noof4wks,"| 5W:",noof5wks)
-            st.subheader('Perfomance across different phases of a game')            
-            st.table(playerphase_df.style.format(precision=2))
-            
-            st.subheader('Perfomance across Innings of a game')
-           
-            playerinning_df.drop(['bowler','Innings'], axis=1, inplace=True)
-                     
-            st.table(playerinning_df.style.format(precision=2))
-            
-            grpbyList=['batting_team']
-            title = bowler+ ' - against all teams'
-            xKey = 'is_wicket'
-            xlabel = 'Wickets taken'
-            ylabel = 'Opposition Teams'
-            
-            utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
-            
+                # Inject CSS with Markdown
+                st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
+                st.write("Inn:",player_df['Innings'][0],"| Balls:",player_df['Balls'][0],'| Runs:',player_df['Runs'][0],"| Wks:",player_df['Dismissals'][0],"| Dot %:",player_df['Dot%'][0],"| Boundary %:",player_df['Boundary%'][0],"| 4W:",noof4wks,"| 5W:",noof5wks)
+                st.subheader('Perfomance across different phases of a game')            
+                st.table(playerphase_df.style.format(precision=2))
+                
+                st.subheader('Perfomance across Innings of a game')
+               
+                playerinning_df.drop(['bowler','Innings'], axis=1, inplace=True)
+                         
+                st.table(playerinning_df.style.format(precision=2))
+                
+                grpbyList=['batting_team']
+                title = bowler+ ' - against all teams'
+                xKey = 'is_wicket'
+                xlabel = 'Wickets taken'
+                ylabel = 'Opposition Teams'
+                
+                utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
+                
+            else:
+                st.subheader('No Data Found!')
         else:
             st.subheader('No Data Found!')
