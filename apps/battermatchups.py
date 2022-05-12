@@ -9,8 +9,8 @@ def app():
     utils.header(st)
     st.title('Batter Matchups')    
     
-    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
-    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
+    del_df = utils.return_df("data/deliveries.csv")
+    match_df = utils.return_df("data/matches.csv")
     player_df = utils.return_df("data/Player Profile.csv")
     
 

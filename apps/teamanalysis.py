@@ -9,8 +9,8 @@ def app():
     utils.header(st)
     st.title('Team Records')    
     
-    del_df = utils.return_df("data/IPL Ball-by-Ball 2008-2022.csv")
-    match_df = utils.return_df("data/IPL Matches 2008-2022.csv")
+    del_df = utils.return_df("data/deliveries.csv")
+    match_df = utils.return_df("data/matches.csv")
     player_df = utils.return_df("data/Player Profile.csv")
     comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
     comb_df.rename(columns = {'id':'match_id'}, inplace = True)
