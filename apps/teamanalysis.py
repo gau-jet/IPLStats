@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     utils.header(st)
-    st.title('Team Records')    
+    #st.title('Team Records')    
     
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
@@ -21,21 +21,25 @@ def app():
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
     
-    
-    team_list = sorted(comb_df['team1'].unique())
-    venue_list = comb_df['venue'].unique()    
-    season_list = utils.getSeasonList(comb_df)
+    with st.form("my_form"):    
+        st.markdown("<h3 style='text-align: center; color: white;'>Team Records</h3>", unsafe_allow_html=True)
+        team_list = sorted(comb_df['team1'].unique())
+        venue_list = comb_df['venue'].unique()    
+        season_list = utils.getSeasonList(comb_df)
     
     #team = st.selectbox('Select Team',sorted(team_list))
     
-    DEFAULT_TEAM = 'Pick a team'
-    team = utils.selectbox_with_default(st,'Select Team',team_list,DEFAULT_TEAM)
-    
-    DEFAULT = 'Pick a venue'
-    venue = utils.selectbox_with_default(st,'Select Venue',sorted(venue_list),DEFAULT)
-    start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
-    
-    if st.button('Show Stats'):
+        DEFAULT_TEAM = 'Pick a team'
+        team = utils.selectbox_with_default(st,'Select Team',team_list,DEFAULT_TEAM)
+        
+        DEFAULT = 'Pick a venue'
+        venue = utils.selectbox_with_default(st,'Select Venue',sorted(venue_list),DEFAULT)
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        submitted = st.form_submit_button("Show Stats")
+        title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
+        st.markdown(title_alignment, unsafe_allow_html=True)
+        
+    if submitted:
         team_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
         
         if venue == DEFAULT:
