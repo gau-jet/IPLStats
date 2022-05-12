@@ -6,7 +6,6 @@ from apps import utils
 
 def app():
     utils.header(st)
-    st.title('Team Matchups')    
     
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
@@ -20,16 +19,21 @@ def app():
     #st.write(comb_df.head(10))
     
     
-    team_list = comb_df['team1'].unique()    
-    venue_list = comb_df['venue'].unique()    
+    team_list = sorted(comb_df['team1'].unique())
+    venue_list = utils.getVenueList(comb_df)    
     
-    team1 = st.selectbox('Select Team1',sorted(team_list))
-    team2 = st.selectbox('Select Team2',sorted(team_list),index=1)
-    
-    DEFAULT = 'Pick a venue'
-    venue = utils.selectbox_with_default(st,'Select Venue',sorted(venue_list),DEFAULT)
-    
-    if st.button('Show Stats'):
+    with st.form("my_form"):
+        #st.title('Team Matchups')
+        st.markdown("<h3 style='text-align: center; color: white;'>Team Matchups</h3>", unsafe_allow_html=True)
+        team1 = st.selectbox('Select Team 1',team_list)
+        team2 = st.selectbox('Select Team 2',team_list,index=1)
+        
+        DEFAULT = 'Pick a venue'
+        venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)
+        submitted = st.form_submit_button("Show Stats")
+        title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
+        st.markdown(title_alignment, unsafe_allow_html=True)
+    if submitted:
         if venue == DEFAULT:
             venue = None
         teamstats_df = utils.getTeamMatchupRecords(comb_df,team1,team2,venue)
