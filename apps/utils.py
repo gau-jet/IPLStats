@@ -159,15 +159,18 @@ def getMinBallsFilteredDF(df,min_balls):
         df = df[df.Balls >= min_balls]
         return df
 
-def getPerInningsWinCount(df,venue):
-    df = df[df.venue == venue]    
-    df['TossWinnerIsWinner'] = df.apply(lambda x: x['toss_winner'] == x['winner'], axis=1)    
-    
-    df['TeamBattingFirst'] = df.apply(lambda x: getTeamBattingFirst(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
-    df['TeamBattingSecond'] = df.apply(lambda x: getTeamBattingSecond(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
-    
-    TeamBattingFirstCount = df.apply( lambda x : 1 if x['TeamBattingFirst'] == x['winner']  else 0 , axis=1).sum()  
-    TeamBattingSecondCount = df.apply( lambda x : 1 if x['TeamBattingSecond'] == x['winner'] else 0 , axis=1).sum()    
+def getPerInningsWinCount(df,venue):    
+    if not df.empty:
+        df['TossWinnerIsWinner'] = df.apply(lambda x: x['toss_winner'] == x['winner'], axis=1)    
+        
+        df['TeamBattingFirst'] = df.apply(lambda x: getTeamBattingFirst(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
+        df['TeamBattingSecond'] = df.apply(lambda x: getTeamBattingSecond(x['team1'] , x['team2'] , x['toss_winner'] , x['toss_decision']) , axis=1)
+        
+        TeamBattingFirstCount = df.apply( lambda x : 1 if x['TeamBattingFirst'] == x['winner']  else 0 , axis=1).sum()  
+        TeamBattingSecondCount = df.apply( lambda x : 1 if x['TeamBattingSecond'] == x['winner'] else 0 , axis=1).sum()   
+    else:
+        TeamBattingFirstCount = 0
+        TeamBattingSecondCount = 0
     
     venue_stats_df = {
         'venue':[venue],        
@@ -179,8 +182,6 @@ def getPerInningsWinCount(df,venue):
     #st.write(df['TeamBattingFirstWins'])
             
 def getVenueStats(df,venue):
-    
-    df = df[df.venue == venue]    
     
     avg_run_per_match = pd.DataFrame(df.groupby(['venue','inning']).total_runs.sum() / df.groupby('venue').id.nunique()).reset_index()
     avg_run_per_match.columns = ['venue', 'Inning','AvgRuns']
