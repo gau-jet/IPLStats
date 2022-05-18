@@ -25,11 +25,11 @@ def app():
     st.title('Win Predictor')
 
     col1, col2 = st.columns(2)
-
+    
     with col1:
-        batting_team = st.selectbox('Select the batting team',sorted(teams))
+        batting_team = st.selectbox('Select the batting team *',sorted(teams))
     with col2:
-        bowling_team = st.selectbox('Select the bowling team',sorted(teams) ,index=1)
+        bowling_team = st.selectbox('Select the bowling team *',sorted(teams) ,index=1)
 
     selected_city = st.selectbox('Select Venue',sorted(cities))
 

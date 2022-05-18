@@ -26,7 +26,7 @@ def app():
     #team = st.selectbox('Select Team',sorted(team_list))
     
         DEFAULT_TEAM = 'Pick a team'
-        team = utils.selectbox_with_default(st,'Select Team',team_list,DEFAULT_TEAM)
+        team = utils.selectbox_with_default(st,'Select Team *',team_list,DEFAULT_TEAM)
         
         DEFAULT = 'Pick a venue'
         venue = utils.selectbox_with_default(st,'Select Venue',sorted(venue_list),DEFAULT)

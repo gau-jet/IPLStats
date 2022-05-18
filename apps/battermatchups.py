@@ -7,7 +7,7 @@ from apps import utils
 
 def app():
     utils.header()
-    st.title('Batter Matchups')    
+    #st.title('Batter Matchups')    
     
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
@@ -32,7 +32,7 @@ def app():
         #st.write(comb_df)
         
         DEFAULT_BATSMAN = 'Pick a player'
-        batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT_BATSMAN)
+        batsman = utils.selectbox_with_default(st,'Select batsman *',batsman_list,DEFAULT_BATSMAN)
         DEFAULT = 'Pick a bowler type'
         bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type),DEFAULT)
         col1, col2 = st.columns(2)
@@ -98,7 +98,7 @@ def app():
             sort_by_list = ['Dismissals']
             sort_asc_order = [False]
             topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
-            topSRbatsman_df.drop(['index'], axis=1, inplace=True)
+            topSRbatsman_df.drop(['index','SR','Eco'], axis=1, inplace=True)
             st.subheader('Players who have dismissed the batsman most')
             st.table(topSRbatsman_df.style.format(precision=2))
             
@@ -106,5 +106,5 @@ def app():
             sort_asc_order = [False]
             st.subheader('Players against which the batsman has scored most')
             topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
-            topSRbatsman_df.drop(['index'], axis=1, inplace=True)
+            topSRbatsman_df.drop(['index','SR','Eco'], axis=1, inplace=True)
             st.table(topSRbatsman_df.style.format(precision=2))

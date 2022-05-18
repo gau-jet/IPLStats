@@ -40,7 +40,7 @@ def app():
         st.markdown("<h3 style='text-align: center; color: white;'>Batsman Comparison</h3>", unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
-        batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT)    
+        batting_style = utils.selectbox_with_default(st,'Select batting hand *',sorted(batting_style_list),DEFAULT)    
         phase = st.selectbox('Select phase',phase_list)
         bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT)
         

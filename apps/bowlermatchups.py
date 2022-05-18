@@ -11,12 +11,15 @@ def app():
     match_df = utils.return_df("data/matches.csv")
     player_df = utils.return_df("data/Player Profile.csv")
 
-    merged_df = utils.return_combined_matchdf(del_df,match_df)   
+    merged_df = pd.merge(del_df, match_df, on = 'id', how='left')
+    merged_df.rename(columns = {'id':'match_id'}, inplace = True)    
     batting_merged_df = pd.merge(merged_df, player_df[['Player_Name','batting_style']], left_on='batsman', right_on='Player_Name', how='left')
     batting_merged_df.drop(['Player_Name'], axis=1, inplace=True)       
     comb_df = pd.merge(batting_merged_df, player_df[['Player_Name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
     
+    comb_df=utils.replaceTeamNames (comb_df)
+
     #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
@@ -33,7 +36,7 @@ def app():
         #st.write(comb_df)
         
         DEFAULT_BOWLER = 'Pick a player'
-        bowler = utils.selectbox_with_default(st,'Select bowler',sorted(bowler_list),DEFAULT_BOWLER)
+        bowler = utils.selectbox_with_default(st,'Select bowler *',sorted(bowler_list),DEFAULT_BOWLER)
         DEFAULT = 'Pick a batting type'
         batting_type = utils.selectbox_with_default(st,'Select batting type',sorted(batting_type),DEFAULT)
         col1, col2 = st.columns(2)
@@ -90,13 +93,13 @@ def app():
             
             st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
             #st.subheader('Bowler Comparison Stats')
-            topSRbowlers_df.drop(['index'], axis=1, inplace=True)
+            topSRbowlers_df.drop(['index','Boundary%','Dot%'], axis=1, inplace=True)
             st.subheader('Batsman dismissed most by bowler')
             st.table(topSRbowlers_df.head(10).style.format(precision=2))
             sort_by_list = ['Runs']
             sort_asc_order = [False]
             st.subheader('Players who have scored most runs against bowler')
             topRunsbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,10)
-            topRunsbatsman_df.drop(['index'], axis=1, inplace=True)
+            topRunsbatsman_df.drop(['index','Boundary%','Dot%'], axis=1, inplace=True)
             st.table(topRunsbatsman_df.style.format(precision=2))
     

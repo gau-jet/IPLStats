@@ -19,7 +19,7 @@ def app():
         
         venue_list = utils.getVenueList(comb_df)
         season_list = utils.getSeasonList(comb_df)
-        venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT)
+        venue = utils.selectbox_with_default(st,'Select venue *',venue_list,DEFAULT)
         start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """

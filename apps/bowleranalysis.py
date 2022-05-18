@@ -66,7 +66,7 @@ def app():
         #st.write(comb_df)
         DEFAULT = 'Pick a player'
         DEFAULT_VENUE = 'Pick a venue'
-        bowler = utils.selectbox_with_default(st,'Select bowler',bowler_list,DEFAULT)
+        bowler = utils.selectbox_with_default(st,'Select bowler *',bowler_list,DEFAULT)
         venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
         start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
         submitted = st.form_submit_button("Show Stats")

@@ -22,8 +22,8 @@ def app():
     with st.form("my_form"):
         #st.title('Team Matchups')
         st.markdown("<h3 style='text-align: center; color: white;'>Team Matchups</h3>", unsafe_allow_html=True)
-        team1 = st.selectbox('Select Team 1',team_list)
-        team2 = st.selectbox('Select Team 2',team_list,index=1)
+        team1 = st.selectbox('Select Team 1 *',team_list)
+        team2 = st.selectbox('Select Team 2 *',team_list,index=1)
         
         DEFAULT = 'Pick a venue'
         venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)

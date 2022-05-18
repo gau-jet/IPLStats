@@ -23,7 +23,7 @@ def app():
         #st.write(comb_df)
         DEFAULT = 'Pick a player'
         DEFAULT_VENUE = 'Pick a venue'
-        batsman = utils.selectbox_with_default(st,'Select batsman',batsman_list,DEFAULT)
+        batsman = utils.selectbox_with_default(st,'Select batsman *',batsman_list,DEFAULT)
         venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
         start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
         submitted = st.form_submit_button("Show Stats")
@@ -89,7 +89,7 @@ def app():
                 st.table(playerinning_df.style.format(precision=2))
                 
                 #st.table(playerphase_df.style.set_properties(**{'text-align': 'right'}, axis=1)) ## doesnot work
-                st.write('* BPD -> Balls per dismissal \r\n * BPB -> Balls per boundary')
+                st.write('* BPD -> Balls per dismissal, \t\t BPB -> Balls per boundary')
                 
                 grpbyList=['bowling_team']
                 title = batsman+ ' - against all teams'
