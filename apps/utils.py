@@ -23,7 +23,7 @@ def return_df(f):
         st.error(e)
     return df.copy()
 
-@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)    
+@st.cache(suppress_st_warning=True,ttl=3600)    
 def return_combined_matchdf(del_df,match_df):        
     try:
         comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
@@ -33,7 +33,7 @@ def return_combined_matchdf(del_df,match_df):
         st.write("Could not combine match and delivery dataframe")
         e = sys.exc_info()
         st.error(e)
-    return comb_df      
+    return comb_df.copy()      
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
 def getBatsmanList(df):
@@ -457,7 +457,7 @@ def plotScatterGraph(df,key1,key2,xlabel,ylabel,player_type='batsman'):
 
         for i, label in enumerate(annotations):
             #if label in selected_players:
-            plt.annotate(label, (df[key1][i], df[key2][i]),(df[key1][i]+.07, df[key2][i]))
+            plt.annotate(label, (df[key1][i], df[key2][i]),(df[key1][i]+.07, df[key2][i]), fontsize=12)
         
         st.pyplot(plt)
 
