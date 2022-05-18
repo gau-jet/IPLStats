@@ -257,7 +257,7 @@ def getTeamHighestScore(df,team):
     
     df = df[df.batting_team == team]
     
-    runs = pd.DataFrame(df.groupby(['batting_team','id'])['total_runs'].sum().reset_index()).groupby(['batting_team','id'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'Match_Runs'})
+    runs = pd.DataFrame(df.groupby(['batting_team','match_id'])['total_runs'].sum().reset_index()).groupby(['batting_team','match_id'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'Match_Runs'})
     
     return (runs.Match_Runs.max())
 
@@ -378,7 +378,7 @@ def getNoofTeamWins(df,team):
     
     df = df[df.winner == team]
     if not df.empty:
-        return len(pd.unique(df['id']))
+        return len(pd.unique(df['match_id']))
     else:
         return 0
         
