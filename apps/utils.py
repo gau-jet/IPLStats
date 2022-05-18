@@ -196,9 +196,9 @@ def getPerInningsWinCount(df,venue):
             
 def getVenueStats(df,venue):
     
-    avg_run_per_match = pd.DataFrame(df.groupby(['venue','inning']).total_runs.sum() / df.groupby('venue').id.nunique()).reset_index()
+    avg_run_per_match = pd.DataFrame(df.groupby(['venue','inning']).total_runs.sum() / df.groupby('venue').match_id.nunique()).reset_index()
     avg_run_per_match.columns = ['venue', 'Inning','AvgRuns']
-    avg_wkt_per_match = pd.DataFrame(df.groupby(['venue','inning']).is_wicket.sum() / df.groupby('venue').id.nunique()).reset_index()
+    avg_wkt_per_match = pd.DataFrame(df.groupby(['venue','inning']).is_wicket.sum() / df.groupby('venue').match_id.nunique()).reset_index()
     avg_wkt_per_match.columns = ['venue','Inning', 'AvgWkts']
     
     avg_run_per_match.drop(['venue'], axis=1, inplace=True) 
@@ -212,7 +212,7 @@ def getVenueStats(df,venue):
     avg_wk_per_match_transposed[1]['AvgWkts'] = (round(avg_wk_per_match_transposed[1]['AvgWkts'],2))
     
    
-    matches = pd.DataFrame(df.groupby('venue')['id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'id':'NoofMatches'})
+    matches = pd.DataFrame(df.groupby('venue')['match_id'].apply(lambda x: len(list(np.unique(x)))).reset_index()).rename(columns = {'match_id':'NoofMatches'})
     matches.drop(['venue'], axis=1, inplace=True) 
     
     innings_stats_df = {
