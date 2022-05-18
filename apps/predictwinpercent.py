@@ -4,7 +4,7 @@ import pandas as pd
 from apps import utils
 
 def app():
-    utils.header(st)
+    utils.header()
     teams = ['Sunrisers Hyderabad',
      'Mumbai Indians',
      'Royal Challengers Bangalore',

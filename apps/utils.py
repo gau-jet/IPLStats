@@ -5,7 +5,7 @@ import math
 import matplotlib.pyplot as plt
 
 
-def header(st):
+def header():
     snippet = """
     <div style="display: flex; justify-content: space-between">
         <div>🡠 Check the sidebar for more apps</div>        
@@ -14,14 +14,26 @@ def header(st):
     st.markdown(snippet, unsafe_allow_html=True)
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)    
-def return_df(f):    
+def return_df(f):        
     try:
         df = pd.read_csv(f)
     except:
         st.write("Could not read file"+f)
         e = sys.exc_info()
         st.error(e)
-    return df.copy()    
+    return df.copy()
+
+@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)    
+def return_combined_matchdf(del_df,match_df):        
+    try:
+        comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
+        comb_df.rename(columns = {'id':'match_id'}, inplace = True)                  
+        comb_df= replaceTeamNames(comb_df)
+    except:
+        st.write("Could not combine match and delivery dataframe")
+        e = sys.exc_info()
+        st.error(e)
+    return comb_df      
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
 def getBatsmanList(df):
@@ -35,7 +47,8 @@ def getBowlerList(df):
 
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
 def getSeasonList(df):
-    return sorted(df['season'].unique())
+    return pd.DataFrame(sorted({2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022}))
+    #return sorted(df['season'].unique())
         
 @st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
 def getVenueList(df):

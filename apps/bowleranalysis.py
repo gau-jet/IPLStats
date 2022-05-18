@@ -1,21 +1,14 @@
 import streamlit as st
-#import math
 import pandas as pd
 import numpy as np
-#import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
-    utils.header(st)
-    #st.title('Bowling Records')    
-    
+    utils.header()
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
 
-    comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
-    comb_df.rename(columns = {'id':'match_id'}, inplace = True)    
-    
-    comb_df=utils.replaceTeamNames (comb_df)
+    comb_df=utils.return_combined_matchdf(del_df,match_df)
 
     #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
     #comb_df = comb_df.replace(np.NaN, 0)

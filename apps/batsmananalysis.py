@@ -4,16 +4,14 @@ from apps import utils
 
 
 def app():
-    utils.header(st)
+    utils.header()
     #st.title('Batting Records')    
     
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
-    
-    comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
-    comb_df.rename(columns = {'id':'match_id'}, inplace = True)    
           
-    comb_df=utils.replaceTeamNames(comb_df)
+    comb_df=utils.return_combined_matchdf(del_df,match_df)
+    
 
     with st.form("my_form"):     
         st.markdown("<h3 style='text-align: center; color: white;'>Batting Records</h3>", unsafe_allow_html=True)

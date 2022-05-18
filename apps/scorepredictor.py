@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from apps import utils
 
 def app():
-    utils.header(st)
+    utils.header()
     teams = ['Sunrisers Hyderabad',
      'Mumbai Indians',
      'Royal Challengers Bangalore',

@@ -8,7 +8,7 @@ from apps import utils
 
 def app():
     
-    utils.header(st)
+    utils.header()
     st.title('IPL TOOLS')
     #st.markdown("### IPL TOOLS")
     st.write("This is a home page for all IPL related stats.")

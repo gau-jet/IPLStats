@@ -1,27 +1,22 @@
 import streamlit as st
-#import math
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from apps import utils
 
 def app():
-    utils.header(st)
-    #st.title('Bowler Matchups')    
-    
+    utils.header()
+        
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
     player_df = utils.return_df("data/Player Profile.csv")
 
-    merged_df = pd.merge(del_df, match_df, on = 'id', how='left')
-    merged_df.rename(columns = {'id':'match_id'}, inplace = True)    
+    merged_df = utils.return_combined_matchdf(del_df,match_df)   
     batting_merged_df = pd.merge(merged_df, player_df[['Player_Name','batting_style']], left_on='batsman', right_on='Player_Name', how='left')
     batting_merged_df.drop(['Player_Name'], axis=1, inplace=True)       
     comb_df = pd.merge(batting_merged_df, player_df[['Player_Name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
     
-    comb_df=utils.replaceTeamNames (comb_df)
-
     #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
