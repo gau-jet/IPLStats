@@ -58,8 +58,10 @@ def app():
             grpbyList = ['batsman']
             #battingteam_df = utils.getSpecificDataFrame(team_df,'batting_team',team)
             
-            batsmanstats_df = utils.getPlayerStatistics(battingteam_df,grpbyList)
-            
+            if not battingteam_df.empty:
+                batsmanstats_df = utils.getPlayerStatistics(battingteam_df,grpbyList)
+            else:
+                return
             if not batsmanstats_df.empty:
                     sort_by_list = ['Runs']
                     sort_asc_order = [False]
