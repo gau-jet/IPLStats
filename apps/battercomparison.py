@@ -8,7 +8,7 @@ from apps import utils
 def app():
     utils.header()
         
-    phase_list = ['Powerplay',
+    phase_list = ['All','Powerplay',
      'Middle',
      'Death'    
      ]
@@ -69,9 +69,11 @@ def app():
             #grpbyList = 'bowler'
             filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
             player_df = utils.getPlayerStatistics(filtered_df,['batsman','phase'])
-            #st.table(player_df);            
+                      
             player_df.reset_index(drop=True,inplace=True)
-            player_df = utils.getSpecificDataFrame(player_df,'phase',phase)
+            if phase != 'All':
+                player_df = utils.getSpecificDataFrame(player_df,'phase',phase)
+            
             if not player_df.empty:
                 player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
             #st.write(player_df)
