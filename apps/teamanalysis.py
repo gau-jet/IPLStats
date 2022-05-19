@@ -11,17 +11,17 @@ def app():
     del_df = utils.return_df("data/deliveries.csv")
     match_df = utils.return_df("data/matches.csv")
     player_df = utils.return_df("data/Player Profile.csv")
-    comb_df=utils.return_combined_matchdf(del_df,match_df)
+    merged_df=utils.return_combined_matchdf(del_df,match_df)
 
-    #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
-    #comb_df = comb_df.replace(np.NaN, 0)
-    #st.write(comb_df.head(10))
+    #merged_df = merged_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
+    #merged_df = merged_df.replace(np.NaN, 0)
+    #st.write(merged_df.head(10))
     
     with st.form("my_form"):    
         st.markdown("<h3 style='text-align: center; color: white;'>Team Records</h3>", unsafe_allow_html=True)
-        team_list = sorted(comb_df['team1'].unique())
-        venue_list = comb_df['venue'].unique()    
-        season_list = utils.getSeasonList(comb_df)
+        team_list = sorted(merged_df['team1'].unique())
+        venue_list = utils.getVenueList(merged_df)    
+        season_list = utils.getSeasonList(merged_df)
     
     #team = st.selectbox('Select Team',sorted(team_list))
     
@@ -36,7 +36,7 @@ def app():
         st.markdown(title_alignment, unsafe_allow_html=True)
         
     if submitted:
-        team_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
+        team_df = utils.getSeasonDataFrame(merged_df,start_year,end_year)
         
         if venue == DEFAULT:
             venue = None
@@ -52,6 +52,9 @@ def app():
         
         
         if not team_df.empty:
+            
+            teamstats_df = utils.getTeamStats(team_df,team)
+            st.write("Played:",teamstats_df['Played'][0],'| Won:',teamstats_df['Won'][0],'| Lost:',teamstats_df['Lost'][0],"| Tied:",teamstats_df['Tied'][0],"| No Result:",teamstats_df['No Result'][0])
             grpbyList = ['batsman']
             #battingteam_df = utils.getSpecificDataFrame(team_df,'batting_team',team)
             

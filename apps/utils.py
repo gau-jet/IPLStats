@@ -233,6 +233,28 @@ def getVenueStats(df,venue):
     
     return final_df
 
+def getTeamStats(df,team):
+    df = df[((df.team1 == team) | (df.team2 == team))]
+    
+    no_of_matches_played = df.match_id.nunique()
+    no_of_matches_won = df[(df.winner == team)].match_id.nunique()    
+    no_of_matches_tied  = df[(df.result == 'tie')].match_id.nunique()    
+    no_of_matches_noresult  = df[(df.result == 'no result')].match_id.nunique()
+    no_of_matches_lost  = no_of_matches_played - ( no_of_matches_won + no_of_matches_tied + no_of_matches_noresult)
+   
+    team_stats_df = {
+        'Played': no_of_matches_played,
+        'Won': no_of_matches_won,
+        'Lost': no_of_matches_lost,
+        'Tied': no_of_matches_tied,
+        'No Result': no_of_matches_noresult
+      }
+      
+    final_df = pd.DataFrame(data=team_stats_df, index=[0])
+   
+    return final_df
+    
+
 def getBowlingStyleWiseStats(df):
     new_df  = pd.DataFrame(df.groupby(['venue','bowling_style']).ball.count()).rename(columns = {'ball' : 'Balls'}).reset_index()
     new_df  = new_df .merge(pd.DataFrame(df.groupby(['venue','bowling_style']).total_runs.sum()).rename(columns = {'total_runs' : 'Runs'}) , on = ['venue', 'bowling_style'])
