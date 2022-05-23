@@ -13,7 +13,7 @@ def header():
     """
     st.markdown(snippet, unsafe_allow_html=True)
 
-@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)    
+@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
 def return_df(f):        
     try:
         df = pd.read_csv(f)
@@ -23,7 +23,7 @@ def return_df(f):
         st.error(e)
     return df.copy()
 
-@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600)    
+@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24)    
 def return_combined_matchdf(del_df,match_df):        
     try:
         comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
@@ -35,22 +35,22 @@ def return_combined_matchdf(del_df,match_df):
         st.error(e)
     return comb_df   
 
-@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getBatsmanList(df):
     batsman_list = df['batsman'].unique()
     return sorted(batsman_list)
 
-@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getBowlerList(df):
     bowler_list = df['bowler'].unique()
     return sorted(bowler_list)
 
-@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getSeasonList(df):
     return pd.DataFrame(sorted({2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022}))
     #return sorted(df['season'].unique())
         
-@st.cache(suppress_st_warning=True,ttl=3600,show_spinner=True)
+@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getVenueList(df):
     return sorted(df['venue'].unique())
         
@@ -285,11 +285,30 @@ def getTeamHighestScore(df,team):
 
 def getTeamLowestScore(df,team):
     
-    df = df[df.batting_team == team]
-    st.write(df.head())
-    runs = pd.DataFrame(df.groupby(['batting_team','id'])['total_runs'].sum().reset_index()).groupby(['batting_team','id'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'Match_Runs'})
-    st.write(runs)
-    return (runs.Match_Runs.min())
+    lowest_score =  'NA'
+    final_df = pd.DataFrame()
+    first_df = df[(df.batting_team == team) & (df.inning == 1)]
+    
+    second_df = df[(df.batting_team == team) & (df.inning == 2) & (df.win_by != 'wickets')]
+    
+    if not first_df.empty:
+            if not second_df.empty:
+                final_df = pd.concat([first_df, second_df], ignore_index=True, sort=False)
+            else:
+                final_df = first_df
+    if not second_df.empty:
+            if not first_df.empty:
+                final_df = pd.concat([first_df, second_df], ignore_index=True, sort=False)
+            else:
+                final_df = second_df
+    
+    if not final_df.empty:
+        runs = pd.DataFrame(final_df.groupby(['batting_team','match_id'])['total_runs'].sum().reset_index()).groupby(['batting_team','match_id'])['total_runs'].sum().reset_index().rename(columns={'total_runs':'Match_Runs'})
+        #match_id = runs.Match_Runs.min().match_id
+        st.write(runs.head(10))
+        lowest_score = runs.Match_Runs.min()
+    
+    return (lowest_score)
 
 def getNoofThirties(df):
     
@@ -403,6 +422,14 @@ def getNoofTeamWins(df,team):
         return len(pd.unique(df['match_id']))
     else:
         return 0
+
+def getNoofTeamLoss(df,team):
+    
+    df = df[(df.result == 'normal') & (df.winner != team)]
+    if not df.empty:
+        return len(pd.unique(df['match_id']))
+    else:
+        return 0
         
 def getTeamMatchupRecords(df,team1,team2,venue=None):
     
@@ -418,13 +445,19 @@ def getTeamMatchupRecords(df,team1,team2,venue=None):
         
         team1_win_count = getNoofTeamWins(team_records_df,team1)
         team2_win_count = getNoofTeamWins(team_records_df,team2)
+        team1_lost_count = getNoofTeamLoss(team_records_df,team1)
+        team2_lost_count = getNoofTeamLoss(team_records_df,team2)
         team1_max_runs = getTeamHighestScore(team_records_df,team1)
         team2_max_runs = getTeamHighestScore(team_records_df,team2)
+        #team1_min_runs = getTeamLowestScore(team_records_df,team1)
+        #team2_min_runs = getTeamLowestScore(team_records_df,team2)
         #team1_min_runs = getTeamLowestScore(team_records_df,team1)
         
         data = [
             ['Matches won',team1_win_count,team2_win_count],
-            ['Highest Score',team1_max_runs,team2_max_runs]
+            ['Matches lost',team1_lost_count,team2_lost_count],
+            ['Highest Score',team1_max_runs,team2_max_runs],
+            #['Lowest Score',team1_min_runs,team2_min_runs]
         ]
         teamstats_df = pd.DataFrame(data, columns = ['Team Name', team1,team2])  
     else:
