@@ -941,3 +941,7 @@ id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winn
 1304110,2022,Navi Mumbai,16-05-2022 00:00,Delhi Capitals,Punjab Kings,Punjab Kings,field,normal,0,Delhi Capitals,runs,17,SN Thakur,Dr DY Patil Sports Academy,GR Sadashiv Iyer,Nitin Menon,
 1304111,2022,Mumbai,17-05-2022 00:00,Sunrisers Hyderabad,Mumbai Indians,Mumbai Indians,field,normal,0,Sunrisers Hyderabad,runs,3,RA Tripathi,Wankhede Stadium,CB Gaffaney,N Pandit,
 1304112,2022,Navi Mumbai,18-05-2022 00:00,Lucknow Super Giants,Kolkata Knight Riders,Lucknow Super Giants,bat,normal,0,Lucknow Super Giants,runs,2,Q de Kock,Dr DY Patil Sports Academy,R Pandit,YC Barde,
+1304113,2022,Mumbai,19-05-2022 00:00,Gujarat Titans,Royal Challengers Bangalore,Gujarat Titans,bat,normal,0,Royal Challengers Bangalore,wickets,8,V Kohli,Wankhede Stadium,KN Ananthapadmanabhan,GR Sadashiv Iyer,
+1304114,2022,Mumbai,20-05-2022 00:00,Chennai Super Kings,Rajasthan Royals,Chennai Super Kings,bat,normal,0,Rajasthan Royals,wickets,5,R Ashwin,Brabourne Stadium,CB Gaffaney,NA Patwardhan,
+1304115,2022,Mumbai,21-05-2022 00:00,Delhi Capitals,Mumbai Indians,Mumbai Indians,field,normal,0,Mumbai Indians,wickets,5,JJ Bumrah,Wankhede Stadium,Nitin Menon,Tapan Sharma,
+1304116,2022,Mumbai,22-05-2022 00:00,Sunrisers Hyderabad,Punjab Kings,Sunrisers Hyderabad,bat,normal,0,Punjab Kings,wickets,5,Harpreet Brar,Wankhede Stadium,AK Chaudhary,NA Patwardhan,
