@@ -945,5 +945,4 @@ id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winn
 1304114,2022,Mumbai,20-05-2022 00:00,Chennai Super Kings,Rajasthan Royals,Chennai Super Kings,bat,normal,0,Rajasthan Royals,wickets,5,R Ashwin,Brabourne Stadium,CB Gaffaney,NA Patwardhan,
 1304115,2022,Mumbai,21-05-2022 00:00,Delhi Capitals,Mumbai Indians,Mumbai Indians,field,normal,0,Mumbai Indians,wickets,5,JJ Bumrah,Wankhede Stadium,Nitin Menon,Tapan Sharma,
 1304116,2022,Mumbai,22-05-2022 00:00,Sunrisers Hyderabad,Punjab Kings,Sunrisers Hyderabad,bat,normal,0,Punjab Kings,wickets,5,Harpreet Brar,Wankhede Stadium,AK Chaudhary,NA Patwardhan,
-id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winner,win_by,result_margin,player_of_match,venue,umpire1,umpire2,umpire3
-1312197,2022,Kolkata,2022-05-24 00:00:00,Rajasthan Royals,Gujarat Titans,Gujarat Titans,field,normal,0,Gujarat Titans,wickets,7,DA Miller,Eden Gardens,BNJ Oxenford,VK Sharma,
+1312197,2022,Kolkata,24-05-2022 00:00,Rajasthan Royals,Gujarat Titans,Gujarat Titans,field,normal,0,Gujarat Titans,wickets,7,DA Miller,Eden Gardens,BNJ Oxenford,VK Sharma,
