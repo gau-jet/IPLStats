@@ -68,28 +68,28 @@ def app():
            # st.write(filtered_df)
             #grpbyList = 'bowler'
             filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-            player_df = utils.getPlayerStatistics(filtered_df,['batsman','phase'])
-                      
-            player_df.reset_index(drop=True,inplace=True)
-            if phase != 'All':
-                player_df = utils.getSpecificDataFrame(player_df,'phase',phase)
             
-            if not player_df.empty:
-                player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
-            #st.write(player_df)
-            #return
-            if not player_df.empty:
-                sort_by_list = ['Runs']
-                sort_asc_order = [False]
-                topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,15)
-                #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
+            if phase != 'All':
+                filtered_df = utils.getSpecificDataFrame(filtered_df,'phase',phase)
+            
+            if not filtered_df.empty:
+                player_df = utils.getPlayerStatistics(filtered_df,['batsman'])
                 
-                      
-            #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
-            #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
-                utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
-                utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
+                if not player_df.empty:
+                    player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
+                if not player_df.empty:
+                    player_df.reset_index(drop=True,inplace=True)
+                    sort_by_list = ['Runs']
+                    sort_asc_order = [False]
+                    topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,15)
+                    #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
+                    
+                          
+                #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
+                #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
+                    utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
+                    utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
+                else:
+                    st.subheader('No Data Found!')
             else:
-                st.subheader('No Data Found!')
-        else:
-            st.subheader('No Data Found!')    
+                st.subheader('No Data Found!')    
