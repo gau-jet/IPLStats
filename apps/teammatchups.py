@@ -25,7 +25,7 @@ def app():
         team1 = st.selectbox('Select Team 1 *',team_list)
         team2 = st.selectbox('Select Team 2 *',team_list,index=1)
         
-        DEFAULT = 'Pick a venue'
+        DEFAULT = 'ALL'
         venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)
         start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
         submitted = st.form_submit_button("Show Stats")
