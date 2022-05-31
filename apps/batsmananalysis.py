@@ -18,13 +18,15 @@ def app():
         batsman_list = utils.getBatsmanList(comb_df)
         season_list = utils.getSeasonList(comb_df)
         venue_list = utils.getVenueList(comb_df)
-        
+        team_list = sorted(comb_df['team1'].unique())
         
         #st.write(comb_df)
         DEFAULT = 'Pick a player'
-        DEFAULT_VENUE = 'Pick a venue'
+        
+        DEFAULT_ALL = 'ALL'
         batsman = utils.selectbox_with_default(st,'Select batsman *',batsman_list,DEFAULT)
-        venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_VENUE)
+        venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_ALL)
+        opposition = utils.selectbox_with_default(st,'Select opposition',team_list,DEFAULT_ALL)
         start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
@@ -43,8 +45,11 @@ def app():
             st.subheader('No Data Found!')
         if not filtered_df.empty:  
             
-            if venue != DEFAULT_VENUE: 
+            if venue != DEFAULT_ALL: 
                 filtered_df = utils.getSpecificDataFrame(filtered_df,'venue',venue)
+            
+            if opposition != DEFAULT_ALL: 
+                filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_team',opposition)
             #st.write(filtered_df)
             #return
             if not filtered_df.empty:
@@ -85,17 +90,25 @@ def app():
                 #st.write(playerphase_df['SR'])
                 #return
                 playerinning_df.drop(['batsman','Innings'], axis=1, inplace=True)
-                         
-                st.table(playerinning_df.style.format(precision=2))
+                   
+                st.table(playerinning_df.head(2).style.format(precision=2))
                 
                 #st.table(playerphase_df.style.set_properties(**{'text-align': 'right'}, axis=1)) ## doesnot work
                 st.write('* BPD -> Balls per dismissal, \t\t BPB -> Balls per boundary')
                 
-                grpbyList=['bowling_team']
-                title = batsman+ ' - against all teams'
-                xKey = 'batsman_runs'
-                xlabel = 'Runs scored'
-                ylabel = 'Opposition Teams'
+                if opposition != DEFAULT_ALL: 
+                    grpbyList=['bowler']
+                    title = batsman+ ' - against all bowlers'
+                    xKey = 'batsman_runs'
+                    xlabel = 'Runs scored'
+                    ylabel = 'Bowlers'
+                
+                else:
+                    grpbyList=['bowling_team']
+                    title = batsman+ ' - against all teams'
+                    xKey = 'batsman_runs'
+                    xlabel = 'Runs scored'
+                    ylabel = 'Opposition Teams'
                 
                 utils.plotBarGraph(filtered_df,grpbyList,title,xKey,xlabel,ylabel)
             else:
