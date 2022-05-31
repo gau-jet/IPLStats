@@ -37,7 +37,7 @@ def app():
         
         DEFAULT_BOWLER = 'Pick a player'
         bowler = utils.selectbox_with_default(st,'Select bowler *',sorted(bowler_list),DEFAULT_BOWLER)
-        DEFAULT = 'Pick a batting type'
+        DEFAULT = 'ALL'
         batting_type = utils.selectbox_with_default(st,'Select batting type',sorted(batting_type),DEFAULT)
         col1, col2 = st.columns(2)
         with col1:
