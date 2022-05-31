@@ -3,7 +3,13 @@ import numpy as np
 import pandas as pd 
 import math
 import matplotlib.pyplot as plt
+import requests, zipfile, io
 
+def download_url(zip_file_url, save_path):
+    req = requests.get(zip_file_url)
+    z = zipfile.ZipFile(io.BytesIO(req.content))   
+    file = z.extractall(save_path)
+        
 
 def header():
     snippet = """
@@ -13,7 +19,7 @@ def header():
     """
     st.markdown(snippet, unsafe_allow_html=True)
 
-@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
+@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
 def return_df(f):        
     try:
         df = pd.read_csv(f)
@@ -54,6 +60,14 @@ def getSeasonList(df):
 def getVenueList(df):
     return sorted(df['venue'].unique())
         
+def getMatchList(df,year,venue):    
+    df = df[(df.season == year)]
+    if venue != 'ALL':
+        df = df[(df.venue == venue)]    
+    df = df.sort_values(by='id',ascending = False).reset_index()
+    df['match_string'] = df.id.astype(str)+"-"+df.team1.astype(str)+" Vs "+df.team2.astype(str)+" at "+df.venue
+    #st.write(df['match_string'])
+    return df['match_string']
     
 def replaceTeamNames(df):
 
@@ -344,6 +358,432 @@ def getNoofHundreds(df):
     noofhundreds = runs['Match_Runs'].apply(lambda x: 1 if x >=100 else 0).sum()
     
     return (noofhundreds)
+
+# first innings
+def innings_1_runs(curr_overs, curr_score, curr_wickets,t1_cum_pb):
+    i1p_0 = t1_cum_pb[0]
+    i1p_1 = t1_cum_pb[1]
+    i1p_2 = t1_cum_pb[2]
+    i1p_3 = t1_cum_pb[3]
+    i1p_4 = t1_cum_pb[4]
+    i1p_6 = t1_cum_pb[5]
+    i1p_w = 1
+
+    # initialize runs, wickets
+    pred_runs = curr_score
+    pred_wks = curr_wickets
+    
+    # calculate leftover balls
+    over_ball = curr_overs
+    over_number = int(str(over_ball).split('.')[0])
+    ball_number = int(str(over_ball).split('.')[1])
+    
+    if ball_number >= 6:
+        ball_number = 6
+    current_balls = over_number*6 + ball_number 
+    leftover_balls = 120 - current_balls
+
+    for i in range(leftover_balls):
+    
+        r_value = np.random.random()
+
+        if r_value <= i1p_0:
+            pred_runs += 0
+        elif r_value <= i1p_1:
+            pred_runs += 1
+        elif r_value <= i1p_2:
+            pred_runs += 2
+        elif r_value <= i1p_3:
+            pred_runs += 3
+        elif r_value <= i1p_4:
+            pred_runs += 4
+        elif r_value <= i1p_6:
+            pred_runs += 6
+        else:
+            pred_runs += 0
+            pred_wks += 1
+            if pred_wks == 10:
+                break
+
+    return pred_runs
+    
+def innings_2_runs(curr_overs, curr_score, curr_wickets, target,t2_cum_pb):
+    i2p_0 = t2_cum_pb[0]
+    i2p_1 = t2_cum_pb[1]
+    i2p_2 = t2_cum_pb[2]
+    i2p_3 = t2_cum_pb[3]
+    i2p_4 = t2_cum_pb[4]
+    i2p_6 = t2_cum_pb[5]
+    i2p_w = 1
+
+    # initialize runs, wickets
+    pred_runs = curr_score
+    pred_wks = curr_wickets
+    
+    # calculate leftover balls
+    over_ball = curr_overs
+    over_number = int(str(over_ball).split('.')[0])
+    ball_number = int(str(over_ball).split('.')[1])
+    
+    if ball_number >= 6:
+        ball_number = 6
+    current_balls = over_number*6 + ball_number 
+    leftover_balls = 120 - current_balls
+
+    for i in range(leftover_balls):
+    
+        r_value = np.random.random()
+
+        if r_value <= i2p_0:
+            pred_runs += 0
+        elif r_value <= i2p_1:
+            pred_runs += 1
+        elif r_value <= i2p_2:
+            pred_runs += 2
+        elif r_value <= i2p_3:
+            pred_runs += 3
+        elif r_value <= i2p_4:
+            pred_runs += 4
+        elif r_value <= i2p_6:
+            pred_runs += 6
+        else:
+            pred_runs += 0
+            pred_wks += 1
+            if pred_wks == 10:
+                break
+        
+        if pred_runs > target:
+            break
+
+    return pred_runs
+
+def getMatchid(match_string):
+    
+    match_string_arr = (match_string.split('-'))
+    
+    return match_string_arr[0]
+ 
+def getMatchSummaryChart(df,matches_df,matchID): 
+    
+    venue = matches_df[matches_df.id==int(matchID)].venue.to_string(index=False)
+    season = matches_df[matches_df.id==int(matchID)].season.to_string(index=False)
+    
+    df = df[df.id==int(matchID)]
+    
+    firstinnings_df = df[df.inning==1]
+    secondinnings_df = df[df.inning==2]
+    
+    firstinnings_df.reset_index(inplace = True, drop = True)
+    secondinnings_df.reset_index(inplace = True, drop = True)
+
+    firstinnings_df['cummulative_runs'] = 0
+    secondinnings_df['cummulative_runs'] = 0
+    #Populate runs for both innings
+    total_runs=0
+    for i in range( len(firstinnings_df)):
+        total_runs += firstinnings_df['total_runs'][i]
+        firstinnings_df['cummulative_runs'][i] = total_runs
+
+    total_runs=0
+    for i in range(len(secondinnings_df)):
+        total_runs += secondinnings_df['total_runs'][i]
+        secondinnings_df['cummulative_runs'][i] = total_runs
+
+
+    #Populate wickets for both innings    
+    ball_no_ings1 = [i for i in range(1,len(firstinnings_df)+1)]
+    ball_no_ings2 = [i for i in range(1,len(secondinnings_df)+1)]
+
+    wk_index1 = list(firstinnings_df[~firstinnings_df.player_dismissed.isna()].index)
+    wk_index2 = list(secondinnings_df[~secondinnings_df.player_dismissed.isna()].index)
+    wk_runs1 = list(firstinnings_df[firstinnings_df.index.isin(wk_index1)].cummulative_runs)
+    wk_runs2 = list(secondinnings_df[secondinnings_df.index.isin(wk_index2)].cummulative_runs)
+           
+    plt.figure(figsize = (16, 6))
+    plt.style.use('dark_background')
+    plt.tight_layout()
+    team1 = firstinnings_df.batting_team[0]
+    team2 = secondinnings_df.batting_team[0]
+    plt.plot(firstinnings_df.index,firstinnings_df.cummulative_runs, linewidth = 3, label = team1)
+    plt.plot(secondinnings_df.index,secondinnings_df.cummulative_runs, linewidth = 3, label = team2)
+
+    plt.scatter(wk_index1, wk_runs1, s = 150)
+    plt.scatter(wk_index2, wk_runs2, s = 150)
+
+
+    plt.axvline(x = 36, ls = '--', c = 'g'),
+    plt.axvline(x = 90, ls = '--', c = 'g')
+    plt.text(16, 1.01, "Powerplay"),
+    plt.text(60, 1.01, "Middle Overs"),
+    plt.text(105, 1.01, "Death Overs")
+
+    plt.xlabel('Ball Number')
+    plt.ylabel('Runs Scored')
+    title = "IPL Season",season," Match Summary at ",venue," - Runs progression Chart"
+    plt.title(title)
+    plt.legend()
+    st.pyplot(plt)
+ 
+def getMatchAnanlysis(df,matchid):
+    
+    ipl_df = df[(df.match_id == int(matchid))]
+    
+    ipl_df.reset_index(inplace = True, drop = True)
+    
+    t1 = ipl_df.team1[0]
+    t2 = ipl_df.team2[0]
+    
+    df_ing1 = ipl_df[ipl_df.inning == 1]
+    df_ing2 = ipl_df[ipl_df.inning == 2]
+    df_ing1.reset_index(inplace = True, drop = True)
+    df_ing2.reset_index(inplace = True, drop = True)
+    
+    first_batting_teamname = df_ing1.batting_team[0]
+    second_batting_teamname = df_ing2.batting_team[0]
+    #st.write(df_ing1)
+    
+    df_ing1 = df_ing1.sort_values(by=['over','ball'], ascending = True)
+    df_ing2 = df_ing2.sort_values(by=['over','ball'], ascending = True)
+    df_ing1.reset_index(inplace = True, drop = True)
+    df_ing2.reset_index(inplace = True, drop = True)
+    
+    
+    #return
+    t1_outs = df[df.batting_team == t1].is_wicket.sum()
+    t2_outs = df[df.batting_team == t2].is_wicket.sum()
+    t1_outcomes = df[df.batting_team == t1].total_runs.value_counts()
+    t2_outcomes = df[df.batting_team == t2].total_runs.value_counts()
+    
+        
+    outcomes = [0, 1, 2, 3, 4, 6, 'w']
+    t1_outcomes_count = []
+    for outcome in outcomes:
+        try:
+            if outcome != 'w':
+                t1_outcomes_count.append(t1_outcomes[outcome])
+            else:
+                t1_outcomes_count.append(t1_outs)
+        except:
+            t1_outcomes_count.append(0)
+            
+    #st.write(t1_outcomes_count)
+    
+    t2_outcomes_count = []
+    for outcome in outcomes:
+        try:
+            if outcome != 'w':
+                t2_outcomes_count.append(t2_outcomes[outcome])
+            else:
+                t2_outcomes_count.append(t2_outs)
+        except:
+            t2_outcomes_count.append(0)
+    #st.write(t2_outcomes_count)
+    #return
+    t1_pb = [i/sum(t1_outcomes_count) for i in t1_outcomes_count]
+    t2_pb = [i/sum(t2_outcomes_count) for i in t2_outcomes_count]
+    #st.write(t2_pb)
+    #st.write(t2_outcomes_count)
+    t1_cum_pb = list(np.cumsum(t1_pb))
+    t2_cum_pb = list(np.cumsum(t2_pb))
+    
+    ## Runs prediction: 1st Innings
+    curr_score = 0
+    curr_wickets = 0
+    curr_overs = 0.0
+
+    ing1_runs_pred = []
+    
+    #st.write(df_ing1.head(10))
+    for i in range(len(df_ing1)):
+        curr_score += df_ing1.total_runs[i]
+        curr_overs = ".".join([str(df_ing1.over[i]-1), str(df_ing1.ball[i])])
+        curr_wickets += df_ing1.is_wicket[i]
+        
+        prediction = innings_1_runs(curr_overs, curr_score, curr_wickets,t1_cum_pb)
+        #st.write('score: ', curr_score, ' overs: ', curr_overs, ' wickets: ', curr_wickets, ' prediction: ', prediction)
+        ing1_runs_pred.append(prediction)
+        #return
+    ing1_actual_score = sum(df_ing1.total_runs)
+    #st.write("First Innings Score"+str(ing1_actual_score)+"/"+str(curr_wickets)+" ("+str(curr_overs)+")")
+    ## Runs prediction: 2nd Innings
+    curr_score = 0
+    curr_wickets = 0
+    curr_overs = 0.0
+    target = ing1_actual_score
+
+    ing2_runs_pred = []
+
+    for i in range(len(df_ing2)):
+        curr_score += df_ing2.total_runs[i]
+        curr_overs = ".".join([str(df_ing2.over[i]-1), str(df_ing2.ball[i])])
+        curr_wickets += df_ing2.is_wicket[i]
+        
+        prediction = innings_2_runs(curr_overs, curr_score, curr_wickets, target,t2_cum_pb)
+    #     print('target: ', target)
+    #     print('score: ', curr_score, ' overs: ', curr_overs, ' wickets: ', curr_wickets, ' prediction: ', prediction)
+        ing2_runs_pred.append(prediction)
+    
+    ing2_actual_score = sum(df_ing2.total_runs)
+    #st.write("Second Innings Score"+str(ing2_actual_score)+"/"+str(curr_wickets)+" ("+str(curr_overs)+")")
+    
+    # for each ball make a prediction: 1st runs, 2nd runs, win/lose/tie
+    #st.write(np.mean([abs(i - ing2_actual_score) for i in ing2_runs_pred]))
+    # initialize win/tie/lose
+    win_count = 0
+    tie_count = 0
+    lose_count = 0
+
+    win_count_ls = []
+    tie_count_ls = []
+    lose_count_ls = []
+
+    ing1_curr_score = 0
+    ing1_curr_overs = 0
+    ing1_curr_wickets = 0
+    win_count_ls.append(50) 
+    lose_count_ls.append(50) 
+    
+    # each ball
+    for i in range(len(df_ing1)):
+        
+        # 1st innings values
+        ing1_curr_score += df_ing1.total_runs[i]        
+        ing1_curr_overs = ".".join([str(df_ing1.over[i]-1), str(df_ing1.ball[i])])
+        ing1_curr_wickets += df_ing1.is_wicket[i]
+        
+        #2nd innings values
+        ing2_curr_score = 0
+        ing2_curr_wickets = 0
+        ing2_curr_overs = 0.0
+        
+        #st.write('score: ', ing1_curr_score, ' overs: ', ing1_curr_overs, ' wickets: ', ing1_curr_wickets)
+        # make a prediction for 100 times & get win/lose/tie count(ex: 28% win)
+        for j in range(100):
+            
+            ing1_prediction = innings_1_runs(ing1_curr_overs, ing1_curr_score, ing1_curr_wickets,t1_cum_pb)
+            target = ing1_prediction
+            
+            ing2_prediction = innings_2_runs(ing2_curr_overs, ing2_curr_score, ing2_curr_wickets, target,t2_cum_pb)
+            
+            #st.write(ing1_prediction, ing2_prediction)
+            
+            # prediction w.r.t 2nd team
+            if ing2_prediction > target:
+                win_count += 1
+            elif ing2_prediction == target:
+                tie_count += 1
+            else:
+                lose_count += 1
+                
+        win_count_ls.append(win_count)
+        tie_count_ls.append(tie_count)
+        lose_count_ls.append(lose_count)
+        
+        win_count = 0
+        tie_count = 0
+        lose_count = 0
+        
+    #2nd innings values
+    ing2_curr_score = 0
+    ing2_curr_wickets = 0
+    ing2_curr_overs = 0.0
+    
+    for i in range(len(df_ing2)):
+        
+        # 1st innings values
+        target = ing1_actual_score
+        
+        #2nd innings values
+        ing2_curr_score += df_ing2.total_runs[i]
+        ing2_curr_wickets += df_ing2.is_wicket[i]
+        ing2_curr_overs = ".".join([str(df_ing2.over[i]-1), str(df_ing2.ball[i])])
+        #st.write("Score:"+str(ing2_curr_score)+"Wickets:"+str(ing2_curr_wickets)+"Overs:"+str(ing2_curr_overs))
+        # make a prediction for 100 times & get win/lose/tie count(ex: 28% win)
+        for j in range(100):
+            ing2_prediction = innings_2_runs(ing2_curr_overs, ing2_curr_score, ing2_curr_wickets, target,t2_cum_pb)
+            
+            #st.write(target, ing2_prediction)
+            
+            # prediction w.r.t 2nd team
+            if ing2_prediction > target:
+                win_count += 1
+            elif ing2_prediction == target:
+                tie_count += 1
+            else:
+                lose_count += 1
+                
+        win_count_ls.append(win_count)
+        tie_count_ls.append(tie_count)
+        lose_count_ls.append(lose_count)
+        #st.write("Win: "+str(win_count)+" Tie: "+str(tie_count)+" lose: "+str(lose_count))
+    
+    
+        win_count = 0
+        tie_count = 0
+        lose_count = 0
+    #st.write(win_count_ls)
+    #st.write(tie_count_ls)
+    #st.write(lose_count_ls)
+    st.write(first_batting_teamname+": "+str(ing1_curr_score)+"/"+str(ing1_curr_wickets)+" ("+str(getOverDetails(ing1_curr_overs))+")")   
+    st.write(second_batting_teamname+": "+str(ing2_curr_score)+"/"+str(ing2_curr_wickets)+" ("+str(getOverDetails(ing2_curr_overs))+")")
+    
+    plt.figure(figsize = (16, 6))
+    plt.style.use('dark_background')
+    plt.tight_layout()
+    x1_values = [i for i in range(len(win_count_ls))]
+    y1_values = win_count_ls
+
+    x2_values = [i for i in range(len(tie_count_ls))]
+    y2_values = tie_count_ls
+
+    x3_values = [i for i in range(len(lose_count_ls))]
+    y3_values = lose_count_ls
+ 
+    for i in range(10, len(ipl_df), 20):
+        if i < len(ipl_df) - 10:
+            plt.axvspan(i, i+10, ymin = 0, ymax = 100, alpha = 0.05, color='grey')
+            
+    plt.axhline(y = 75, ls = '--', alpha = 0.3, c = 'grey')
+    plt.axhline(y = 50, ls = '--', alpha = 1, c = 'grey')
+    plt.axhline(y = 25, ls = '--', alpha = 0.3, c = 'grey')
+
+    plt.plot(x1_values, y1_values, color = 'orange', label = t2)
+    plt.plot(x2_values, y2_values, color = 'grey', label = 'Tie Value')
+    plt.plot(x3_values, y3_values, color = 'blue', label = t1)
+
+    plt.ylim(0, 100)
+    plt.yticks([0, 25, 50, 75, 100])
+
+
+    # add confidence interval
+    # ci = 3
+    # plt.fill_between(x1_values, np.array(y1_values) - ci, np.array(y1_values) + ci, color = 'orange', alpha = 0.2 )
+    # plt.fill_between(x2_values, np.array(y2_values) - ci, np.array(y2_values) + ci, color = 'grey', alpha = 0.2 )
+    # plt.fill_between(x3_values, np.array(y3_values) - ci, np.array(y3_values) + ci, color = 'blue', alpha = 0.2 )
+
+    plt.title('Win Percentage Chart: ' + t1 + ' vs ' + t2, fontsize = 16)
+    plt.xlabel('Ball No')
+    plt.ylabel('Win %')
+    plt.legend()
+    #plt.show()
+    st.pyplot(plt)
+    
+        
+    match_stats_df = {
+        't1_score':str(ing1_curr_score)+"/"+str(ing1_curr_wickets)+" ("+str(getOverDetails(ing1_curr_overs))+")",
+        't2_score':str(ing2_curr_score)+"/"+str(ing2_curr_wickets)+" ("+str(getOverDetails(ing2_curr_overs))+")"
+        }
+    return match_stats_df
+
+def getOverDetails(curr_overs):
+    over_ball = curr_overs
+    over_number = int(str(over_ball).split('.')[0])
+    ball_number = int(str(over_ball).split('.')[1])
+    if ball_number >=6:
+        over_no = over_number+1
+    else:
+        over_no = curr_overs
+    return over_no
     
 def getPlayerStatistics(df,grpbyList):    
         
@@ -481,15 +921,22 @@ def plotBarGraph(df,grpbyList,title,xKey,xlabel,ylabel):
         plt.style.use('dark_background')
         plt.tight_layout()
         if xKey == 'is_wicket':
-            df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','NA'])]    
-        df.groupby(grpbyList)[xKey].sum().sort_values().plot(kind = 'barh')
+            df = df[~df.dismissal_kind.isin(['run out', 'retired hurt', 'obstructing the field','<NA>'])]   
+            df = df[(df.is_wicket==1)]
+        
+        if df.empty:
+            return
+        final_df = df.groupby(grpbyList)[xKey].sum().sort_values(ascending=False).head(15)
+        
+        final_df.plot(kind = 'barh')
               
         
         plt.title(title)
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
         
-        for i, v in enumerate(df.groupby(grpbyList)[xKey].sum().sort_values()):
+        for i, v in enumerate(final_df):
+            
             #plt.text(v+1 , i-.15 , str(v),
              #       color = 'blue', fontweight = 'bold')
             plt.text(v+0.05 , i-.15 , str(v),
