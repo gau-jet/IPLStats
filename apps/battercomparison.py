@@ -8,7 +8,7 @@ from apps import utils
 def app():
     utils.header()
         
-    phase_list = ['All','Powerplay',
+    phase_list = ['ALL','Powerplay',
      'Middle',
      'Death'    
      ]
@@ -40,9 +40,10 @@ def app():
         st.markdown("<h3 style='text-align: center; color: white;'>Batsman Comparison</h3>", unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
+        DEFAULT_TYPE = 'ALL'
         batting_style = utils.selectbox_with_default(st,'Select batting hand *',sorted(batting_style_list),DEFAULT)    
         phase = st.selectbox('Select phase',phase_list)
-        bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT)
+        bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT_TYPE)
         
         col1, col2 = st.columns(2)
         with col1:
@@ -60,36 +61,41 @@ def app():
         else:
             st.error('Please select batting style')      
             return    
-        if bowling_type != DEFAULT:
+        if bowling_type != DEFAULT_TYPE:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type)             
-       
+        
         if not filtered_df.empty:  
             
            # st.write(filtered_df)
             #grpbyList = 'bowler'
             filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
             
-            if phase != 'All':
-                filtered_df = utils.getSpecificDataFrame(filtered_df,'phase',phase)
+            
             
             if not filtered_df.empty:
-                player_df = utils.getPlayerStatistics(filtered_df,['batsman'])
-                
-                if not player_df.empty:
-                    player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
-                if not player_df.empty:
-                    player_df.reset_index(drop=True,inplace=True)
-                    sort_by_list = ['Runs']
-                    sort_asc_order = [False]
-                    topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,15)
-                    #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
-                    
-                          
-                #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
-                #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
-                    utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
-                    utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
+                if phase != 'ALL':
+                    grpbyList = ['batsman','phase']
                 else:
-                    st.subheader('No Data Found!')
+                     grpbyList = ['batsman']
+            player_df = utils.getPlayerStatistics(filtered_df,grpbyList)
+            
+            if phase != 'ALL':    
+                    player_df = utils.getSpecificDataFrame(player_df,'phase',phase)    
+            if not player_df.empty:
+                player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
+            if not player_df.empty:
+                player_df.reset_index(drop=True,inplace=True)
+                sort_by_list = ['Runs']
+                sort_asc_order = [False]
+                topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,15)
+                #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
+                
+                      
+            #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
+            #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
+                utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
+                utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
             else:
-                st.subheader('No Data Found!')    
+                st.subheader('No Data Found!')
+        else:
+            st.subheader('No Data Found!')    

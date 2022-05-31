@@ -8,7 +8,7 @@ from apps import utils
 def app():
     utils.header()
         
-    phase_list = ['All','Powerplay',
+    phase_list = ['ALL','Powerplay',
      'Middle',
      'Death'    
      ]
@@ -38,9 +38,10 @@ def app():
         st.markdown("<h3 style='text-align: center; color: white;'>Bowler Comparison</h3>", unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
+        DEFAULT_STYLE = 'ALL'
         bowling_type = utils.selectbox_with_default(st,'Select bowler type *',sorted(bowling_type_list),DEFAULT)    
         phase = st.selectbox('Select phase',phase_list)
-        batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT)    
+        batting_style = utils.selectbox_with_default(st,'Select batting hand',sorted(batting_style_list),DEFAULT_STYLE)    
         
         col1, col2 = st.columns(2)
         with col1:
@@ -58,8 +59,8 @@ def app():
         else:
             st.error('Please select bowler type')
             return
-        if batting_style != DEFAULT:
-            filtered_df = utils.getSeasonDataFrame(filtered_df,start_year,end_year)
+        if batting_style != DEFAULT_STYLE:
+            #filtered_df = utils.getSeasonDataFrame(filtered_df,start_year,end_year)
             filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style)             
        
         if not filtered_df.empty:  
@@ -67,11 +68,16 @@ def app():
            # st.write(filtered_df)
             #grpbyList = 'bowler'
             filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-            player_df = utils.getPlayerStatistics(filtered_df,['bowler','phase'])
+            if not filtered_df.empty:
+                if phase != 'ALL':
+                    grpbyList = ['bowler','phase']
+                else:
+                     grpbyList = ['bowler']
+            player_df = utils.getPlayerStatistics(filtered_df,grpbyList)
             #st.table(player_df);            
             player_df.reset_index(drop=True,inplace=True)
             
-            if phase != 'All':
+            if phase != 'ALL':
                 player_df = utils.getSpecificDataFrame(player_df,'phase',phase)
             if not player_df.empty:
                 player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
