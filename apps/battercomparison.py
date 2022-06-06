@@ -32,6 +32,7 @@ def app():
     bowling_type_list = comb_df['bowling_style'].dropna().unique()
     batting_style_list = comb_df['batting_style'].unique()
     season_list = utils.getSeasonList(comb_df)
+    venue_list = utils.getVenueList(comb_df)
     #st.table(batting_style_list)
     #comb_df = comb_df[comb_df['batting_style'].isnull()]
     #st.table(comb_df.head(10))
@@ -42,7 +43,11 @@ def app():
         DEFAULT = 'Pick a style'
         DEFAULT_TYPE = 'ALL'
         batting_style = utils.selectbox_with_default(st,'Select batting hand *',sorted(batting_style_list),DEFAULT)    
-        phase = st.selectbox('Select phase',phase_list)
+        col1, col2 = st.columns(2)
+        with col1:
+            phase = st.selectbox('Select phase',phase_list)
+        with col2:    
+            venue = utils.selectbox_with_default(st,'Select Venue',sorted(venue_list),DEFAULT_TYPE)
         bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type_list),DEFAULT_TYPE)
         
         col1, col2 = st.columns(2)
@@ -56,46 +61,52 @@ def app():
         
     if submitted:       
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
+                
         if batting_style != DEFAULT:
             filtered_df = utils.getSpecificDataFrame(filtered_df,'batting_style',batting_style)
         else:
             st.error('Please select batting style')      
             return    
-        if bowling_type != DEFAULT_TYPE:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type)             
-        
-        if not filtered_df.empty:  
+        if venue != DEFAULT_TYPE:
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'venue',venue)
+        if not filtered_df.empty:    
+            if bowling_type != DEFAULT_TYPE:
+                filtered_df = utils.getSpecificDataFrame(filtered_df,'bowling_style',bowling_type)             
             
-           # st.write(filtered_df)
-            #grpbyList = 'bowler'
-            filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-            
-            
-            
-            if not filtered_df.empty:
-                if phase != 'ALL':
-                    grpbyList = ['batsman','phase']
-                else:
-                     grpbyList = ['batsman']
-            player_df = utils.getPlayerStatistics(filtered_df,grpbyList)
-            
-            if phase != 'ALL':    
-                    player_df = utils.getSpecificDataFrame(player_df,'phase',phase)    
-            if not player_df.empty:
-                player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
-            if not player_df.empty:
-                player_df.reset_index(drop=True,inplace=True)
-                sort_by_list = ['Runs']
-                sort_asc_order = [False]
-                topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,15)
-                #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
+            if not filtered_df.empty:  
                 
-                      
-            #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
-            #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
-                utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
-                utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
+               # st.write(filtered_df)
+                #grpbyList = 'bowler'
+                filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
+                
+                
+                
+                if not filtered_df.empty:
+                    if phase != 'ALL':
+                        grpbyList = ['batsman','phase']
+                    else:
+                         grpbyList = ['batsman']
+                player_df = utils.getPlayerStatistics(filtered_df,grpbyList)
+                
+                if phase != 'ALL':    
+                        player_df = utils.getSpecificDataFrame(player_df,'phase',phase)    
+                if not player_df.empty:
+                    player_df = utils.getMinBallsFilteredDF(player_df,min_balls)
+                if not player_df.empty:
+                    player_df.reset_index(drop=True,inplace=True)
+                    sort_by_list = ['Runs']
+                    sort_asc_order = [False]
+                    topSRbatsman_df = utils.getTopRecordsDF(player_df,sort_by_list,sort_asc_order,15)
+                    #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
+                    
+                          
+                #plotScatterGraph(topSRbowlers_df,'SR','Eco','StrikeRate','EconomyRate')
+                #topbowlers_df = getTopRecordsDF(player_df,'dismissals',15)
+                    utils.plotScatterGraph(topSRbatsman_df,'Boundary%','Dot%','Boundary Ball %','Dot Ball %')            
+                    utils.plotScatterGraph(topSRbatsman_df,'SR','BPD','Strike Rate','Balls Per Dismissal')
+                else:
+                    st.subheader('No Data Found!')
             else:
-                st.subheader('No Data Found!')
+                st.subheader('No Data Found!')    
         else:
             st.subheader('No Data Found!')    
