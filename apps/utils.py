@@ -14,7 +14,7 @@ def download_url(zip_file_url, save_path):
 def header():
     snippet = """
     <div style="display: flex; justify-content: space-between">
-        <div>🡠 Check the sidebar for more apps</div>        
+        <div>🡠 Check the sidebar for more options</div>        
     </div>
     """
     st.markdown(snippet, unsafe_allow_html=True)
