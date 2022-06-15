@@ -1,650 +1,1448 @@
-Player_Name,batting_style,bowling_style
-RT Ponting,RHB,Right-arm fast
-BB McCullum,RHB,Right-arm fast
-DJ Hussey,RHB,Off Break
-Mohammad Hafeez,RHB,Off Break
-SC Ganguly,LHB,Right-arm fast
-CL White,RHB,Leg Break
-MV Boucher,RHB,Right-arm fast
-B Akhil,RHB,Right-arm fast
-AA Noffke,RHB,Right-arm fast
-P Kumar,RHB,Right-arm fast
-Z Khan,RHB,Left-arm fast
-SB Joshi,LHB,Slow left-arm orthodox
-W Jaffer,RHB,Off Break
-JH Kallis,RHB,Right-arm fast
-R Dravid,RHB,Off Break
-V Kohli,RHB,Right-arm fast
-MEK Hussey,LHB,Right-arm fast
-SK Raina,LHB,Off Break
-JDP Oram,LHB,Right-arm fast
-S Badrinath,RHB,Off Break
-PA Patel,LHB,
-ML Hayden,LHB,Right-arm fast
-MS Dhoni,RHB,Right-arm fast
-K Goel,LHB,Off Break
-JR Hopes,RHB,Right-arm fast
-KC Sangakkara,LHB,Off Break
-Yuvraj Singh,LHB,Slow left-arm orthodox
-SM Katich,LHB,Slow left-arm chinaman
-IK Pathan,LHB,Left-arm fast
-T Kohli,RHB,Right-arm fast
-YK Pathan,RHB,Off Break
-SK Warne,RHB,Leg Break
-D Salunkhe,RHB,Leg Break
-SK Trivedi,RHB,Right-arm fast
-SR Watson,RHB,Right-arm fast
-M Kaif,RHB,Off Break
-DS Lehmann,LHB,Slow left-arm orthodox
-RA Jadeja,LHB,Slow left-arm orthodox
-M Rawat,RHB,
-S Dhawan,LHB,Off Break
-G Gambhir,LHB,Leg Break
-V Sehwag,RHB,Off Break
-L Ronchi,RHB,
-ST Jayasuriya,LHB,Slow left-arm orthodox
-DJ Thornely,RHB,Right-arm fast
-RV Uthappa,RHB,Right-arm fast
-PR Shah,RHB,
-AM Nayar,LHB,Right-arm fast
-SM Pollock,RHB,Right-arm fast
-Harbhajan Singh,RHB,Off Break
-S Chanderpaul,LHB,Leg Break
-LRPL Taylor,RHB,Off Break
-AS Yadav,RHB,
-A Symonds,RHB,Off Break
-SB Bangar,RHB,Right-arm fast
-WPUJC Vaas,LHB,Left-arm fast
-RP Singh,RHB,Left-arm fast
-AC Gilchrist,LHB,Off Break
-Y Venugopal Rao,RHB,Off Break
-VVS Laxman,RHB,Off Break
-RG Sharma,RHB,Off Break
-SB Styris,RHB,Right-arm fast
-WP Saha,RHB,
-LR Shukla,RHB,Right-arm fast
-PP Chawla,LHB,Leg Break
-DPMD Jayawardene,RHB,Right-arm fast
-S Sohal,RHB,Leg Break
-B Lee,RHB,Right-arm fast
-WA Mota,RHB,Right-arm fast
-Kamran Akmal,RHB,
-Shahid Afridi,RHB,Leg Break
-DJ Bravo,RHB,Right-arm fast
-A Nehra,RHB,Left-arm fast
-MA Khote,RHB,Right-arm fast
-GC Smith,LHB,Off Break
-Pankaj Singh,RHB,Right-arm fast
-S Sreesanth,RHB,Right-arm fast
-VRV Singh,RHB,Right-arm fast
-RR Sarwan,RHB,Leg Break
-SS Tiwary,LHB,
-DS Kulkarni,RHB,Right-arm fast
-R Vinay Kumar,RHB,Right-arm fast
-M Kartik,LHB,Slow left-arm orthodox
-I Sharma,RHB,Right-arm fast
-AB Agarkar,RHB,Right-arm fast
-AM Rahane,RHB,Right-arm fast
-Shoaib Malik,RHB,Off Break
-MK Tiwary,RHB,Leg Break
-KD Karthik,RHB,
-R Bhatia,RHB,Right-arm fast
-MF Maharoof,RHB,Right-arm fast
-VY Mahesh,RHB,Right-arm fast
-TM Srivastava,LHB,Right-arm fast
-B Chipli,RHB,Right-arm fast
-DW Steyn,RHB,Right-arm fast
-DB Das,RHB,Leg Break
-MK Pandey,RHB,Right-arm fast
-HH Gibbs,RHB,Off Break
-DNT Zoysa,LHB,Left-arm fast
-D Kalyankrishna,RHB,Right-arm fast
-SE Marsh,LHB,Slow left-arm orthodox
-SA Asnodkar,RHB,Off Break
-Sohail Tanvir,LHB,Left-arm fast
-BJ Hodge,RHB,Off Break
-Salman Butt,LHB,Off Break
-Umar Gul,RHB,Right-arm fast
-AB Dinda,RHB,Right-arm fast
-SP Fleming,LHB,
-S Vidyut,LHB,Slow left-arm orthodox
-JA Morkel,LHB,Right-arm fast
-AB de Villiers,RHB,Right-arm fast
-LPC Silva,RHB,Leg Break
-DB Ravi Teja,RHB,Leg Break
-Misbah-ul-Haq,RHB,Leg Break
-YV Takawale,RHB,
-RR Raje,RHB,Right-arm fast
-PJ Sangwan,RHB,Left-arm fast
-Mohammad Asif,LHB,Right-arm fast
-GD McGrath,RHB,Right-arm fast
-Joginder Sharma,RHB,Right-arm fast
-MS Gony,RHB,Right-arm fast
-M Muralitharan,RHB,Off Break
-M Ntini,RHB,Right-arm fast
-DT Patil,RHB,
-A Kumble,RHB,Leg Break
-S Anirudha,RHB,
-MM Patel,RHB,Right-arm fast
-CK Kapugedera,RHB,Right-arm fast
-A Chopra,RHB,Off Break
-T Taibu,RHB,Right-arm fast
-J Arunkumar,RHB,Off Break
-PP Ojha,LHB,Slow left-arm orthodox
-SP Goswami,LHB,
-SR Tendulkar,RHB,Off Break
-U Kaul,LHB,
-TM Dilshan,RHB,Off Break
-A Mishra,RHB,Leg Break
-Niraj Patel,RHB,
-AD Mascarenhas,RHB,Right-arm fast
-LA Pomersbach,LHB,Off Break
-Iqbal Abdulla,LHB,Slow left-arm orthodox
-Younis Khan,RHB,Right-arm fast
-PM Sarvesh Kumar,RHB,Right-arm fast
-DP Vijaykumar,RHB,Right-arm fast
-Shoaib Akhtar,RHB,Right-arm fast
-Abdur Razzak,LHB,Slow left-arm orthodox
-H Das,RHB,
-DR Smith,RHB,Right-arm fast
-SD Chitnis,RHB,Off Break
-CRD Fernando,RHB,Right-arm fast
-VS Yeligati,RHB,Off Break
-L Balaji,RHB,Right-arm fast
-A Mukund,LHB,Leg Break
-RR Powar,RHB,Off Break
-JP Duminy,LHB,Off Break
-A Flintoff,RHB,Right-arm fast
-T Thushara,LHB,Left-arm fast
-KP Pietersen,RHB,Off Break
-JD Ryder,LHB,Right-arm fast
-T Henderson,RHB,Right-arm fast
-Kamran Khan,LHB,Left-arm fast
-RS Bopara,RHB,Right-arm fast
-MC Henriques,RHB,Right-arm fast
-CH Gayle,LHB,Off Break
-R Bishnoi,RHB,Right-arm fast
-FH Edwards,RHB,Right-arm fast
-KV Sharma,LHB,Leg Break
-AS Raut,RHB,Leg Break
-PC Valthaty,RHB,Right-arm fast
-RJ Quiney,LHB,Right-arm fast
-Yashpal Singh,RHB,Right-arm fast
-M Manhas,RHB,Off Break
-AA Bilakhia,RHB,Right-arm fast
-AN Ghosh,RHB,Right-arm fast
-BAW Mendis,RHB,Off Break
-DL Vettori,LHB,Slow left-arm orthodox
-MN van Wyk,RHB,Slow left-arm orthodox
-RE van der Merwe,RHB,Slow left-arm orthodox
-TL Suman,RHB,Off Break
-Shoaib Ahmed,RHB,Right-arm fast
-GR Napier,RHB,Right-arm fast
-KP Appanna,RHB,Slow left-arm orthodox
-LA Carseldine,LHB,Left-arm fast
-NV Ojha,RHB,
-SM Harwood,RHB,Right-arm fast
-M Vijay,RHB,Off Break
-SB Jakati,LHB,Slow left-arm orthodox
-DA Warner,LHB,Leg Break
-RJ Harris,RHB,Right-arm fast
-D du Preez,RHB,Right-arm fast
-M Morkel,LHB,Right-arm fast
-AD Mathews,RHB,Right-arm fast
-J Botha,RHB,Off Break
-SL Malinga,RHB,Right-arm fast
-C Nanda,RHB,Leg Break
-Mashrafe Mortaza,RHB,Right-arm fast
-A Singh,RHB,Right-arm fast
-GJ Bailey,RHB,Right-arm fast
-AB McDonald,RHB,Right-arm fast
-Y Nagar,RHB,Off Break
-SS Shaikh,RHB,Right-arm fast
-R Ashwin,RHB,Off Break
-Mohammad Ashraful,RHB,Off Break
-CA Pujara,RHB,Leg Break
-OA Shah,RHB,Off Break
-Jaskaran Singh,RHB,Right-arm fast
-Anirudh Singh,LHB,Right-arm fast
-AP Tare,RHB,
-AT Rayudu,RHB,Off Break
-R Sathish,RHB,Right-arm fast
-R McLaren,LHB,Right-arm fast
-AA Jhunjhunwala,RHB,Off Break
-P Dogra,RHB,Leg Break
-A Uniyal,LHB,Left-arm fast
-MS Bisla,RHB,
-YA Abdulla,LHB,Left-arm fast
-EJG Morgan,LHB,Right-arm fast
-JM Kemp,RHB,Right-arm fast
-S Tyagi,RHB,Right-arm fast
-RS Gavaskar,LHB,Slow left-arm orthodox
-SE Bond,RHB,Right-arm fast
-KA Pollard,RHB,Right-arm fast
-S Ladda,RHB,Leg Break
-DP Nannes,RHB,Left-arm fast
-DR Martyn,RHB,Right-arm fast
-S Narwal,LHB,Right-arm fast
-MJ Lumb,LHB,Right-arm fast
-Bipul Sharma,LHB,Slow left-arm orthodox
-AB Barath,RHB,Off Break
-FY Fazal,LHB,Right-arm fast
-AC Voges,RHB,Slow left-arm orthodox
-MD Mishra,RHB,Off Break
-UT Yadav,RHB,Right-arm fast
-J Theron,RHB,Right-arm fast
-SJ Srivastava,RHB,Left-arm fast
-R Sharma,RHB,Off Break
-Mandeep Singh,RHB,Right-arm fast
-KM Jadhav,RHB,Off Break
-SW Tait,RHB,Right-arm fast
-KB Arun Karthik,RHB,Leg Break
-KAJ Roach,RHB,Right-arm fast
-PD Collingwood,RHB,Right-arm fast
-CK Langeveldt,RHB,Right-arm fast
-VS Malik,RHB,Right-arm fast
-A Mithun,RHB,Right-arm fast
-AP Dole,RHB,Right-arm fast
-AN Ahmed,RHB,Right-arm fast
-RS Sodhi,RHB,Right-arm fast
-DE Bollinger,LHB,Left-arm fast
-S Sriram,LHB,Slow left-arm orthodox
-B Sumanth,RHB,Right-arm fast
-C Madan,RHB,
-AG Paunikar,RHB,
-MR Marsh,RHB,Right-arm fast
-AJ Finch,RHB,Slow left-arm orthodox
-STR Binny,RHB,Right-arm fast
-Harmeet Singh,LHB,Slow left-arm orthodox
-IR Jaggi,RHB,Leg Break
-DT Christian,RHB,Right-arm fast
-RV Gomez,RHB,Right-arm fast
-MA Agarwal,RHB,
-AUK Pathan,RHB,Right-arm fast
-UBT Chand,RHB,Off Break
-DJ Jacobs,RHB,Right-arm fast
-NJ Rimmington,RHB,Right-arm fast
-Sunny Singh,RHB,Right-arm fast
-AL Menaria,LHB,Slow left-arm orthodox
-WD Parnell,LHB,Left-arm fast
-JJ van der Wath,RHB,Right-arm fast
-R Ninan,RHB,Off Break
-S Aravind,LHB,Left-arm fast
-MS Wade,LHB,Right-arm fast
-TD Paine,RHB,Right-arm fast
-SB Wagh,LHB,Left-arm fast
-AC Thomas,RHB,Right-arm fast
-JEC Franklin,LHB,Left-arm fast
-Shakib Al Hasan,LHB,Slow left-arm orthodox
-DH Yagnik,LHB,
-S Randiv,RHB,Off Break
-BJ Haddin,RHB,
-NLTC Perera,LHB,Right-arm fast
-NL McCullum,RHB,Off Break
-JE Taylor,RHB,Right-arm fast
-J Syed Mohammad,LHB,Slow left-arm orthodox
-RN ten Doeschate,RHB,Right-arm fast
-TR Birt,LHB,Right-arm fast
-AG Murtaza,LHB,Slow left-arm orthodox
-Harpreet Singh,LHB,Right-arm fast
-M Klinger,RHB,
-AC Blizzard,LHB,Left-arm fast
-I Malhotra,RHB,Right-arm fast
-L Ablish,RHB,Right-arm fast
-CA Ingram,LHB,Leg Break
-S Nadeem,RHB,Slow left-arm orthodox
-P Parameswaran,RHB,Left-arm fast
-CJ Ferguson,RHB,Right-arm fast
-VR Aaron,RHB,Right-arm fast
-AA Chavan,LHB,Slow left-arm orthodox
-ND Doshi,RHB,Slow left-arm orthodox
-B Kumar,RHB,Right-arm fast
-Y Gnaneswara Rao,RHB,Right-arm fast
-S Rana,RHB,Right-arm fast
-BA Bhatt,LHB,Slow left-arm orthodox
-F du Plessis,RHB,Leg Break
-RE Levi,RHB,Right-arm fast
-GJ Maxwell,RHB,Off Break
-SPD Smith,RHB,Leg Break
-MN Samuels,RHB,Off Break
-SA Yadav,RHB,Off Break
-KK Cooper,RHB,Right-arm fast
-JP Faulkner,RHB,Left-arm fast
-HV Patel,RHB,Right-arm fast
-DAJ Bracewell,RHB,Right-arm fast
-DJ Harris,RHB,Right-arm fast
-Ankit Sharma,LHB,Slow left-arm orthodox
-SP Narine,LHB,Off Break
-GB Hogg,LHB,Slow left-arm chinaman
-RR Bhatkal,RHB,Right-arm fast
-CJ McKay,RHB,Right-arm fast
-N Saini,RHB,Right-arm fast
-DA Miller,LHB,Off Break
-Azhar Mahmood,RHB,Right-arm fast
-P Negi,LHB,Slow left-arm orthodox
-RJ Peterson,LHB,Slow left-arm orthodox
-KMDN Kulasekara,RHB,Right-arm fast
-A Ashish Reddy,RHB,Right-arm fast
-V Pratap Singh,RHB,Right-arm fast
-BB Samantray,RHB,
-MJ Clarke,RHB,Slow left-arm orthodox
-Gurkeerat Singh,RHB,Off Break
-AP Majumdar,RHB,Leg Break
-PA Reddy,RHB,Leg Break
-K Upadhyay,RHB,Right-arm fast
-P Awana,RHB,Right-arm fast
-AD Russell,RHB,Right-arm fast
-A Chandila,RHB,Off Break
-CA Lynn,RHB,Slow left-arm orthodox
-Sunny Gupta,RHB,Off Break
-MC Juneja,RHB,Off Break
-KK Nair,RHB,Off Break
-GH Vihari,RHB,Off Break
-R Shukla,RHB,Right-arm fast
-MDKJ Perera,LHB,
-AS Rajpoot,RHB,Right-arm fast
-B Laughlin,RHB,Right-arm fast
-M Vohra,RHB,Right-arm fast
-JD Unadkat,RHB,Left-arm fast
-Mohammed Shami,RHB,Right-arm fast
-BMAJ Mendis,LHB,Leg Break
-R Rampaul,LHB,Right-arm fast
-CH Morris,RHB,Right-arm fast
-SV Samson,RHB,
-SMSM Senanayake,RHB,Off Break
-BJ Rohrer,LHB,
-KL Rahul,RHB,
-Q de Kock,LHB,
-R Dhawan,RHB,Right-arm fast
-MG Johnson,LHB,Left-arm fast
-LJ Wright,RHB,Right-arm fast
-IC Pandey,RHB,Right-arm fast
-CM Gautam,RHB,
-X Thalaivan Sargunam,RHB,Off Break
-DJG Sammy,RHB,Right-arm fast
-KW Richardson,RHB,Right-arm fast
-MM Sharma,RHB,Right-arm fast
-UA Birla,RHB,Right-arm fast
-Parvez Rasool,RHB,Off Break
-Sandeep Sharma,RHB,Right-arm fast
-S Kaul,RHB,Right-arm fast
-Sachin Baby,LHB,Off Break
-PV Tambe,RHB,Leg Break
-NM Coulter-Nile,RHB,Right-arm fast
-CJ Anderson,LHB,Left-arm fast
-NJ Maddinson,LHB,Slow left-arm orthodox
-AR Patel,LHB,Slow left-arm orthodox
-JJ Bumrah,RHB,Right-arm fast
-JDS Neesham,LHB,Right-arm fast
-TG Southee,RHB,Right-arm fast
-MA Starc,LHB,Left-arm fast
-BR Dunk,LHB,
-RR Rossouw,LHB,Off Break
-Shivam Sharma,RHB,Off Break
-YS Chahal,RHB,Leg Break
-LMP Simmons,RHB,Right-arm fast
-VH Zol,LHB,Off Break
-BCJ Cutting,RHB,Right-arm fast
-Imran Tahir,RHB,Leg Break
-BE Hendricks,LHB,Left-arm fast
-S Gopal,RHB,Leg Break
-M de Lange,RHB,Right-arm fast
-R Tewatia,LHB,Leg Break
-JO Holder,RHB,Right-arm fast
-Karanveer Singh,RHB,Leg Break
-SS Iyer,RHB,Leg Break
-DJ Hooda,RHB,Off Break
-Anureet Singh,RHB,Right-arm fast
-KS Williamson,RHB,Off Break
-SA Abbott,RHB,Right-arm fast
-J Suchith,LHB,Slow left-arm orthodox
-RG More,RHB,Right-arm fast
-HH Pandya,RHB,Right-arm fast
-D Wiese,RHB,Right-arm fast
-SN Khan,RHB,Leg Break
-MJ McClenaghan,LHB,Left-arm fast
-DJ Muthuswami,RHB,Right-arm fast
-PJ Cummins,RHB,Right-arm fast
-SN Thakur,RHB,Right-arm fast
-JC Buttler,RHB,
-CR Brathwaite,RHB,Right-arm fast
-MP Stoinis,RHB,Right-arm fast
-Ishan Kishan,LHB,
-C Munro,LHB,Right-arm fast
-P Sahu,RHB,Leg Break
-KH Pandya,LHB,Slow left-arm orthodox
-AD Nath,RHB,Right-arm fast
-MJ Guptill,RHB,Off Break
-KJ Abbott,RHB,Right-arm fast
-TM Head,LHB,Off Break
-M Ashwin,RHB,Leg Break
-NS Naik,RHB,
-RR Pant,LHB,
-SW Billings,RHB,
-KC Cariappa,RHB,Leg Break
-PSP Handscomb,RHB,
-Swapnil Singh,RHB,Slow left-arm orthodox
-J Yadav,RHB,Off Break
-UT Khawaja,LHB,Right-arm fast
-HM Amla,RHB,Off Break
-F Behardien,RHB,Right-arm fast
-BB Sran,LHB,Left-arm fast
-A Zampa,RHB,Leg Break
-N Rana,LHB,Off Break
-S Kaushik,RHB,Slow left-arm chinaman
-ER Dwivedi,RHB,
-CJ Jordan,RHB,Right-arm fast
-A Choudhary,RHB,Left-arm fast
-TS Mills,RHB,Left-arm fast
-BA Stokes,LHB,Right-arm fast
-JJ Roy,RHB,
-Vishnu Vinod,RHB,
-Basil Thampi,RHB,Right-arm fast
-CR Woakes,RHB,Right-arm fast
-RA Tripathi,RHB,Right-arm fast
-DL Chahar,RHB,Right-arm fast
-V Shankar,RHB,Right-arm fast
-Rashid Khan,RHB,Leg Break
-LH Ferguson,RHB,Right-arm fast
-RD Chahar,RHB,Leg Break
-C de Grandhomme,RHB,Right-arm fast
-AF Milne,RHB,Right-arm fast
-S Badree,RHB,Leg Break
-Mohammad Nabi,RHB,Off Break
-AJ Tye,RHB,Right-arm fast
-K Rabada,LHB,Right-arm fast
-Kuldeep Yadav,LHB,Slow left-arm chinaman
-Washington Sundar,LHB,Off Break
-DM Bravo,LHB,Right-arm fast
-AR Bawne,RHB,Off Break
-SP Jackson,RHB,
-Ankit Soni,RHB,Leg Break
-TA Boult,RHB,Left-arm fast
-E Lewis,LHB,
-MA Wood,RHB,Right-arm fast
-RK Singh,LHB,Off Break
-DJM Short,LHB,Slow left-arm chinaman
-K Gowtham,RHB,Off Break
-TK Curran,RHB,Right-arm fast
-M Markande,RHB,Leg Break
-B Stanlake,LHB,Right-arm fast
-Mujeeb Ur Rahman,RHB,Off Break
-A Dananjaya,LHB,Off Break
-Shivam Mavi,RHB,Right-arm fast
-Shubman Gill,RHB,
-Mohammed Siraj,RHB,Right-arm fast
-H Klaasen,RHB,
-RK Bhui,RHB,
-JC Archer,RHB,Right-arm fast
-PP Shaw,RHB,
-LE Plunkett,RHB,Right-arm fast
-Mustafizur Rahman,LHB,Left-arm fast
-AD Hales,RHB,
-MK Lomror,LHB,Slow left-arm orthodox
-DR Shorey,RHB,Off Break
-MM Ali,LHB,Leg Break
-M Prasidh Krishna,RHB,Right-arm fast
-P Chopra,RHB,
-JPR Scantlebury-Searles,RHB,Right-arm fast
-Abhishek Sharma,LHB,Slow left-arm orthodox
-IS Sodhi,RHB,Leg Break
-SO Hetmyer,LHB,
-S Dube,LHB,Right-arm fast
-NA Saini,RHB,Right-arm fast
-JM Bairstow,RHB,
-KMA Paul,RHB,Right-arm fast
-Rasikh Salam,RHB,Right-arm fast
-N Pooran,LHB,
-P Ray Barman,RHB,Leg Break
-SM Curran,LHB,Left-arm fast
-GC Viljoen,LHB,
-S Lamichhane,RHB,Off Break
-Avesh Khan,RHB,Right-arm fast
-HF Gurney,RHB,Left-arm fast
-SD Lad,RHB,Off Break
-AS Joseph,RHB,Right-arm fast
-R Parag,RHB,Leg Break
-MJ Santner,LHB,Slow left-arm orthodox
-JL Denly,RHB,Leg Break
-LS Livingstone,RHB,Leg Break
-KK Ahmed,RHB,Left-arm fast
-AJ Turner,RHB,Off Break
-Harpreet Brar,LHB,Slow left-arm orthodox
-SE Rutherford,RHB,Right-arm fast
-Y Prithvi Raj,LHB,Left-arm fast
-P Simran Singh,RHB,
-JL Pattinson,LHB,Right-arm fast
-A Nortje,RHB,Right-arm fast
-T Banton,RHB,
-D Padikkal,LHB,
-YBK Jaiswal,LHB,
-RD Gaikwad,RHB,
-TU Deshpande,LHB,Right-arm fast
-Abdul Samad,RHB,
-PK Garg,RHB,Right-arm fast
-JR Philippe,RHB,Off Break
-Kartik Tyagi,RHB,Right-arm fast
-CV Varun,RHB,Leg Break
-KL Nagarkoti,RHB,Right-arm fast
-I Udana,LHB,Left-arm fast
-Ravi Bishnoi,RHB,Leg Break
-Shahbaz Ahmed,LHB,Slow left-arm orthodox
-AT Carey,LHB,
-N Jagadeesan,RHB,
-T Natarajan,LHB,Left-arm fast
-P Dubey,RHB,Leg Break
-SS Cottrell,LHB,Left-arm fast
-Arshdeep Singh,LHB,Left-arm fast
-DR Sams,RHB,Left-arm fast
-M Jansen,LHB,Left-arm fast
-RM Patidar,RHB,
-KA Jamieson,LHB,Right-arm fast
-M Shahrukh Khan,RHB,
-JA Richardson,RHB,Right-arm fast
-Lalit Yadav,RHB,Off Break
-Virat Singh,LHB,Leg Break
-FA Allen,RHB,Slow left-arm orthodox
-C Sakariya,LHB,Left-arm fast
-DP Conway,LHB,Right-arm fast
-VR Iyer,LHB,Right-arm fast
-Anmolpreet Singh,RHB,Off Break
-Tilak Varma,LHB,Off Break
-TH David,RHB,Off Break
-TL Seifert,RHB,
-R Powell,RHB,Right-arm fast
-Anuj Rawat,LHB,
-PBB Rajapaksa,LHB,
-RA Bawa,LHB,Right-arm fast
-OF Smith,RHB,Right-arm fast
-A Badoni,RHB,
-PVD Chameera,RHB,Right-arm fast
-A Manohar,RHB,Leg Break
-AK Markram,RHB,Off Break
-R Shepherd,RHB,Right-arm fast
-DJ Willey,LHB,Left-arm fast
-PWH de Silva,RHB,Leg Break
-D Pretorius,RHB,Right-arm fast
-Navdeep Saini,RHB,Right-arm fast
-JM Sharma,RHB,
-VG Arora,RHB,Right-arm fast
-Mukesh Choudhary,LHB,Left-arm fast
-Umran Malik,RHB,Right-arm fast
-D Brevis,RHB,Leg Break
-B Sai Sudharsan,LHB,Leg Break
-Ramandeep Singh,RHB,Right-arm fast
-HE van der Dussen,RHB,
-SS Prabhudessai,RHB,Right-arm fast
-Akash Deep,RHB,Right-arm fast
-JR Hazlewood,LHB,Right-arm fast
-A Nel,RHB,Right-arm fast
-C Ganapathy,RHB,Right-arm fast
-TP Sudhindra,LHB,Right-arm fast
-BW Hilfenhaus,RHB,Right-arm fast
-RP Meredith,RHB,Right-arm fast
-P Amarnath,RHB,Right-arm fast
-B Geeves,RHB,Right-arm fast
-Gagandeep Singh,RHB,Right-arm fast
-AM Salvi,RHB,Right-arm fast
-RR Bose,RHB,Right-arm fast
-SS Sarkar,RHB,Right-arm fast
-RA Shaikh,LHB,Left-arm fast
-MB Parmar,RHB,Off Break
-AA Kazi,LHB,Slow left-arm orthodox
-Anand Rajan,RHB,Right-arm fast
-P Prasanth,LHB,Slow left-arm orthodox
-SS Mundhe,RHB,Right-arm fast
-RW Price,RHB,Slow left-arm orthodox
-Harmeet Singh,LHB,Slow left-arm orthodox
-P Suyal,RHB,Left-arm fast
-MG Neser,RHB,Right-arm fast
-K Santokie,LHB,Left-arm fast
-JW Hastings,RHB,Right-arm fast
-GS Sandhu,LHB,Right-arm fast
-T Shamsi,RHB,Slow left-arm chinaman
-SM Boland,RHB,Right-arm fast
-Tejas Baroka,RHB,Leg Break
-SS Agarwal,RHB,Leg Break
-NB Singh,RHB,Right-arm fast
-MJ Henry,RHB,Right-arm fast
-K Khejroliya,LHB,Left-arm fast
-KM Asif,RHB,Right-arm fast
-L Ngidi,RHB,Right-arm fast
-CJ Dala,RHB,Right-arm fast
-JP Behrendorff,LHB,Right-arm fast
-SC Kuggeleijn,RHB,Right-arm fast
-S Midhun,RHB,Leg Break
-O Thomas,LHB,Right-arm fast
-AS Roy,LHB,Slow left-arm orthodox
-S Sandeep Warrier,RHB,Right-arm fast
-CJ Green,RHB,Off Break
-Monu Kumar,RHB,Right-arm fast
-LI Meriwala,LHB,Left-arm fast
-Jalaj S Saxena,RHB,Off Break
-Mohsin Khan,LHB,Left-arm fast
-DG Nalkande,RHB,Right-arm fast
-M Theekshana,RHB,Off Break
-KR Sen,RHB,Right-arm fast
-Aman Hakim Khan,RHB,Right-arm fast
-DJ Malan,LHB,Leg Break
-GD Phillips,RHB,Off Break
-GHS Garton,LHB,Left-arm fast
-NT Ellis,RHB,Right-arm fast
-RV Patel,RHB,Right-arm fast
-KS Bharat,RHB,
-HR Shokeen,RHB,Off Break
-Yash Dayal,LHB,Left-arm fast
-DJ Mitchell,RHB,Right-arm fast
-K Yadav,LHB,Left-arm fast
-Shashank Singh,RHB,
-B Indrajith,RHB,Leg Break
-Harshit Rana,RHB,Right-arm fast
-Simarjeet Singh,RHB,Right-arm fast
-Fazalhaq Farooqi,RHB,Left-arm fast
-K Kartikeya,RHB,Slow left-arm orthodox
-KS Sharma,RHB,Off Break
-R Sai Kishore,LHB,Slow left-arm orthodox
-T Stubbs,RHB,Off Break
-R Sanjay Yadav,LHB,Slow left-arm orthodox
-A Tomar,RHB,Off Break
-PN Mankad,RHB,Right-arm fast
-OC McCoy,LHB,Left-arm fast
+Player_Name,batting_style,bowling_style,Dataset
+RT Ponting,RHB,Right-arm fast,IPL
+BB McCullum,RHB,Right-arm fast,IPL
+DJ Hussey,RHB,Off Break,IPL
+Mohammad Hafeez,RHB,Off Break,IPL
+SC Ganguly,LHB,Right-arm fast,IPL
+CL White,RHB,Leg Break,IPL
+MV Boucher,RHB,Right-arm fast,IPL
+B Akhil,RHB,Right-arm fast,IPL
+AA Noffke,RHB,Right-arm fast,IPL
+P Kumar,RHB,Right-arm fast,IPL
+Z Khan,RHB,Left-arm fast,IPL
+SB Joshi,LHB,Slow left-arm orthodox,IPL
+W Jaffer,RHB,Off Break,IPL
+JH Kallis,RHB,Right-arm fast,IPL
+R Dravid,RHB,Off Break,IPL
+V Kohli,RHB,Right-arm fast,IPL
+MEK Hussey,LHB,Right-arm fast,IPL
+SK Raina,LHB,Off Break,IPL
+JDP Oram,LHB,Right-arm fast,IPL
+S Badrinath,RHB,Off Break,IPL
+PA Patel,LHB,,IPL
+ML Hayden,LHB,Right-arm fast,IPL
+MS Dhoni,RHB,Right-arm fast,IPL
+K Goel,LHB,Off Break,IPL
+JR Hopes,RHB,Right-arm fast,IPL
+KC Sangakkara,LHB,Off Break,IPL
+Yuvraj Singh,LHB,Slow left-arm orthodox,IPL
+SM Katich,LHB,Slow left-arm chinaman,IPL
+IK Pathan,LHB,Left-arm fast,IPL
+T Kohli,RHB,Right-arm fast,IPL
+YK Pathan,RHB,Off Break,IPL
+SK Warne,RHB,Leg Break,IPL
+D Salunkhe,RHB,Leg Break,IPL
+SK Trivedi,RHB,Right-arm fast,IPL
+SR Watson,RHB,Right-arm fast,IPL
+M Kaif,RHB,Off Break,IPL
+DS Lehmann,LHB,Slow left-arm orthodox,IPL
+RA Jadeja,LHB,Slow left-arm orthodox,IPL
+M Rawat,RHB,,IPL
+S Dhawan,LHB,Off Break,IPL
+G Gambhir,LHB,Leg Break,IPL
+V Sehwag,RHB,Off Break,IPL
+L Ronchi,RHB,,IPL
+ST Jayasuriya,LHB,Slow left-arm orthodox,IPL
+DJ Thornely,RHB,Right-arm fast,IPL
+RV Uthappa,RHB,Right-arm fast,IPL
+PR Shah,RHB,,IPL
+AM Nayar,LHB,Right-arm fast,IPL
+SM Pollock,RHB,Right-arm fast,IPL
+Harbhajan Singh,RHB,Off Break,IPL
+S Chanderpaul,LHB,Leg Break,IPL
+LRPL Taylor,RHB,Off Break,IPL
+AS Yadav,RHB,,IPL
+A Symonds,RHB,Off Break,IPL
+SB Bangar,RHB,Right-arm fast,IPL
+WPUJC Vaas,LHB,Left-arm fast,IPL
+RP Singh,RHB,Left-arm fast,IPL
+AC Gilchrist,LHB,Off Break,IPL
+Y Venugopal Rao,RHB,Off Break,IPL
+VVS Laxman,RHB,Off Break,IPL
+RG Sharma,RHB,Off Break,IPL
+SB Styris,RHB,Right-arm fast,IPL
+WP Saha,RHB,,IPL
+LR Shukla,RHB,Right-arm fast,IPL
+PP Chawla,LHB,Leg Break,IPL
+DPMD Jayawardene,RHB,Right-arm fast,IPL
+S Sohal,RHB,Leg Break,IPL
+B Lee,RHB,Right-arm fast,IPL
+WA Mota,RHB,Right-arm fast,IPL
+Kamran Akmal,RHB,,IPL
+Shahid Afridi,RHB,Leg Break,IPL
+DJ Bravo,RHB,Right-arm fast,IPL
+A Nehra,RHB,Left-arm fast,IPL
+MA Khote,RHB,Right-arm fast,IPL
+GC Smith,LHB,Off Break,IPL
+Pankaj Singh,RHB,Right-arm fast,IPL
+S Sreesanth,RHB,Right-arm fast,IPL
+VRV Singh,RHB,Right-arm fast,IPL
+RR Sarwan,RHB,Leg Break,IPL
+SS Tiwary,LHB,,IPL
+DS Kulkarni,RHB,Right-arm fast,IPL
+R Vinay Kumar,RHB,Right-arm fast,IPL
+M Kartik,LHB,Slow left-arm orthodox,IPL
+I Sharma,RHB,Right-arm fast,IPL
+AB Agarkar,RHB,Right-arm fast,IPL
+AM Rahane,RHB,Right-arm fast,IPL
+Shoaib Malik,RHB,Off Break,IPL
+MK Tiwary,RHB,Leg Break,IPL
+KD Karthik,RHB,,IPL
+R Bhatia,RHB,Right-arm fast,IPL
+MF Maharoof,RHB,Right-arm fast,IPL
+VY Mahesh,RHB,Right-arm fast,IPL
+TM Srivastava,LHB,Right-arm fast,IPL
+B Chipli,RHB,Right-arm fast,IPL
+DW Steyn,RHB,Right-arm fast,IPL
+DB Das,RHB,Leg Break,IPL
+MK Pandey,RHB,Right-arm fast,IPL
+HH Gibbs,RHB,Off Break,IPL
+DNT Zoysa,LHB,Left-arm fast,IPL
+D Kalyankrishna,RHB,Right-arm fast,IPL
+SE Marsh,LHB,Slow left-arm orthodox,IPL
+SA Asnodkar,RHB,Off Break,IPL
+Sohail Tanvir,LHB,Left-arm fast,IPL
+BJ Hodge,RHB,Off Break,IPL
+Salman Butt,LHB,Off Break,IPL
+Umar Gul,RHB,Right-arm fast,IPL
+AB Dinda,RHB,Right-arm fast,IPL
+SP Fleming,LHB,,IPL
+S Vidyut,LHB,Slow left-arm orthodox,IPL
+JA Morkel,LHB,Right-arm fast,IPL
+AB de Villiers,RHB,Right-arm fast,IPL
+LPC Silva,RHB,Leg Break,IPL
+DB Ravi Teja,RHB,Leg Break,IPL
+Misbah-ul-Haq,RHB,Leg Break,IPL
+YV Takawale,RHB,,IPL
+RR Raje,RHB,Right-arm fast,IPL
+PJ Sangwan,RHB,Left-arm fast,IPL
+Mohammad Asif,LHB,Right-arm fast,IPL
+GD McGrath,RHB,Right-arm fast,IPL
+Joginder Sharma,RHB,Right-arm fast,IPL
+MS Gony,RHB,Right-arm fast,IPL
+M Muralitharan,RHB,Off Break,IPL
+M Ntini,RHB,Right-arm fast,IPL
+DT Patil,RHB,,IPL
+A Kumble,RHB,Leg Break,IPL
+S Anirudha,RHB,,IPL
+MM Patel,RHB,Right-arm fast,IPL
+CK Kapugedera,RHB,Right-arm fast,IPL
+A Chopra,RHB,Off Break,IPL
+T Taibu,RHB,Right-arm fast,IPL
+J Arunkumar,RHB,Off Break,IPL
+PP Ojha,LHB,Slow left-arm orthodox,IPL
+SP Goswami,LHB,,IPL
+SR Tendulkar,RHB,Off Break,IPL
+U Kaul,LHB,,IPL
+TM Dilshan,RHB,Off Break,IPL
+A Mishra,RHB,Leg Break,IPL
+Niraj Patel,RHB,,IPL
+AD Mascarenhas,RHB,Right-arm fast,IPL
+LA Pomersbach,LHB,Off Break,IPL
+Iqbal Abdulla,LHB,Slow left-arm orthodox,IPL
+Younis Khan,RHB,Right-arm fast,IPL
+PM Sarvesh Kumar,RHB,Right-arm fast,IPL
+DP Vijaykumar,RHB,Right-arm fast,IPL
+Shoaib Akhtar,RHB,Right-arm fast,IPL
+Abdur Razzak,LHB,Slow left-arm orthodox,IPL
+H Das,RHB,,IPL
+DR Smith,RHB,Right-arm fast,IPL
+SD Chitnis,RHB,Off Break,IPL
+CRD Fernando,RHB,Right-arm fast,IPL
+VS Yeligati,RHB,Off Break,IPL
+L Balaji,RHB,Right-arm fast,IPL
+A Mukund,LHB,Leg Break,IPL
+RR Powar,RHB,Off Break,IPL
+JP Duminy,LHB,Off Break,IPL
+A Flintoff,RHB,Right-arm fast,IPL
+T Thushara,LHB,Left-arm fast,IPL
+KP Pietersen,RHB,Off Break,IPL
+JD Ryder,LHB,Right-arm fast,IPL
+T Henderson,RHB,Right-arm fast,IPL
+Kamran Khan,LHB,Left-arm fast,IPL
+RS Bopara,RHB,Right-arm fast,IPL
+MC Henriques,RHB,Right-arm fast,IPL
+CH Gayle,LHB,Off Break,IPL
+R Bishnoi,RHB,Right-arm fast,IPL
+FH Edwards,RHB,Right-arm fast,IPL
+KV Sharma,LHB,Leg Break,IPL
+AS Raut,RHB,Leg Break,IPL
+PC Valthaty,RHB,Right-arm fast,IPL
+RJ Quiney,LHB,Right-arm fast,IPL
+Yashpal Singh,RHB,Right-arm fast,IPL
+M Manhas,RHB,Off Break,IPL
+AA Bilakhia,RHB,Right-arm fast,IPL
+AN Ghosh,RHB,Right-arm fast,IPL
+BAW Mendis,RHB,Off Break,IPL
+DL Vettori,LHB,Slow left-arm orthodox,IPL
+MN van Wyk,RHB,Slow left-arm orthodox,IPL
+RE van der Merwe,RHB,Slow left-arm orthodox,IPL
+TL Suman,RHB,Off Break,IPL
+Shoaib Ahmed,RHB,Right-arm fast,IPL
+GR Napier,RHB,Right-arm fast,IPL
+KP Appanna,RHB,Slow left-arm orthodox,IPL
+LA Carseldine,LHB,Left-arm fast,IPL
+NV Ojha,RHB,,IPL
+SM Harwood,RHB,Right-arm fast,IPL
+M Vijay,RHB,Off Break,IPL
+SB Jakati,LHB,Slow left-arm orthodox,IPL
+DA Warner,LHB,Leg Break,IPL
+RJ Harris,RHB,Right-arm fast,IPL
+D du Preez,RHB,Right-arm fast,IPL
+M Morkel,LHB,Right-arm fast,IPL
+AD Mathews,RHB,Right-arm fast,IPL
+J Botha,RHB,Off Break,IPL
+SL Malinga,RHB,Right-arm fast,IPL
+C Nanda,RHB,Leg Break,IPL
+Mashrafe Mortaza,RHB,Right-arm fast,IPL
+A Singh,RHB,Right-arm fast,IPL
+GJ Bailey,RHB,Right-arm fast,IPL
+AB McDonald,RHB,Right-arm fast,IPL
+Y Nagar,RHB,Off Break,IPL
+SS Shaikh,RHB,Right-arm fast,IPL
+R Ashwin,RHB,Off Break,IPL
+Mohammad Ashraful,RHB,Off Break,IPL
+CA Pujara,RHB,Leg Break,IPL
+OA Shah,RHB,Off Break,IPL
+Jaskaran Singh,RHB,Right-arm fast,IPL
+Anirudh Singh,LHB,Right-arm fast,IPL
+AP Tare,RHB,,IPL
+AT Rayudu,RHB,Off Break,IPL
+R Sathish,RHB,Right-arm fast,IPL
+R McLaren,LHB,Right-arm fast,IPL
+AA Jhunjhunwala,RHB,Off Break,IPL
+P Dogra,RHB,Leg Break,IPL
+A Uniyal,LHB,Left-arm fast,IPL
+MS Bisla,RHB,,IPL
+YA Abdulla,LHB,Left-arm fast,IPL
+EJG Morgan,LHB,Right-arm fast,IPL
+JM Kemp,RHB,Right-arm fast,IPL
+S Tyagi,RHB,Right-arm fast,IPL
+RS Gavaskar,LHB,Slow left-arm orthodox,IPL
+SE Bond,RHB,Right-arm fast,IPL
+KA Pollard,RHB,Right-arm fast,IPL
+S Ladda,RHB,Leg Break,IPL
+DP Nannes,RHB,Left-arm fast,IPL
+DR Martyn,RHB,Right-arm fast,IPL
+S Narwal,LHB,Right-arm fast,IPL
+MJ Lumb,LHB,Right-arm fast,IPL
+Bipul Sharma,LHB,Slow left-arm orthodox,IPL
+AB Barath,RHB,Off Break,IPL
+FY Fazal,LHB,Right-arm fast,IPL
+AC Voges,RHB,Slow left-arm orthodox,IPL
+MD Mishra,RHB,Off Break,IPL
+UT Yadav,RHB,Right-arm fast,IPL
+J Theron,RHB,Right-arm fast,IPL
+SJ Srivastava,RHB,Left-arm fast,IPL
+R Sharma,RHB,Off Break,IPL
+Mandeep Singh,RHB,Right-arm fast,IPL
+KM Jadhav,RHB,Off Break,IPL
+SW Tait,RHB,Right-arm fast,IPL
+KB Arun Karthik,RHB,Leg Break,IPL
+KAJ Roach,RHB,Right-arm fast,IPL
+PD Collingwood,RHB,Right-arm fast,IPL
+CK Langeveldt,RHB,Right-arm fast,IPL
+VS Malik,RHB,Right-arm fast,IPL
+A Mithun,RHB,Right-arm fast,IPL
+AP Dole,RHB,Right-arm fast,IPL
+AN Ahmed,RHB,Right-arm fast,IPL
+RS Sodhi,RHB,Right-arm fast,IPL
+DE Bollinger,LHB,Left-arm fast,IPL
+S Sriram,LHB,Slow left-arm orthodox,IPL
+B Sumanth,RHB,Right-arm fast,IPL
+C Madan,RHB,,IPL
+AG Paunikar,RHB,,IPL
+MR Marsh,RHB,Right-arm fast,IPL
+AJ Finch,RHB,Slow left-arm orthodox,IPL
+STR Binny,RHB,Right-arm fast,IPL
+Harmeet Singh,LHB,Slow left-arm orthodox,IPL
+IR Jaggi,RHB,Leg Break,IPL
+DT Christian,RHB,Right-arm fast,IPL
+RV Gomez,RHB,Right-arm fast,IPL
+MA Agarwal,RHB,,IPL
+AUK Pathan,RHB,Right-arm fast,IPL
+UBT Chand,RHB,Off Break,IPL
+DJ Jacobs,RHB,Right-arm fast,IPL
+NJ Rimmington,RHB,Right-arm fast,IPL
+Sunny Singh,RHB,Right-arm fast,IPL
+AL Menaria,LHB,Slow left-arm orthodox,IPL
+WD Parnell,LHB,Left-arm fast,IPL
+JJ van der Wath,RHB,Right-arm fast,IPL
+R Ninan,RHB,Off Break,IPL
+S Aravind,LHB,Left-arm fast,IPL
+MS Wade,LHB,Right-arm fast,IPL
+TD Paine,RHB,Right-arm fast,IPL
+SB Wagh,LHB,Left-arm fast,IPL
+AC Thomas,RHB,Right-arm fast,IPL
+JEC Franklin,LHB,Left-arm fast,IPL
+Shakib Al Hasan,LHB,Slow left-arm orthodox,IPL
+DH Yagnik,LHB,,IPL
+S Randiv,RHB,Off Break,IPL
+BJ Haddin,RHB,,IPL
+NLTC Perera,LHB,Right-arm fast,IPL
+NL McCullum,RHB,Off Break,IPL
+JE Taylor,RHB,Right-arm fast,IPL
+J Syed Mohammad,LHB,Slow left-arm orthodox,IPL
+RN ten Doeschate,RHB,Right-arm fast,IPL
+TR Birt,LHB,Right-arm fast,IPL
+AG Murtaza,LHB,Slow left-arm orthodox,IPL
+Harpreet Singh,LHB,Right-arm fast,IPL
+M Klinger,RHB,,IPL
+AC Blizzard,LHB,Left-arm fast,IPL
+I Malhotra,RHB,Right-arm fast,IPL
+L Ablish,RHB,Right-arm fast,IPL
+CA Ingram,LHB,Leg Break,IPL
+S Nadeem,RHB,Slow left-arm orthodox,IPL
+P Parameswaran,RHB,Left-arm fast,IPL
+CJ Ferguson,RHB,Right-arm fast,IPL
+VR Aaron,RHB,Right-arm fast,IPL
+AA Chavan,LHB,Slow left-arm orthodox,IPL
+ND Doshi,RHB,Slow left-arm orthodox,IPL
+B Kumar,RHB,Right-arm fast,IPL
+Y Gnaneswara Rao,RHB,Right-arm fast,IPL
+S Rana,RHB,Right-arm fast,IPL
+BA Bhatt,LHB,Slow left-arm orthodox,IPL
+F du Plessis,RHB,Leg Break,IPL
+RE Levi,RHB,Right-arm fast,IPL
+GJ Maxwell,RHB,Off Break,IPL
+SPD Smith,RHB,Leg Break,IPL
+MN Samuels,RHB,Off Break,IPL
+SA Yadav,RHB,Off Break,IPL
+KK Cooper,RHB,Right-arm fast,IPL
+JP Faulkner,RHB,Left-arm fast,IPL
+HV Patel,RHB,Right-arm fast,IPL
+DAJ Bracewell,RHB,Right-arm fast,IPL
+DJ Harris,RHB,Right-arm fast,IPL
+Ankit Sharma,LHB,Slow left-arm orthodox,IPL
+SP Narine,LHB,Off Break,IPL
+GB Hogg,LHB,Slow left-arm chinaman,IPL
+RR Bhatkal,RHB,Right-arm fast,IPL
+CJ McKay,RHB,Right-arm fast,IPL
+N Saini,RHB,Right-arm fast,IPL
+DA Miller,LHB,Off Break,IPL
+Azhar Mahmood,RHB,Right-arm fast,IPL
+P Negi,LHB,Slow left-arm orthodox,IPL
+RJ Peterson,LHB,Slow left-arm orthodox,IPL
+KMDN Kulasekara,RHB,Right-arm fast,IPL
+A Ashish Reddy,RHB,Right-arm fast,IPL
+V Pratap Singh,RHB,Right-arm fast,IPL
+BB Samantray,RHB,,IPL
+MJ Clarke,RHB,Slow left-arm orthodox,IPL
+Gurkeerat Singh,RHB,Off Break,IPL
+AP Majumdar,RHB,Leg Break,IPL
+PA Reddy,RHB,Leg Break,IPL
+K Upadhyay,RHB,Right-arm fast,IPL
+P Awana,RHB,Right-arm fast,IPL
+AD Russell,RHB,Right-arm fast,IPL
+A Chandila,RHB,Off Break,IPL
+CA Lynn,RHB,Slow left-arm orthodox,IPL
+Sunny Gupta,RHB,Off Break,IPL
+MC Juneja,RHB,Off Break,IPL
+KK Nair,RHB,Off Break,IPL
+GH Vihari,RHB,Off Break,IPL
+R Shukla,RHB,Right-arm fast,IPL
+MDKJ Perera,LHB,,IPL
+AS Rajpoot,RHB,Right-arm fast,IPL
+B Laughlin,RHB,Right-arm fast,IPL
+M Vohra,RHB,Right-arm fast,IPL
+JD Unadkat,RHB,Left-arm fast,IPL
+Mohammed Shami,RHB,Right-arm fast,IPL
+BMAJ Mendis,LHB,Leg Break,IPL
+R Rampaul,LHB,Right-arm fast,IPL
+CH Morris,RHB,Right-arm fast,IPL
+SV Samson,RHB,,IPL
+SMSM Senanayake,RHB,Off Break,IPL
+BJ Rohrer,LHB,,IPL
+KL Rahul,RHB,,IPL
+Q de Kock,LHB,,IPL
+R Dhawan,RHB,Right-arm fast,IPL
+MG Johnson,LHB,Left-arm fast,IPL
+LJ Wright,RHB,Right-arm fast,IPL
+IC Pandey,RHB,Right-arm fast,IPL
+CM Gautam,RHB,,IPL
+X Thalaivan Sargunam,RHB,Off Break,IPL
+DJG Sammy,RHB,Right-arm fast,IPL
+KW Richardson,RHB,Right-arm fast,IPL
+MM Sharma,RHB,Right-arm fast,IPL
+UA Birla,RHB,Right-arm fast,IPL
+Parvez Rasool,RHB,Off Break,IPL
+Sandeep Sharma,RHB,Right-arm fast,IPL
+S Kaul,RHB,Right-arm fast,IPL
+Sachin Baby,LHB,Off Break,IPL
+PV Tambe,RHB,Leg Break,IPL
+NM Coulter-Nile,RHB,Right-arm fast,IPL
+CJ Anderson,LHB,Left-arm fast,IPL
+NJ Maddinson,LHB,Slow left-arm orthodox,IPL
+AR Patel,LHB,Slow left-arm orthodox,IPL
+JJ Bumrah,RHB,Right-arm fast,IPL
+JDS Neesham,LHB,Right-arm fast,IPL
+TG Southee,RHB,Right-arm fast,IPL
+MA Starc,LHB,Left-arm fast,IPL
+BR Dunk,LHB,,IPL
+RR Rossouw,LHB,Off Break,IPL
+Shivam Sharma,RHB,Off Break,IPL
+YS Chahal,RHB,Leg Break,IPL
+LMP Simmons,RHB,Right-arm fast,IPL
+VH Zol,LHB,Off Break,IPL
+BCJ Cutting,RHB,Right-arm fast,IPL
+Imran Tahir,RHB,Leg Break,IPL
+BE Hendricks,LHB,Left-arm fast,IPL
+S Gopal,RHB,Leg Break,IPL
+M de Lange,RHB,Right-arm fast,IPL
+R Tewatia,LHB,Leg Break,IPL
+JO Holder,RHB,Right-arm fast,IPL
+Karanveer Singh,RHB,Leg Break,IPL
+SS Iyer,RHB,Leg Break,IPL
+DJ Hooda,RHB,Off Break,IPL
+Anureet Singh,RHB,Right-arm fast,IPL
+KS Williamson,RHB,Off Break,IPL
+SA Abbott,RHB,Right-arm fast,IPL
+J Suchith,LHB,Slow left-arm orthodox,IPL
+RG More,RHB,Right-arm fast,IPL
+HH Pandya,RHB,Right-arm fast,IPL
+D Wiese,RHB,Right-arm fast,IPL
+SN Khan,RHB,Leg Break,IPL
+MJ McClenaghan,LHB,Left-arm fast,IPL
+DJ Muthuswami,RHB,Right-arm fast,IPL
+PJ Cummins,RHB,Right-arm fast,IPL
+SN Thakur,RHB,Right-arm fast,IPL
+JC Buttler,RHB,,IPL
+CR Brathwaite,RHB,Right-arm fast,IPL
+MP Stoinis,RHB,Right-arm fast,IPL
+Ishan Kishan,LHB,,IPL
+C Munro,LHB,Right-arm fast,IPL
+P Sahu,RHB,Leg Break,IPL
+KH Pandya,LHB,Slow left-arm orthodox,IPL
+AD Nath,RHB,Right-arm fast,IPL
+MJ Guptill,RHB,Off Break,IPL
+KJ Abbott,RHB,Right-arm fast,IPL
+TM Head,LHB,Off Break,IPL
+M Ashwin,RHB,Leg Break,IPL
+NS Naik,RHB,,IPL
+RR Pant,LHB,,IPL
+SW Billings,RHB,,IPL
+KC Cariappa,RHB,Leg Break,IPL
+PSP Handscomb,RHB,,IPL
+Swapnil Singh,RHB,Slow left-arm orthodox,IPL
+J Yadav,RHB,Off Break,IPL
+UT Khawaja,LHB,Right-arm fast,IPL
+HM Amla,RHB,Off Break,IPL
+F Behardien,RHB,Right-arm fast,IPL
+BB Sran,LHB,Left-arm fast,IPL
+A Zampa,RHB,Leg Break,IPL
+N Rana,LHB,Off Break,IPL
+S Kaushik,RHB,Slow left-arm chinaman,IPL
+ER Dwivedi,RHB,,IPL
+CJ Jordan,RHB,Right-arm fast,IPL
+A Choudhary,RHB,Left-arm fast,IPL
+TS Mills,RHB,Left-arm fast,IPL
+BA Stokes,LHB,Right-arm fast,IPL
+JJ Roy,RHB,,IPL
+Vishnu Vinod,RHB,,IPL
+Basil Thampi,RHB,Right-arm fast,IPL
+CR Woakes,RHB,Right-arm fast,IPL
+RA Tripathi,RHB,Right-arm fast,IPL
+DL Chahar,RHB,Right-arm fast,IPL
+V Shankar,RHB,Right-arm fast,IPL
+Rashid Khan,RHB,Leg Break,IPL
+LH Ferguson,RHB,Right-arm fast,IPL
+RD Chahar,RHB,Leg Break,IPL
+C de Grandhomme,RHB,Right-arm fast,IPL
+AF Milne,RHB,Right-arm fast,IPL
+S Badree,RHB,Leg Break,IPL
+Mohammad Nabi,RHB,Off Break,IPL
+AJ Tye,RHB,Right-arm fast,IPL
+K Rabada,LHB,Right-arm fast,IPL
+Kuldeep Yadav,LHB,Slow left-arm chinaman,IPL
+Washington Sundar,LHB,Off Break,IPL
+DM Bravo,LHB,Right-arm fast,IPL
+AR Bawne,RHB,Off Break,IPL
+SP Jackson,RHB,,IPL
+Ankit Soni,RHB,Leg Break,IPL
+TA Boult,RHB,Left-arm fast,IPL
+E Lewis,LHB,,IPL
+MA Wood,RHB,Right-arm fast,IPL
+RK Singh,LHB,Off Break,IPL
+DJM Short,LHB,Slow left-arm chinaman,IPL
+K Gowtham,RHB,Off Break,IPL
+TK Curran,RHB,Right-arm fast,IPL
+M Markande,RHB,Leg Break,IPL
+B Stanlake,LHB,Right-arm fast,IPL
+Mujeeb Ur Rahman,RHB,Off Break,IPL
+A Dananjaya,LHB,Off Break,IPL
+Shivam Mavi,RHB,Right-arm fast,IPL
+Shubman Gill,RHB,,IPL
+Mohammed Siraj,RHB,Right-arm fast,IPL
+H Klaasen,RHB,,IPL
+RK Bhui,RHB,,IPL
+JC Archer,RHB,Right-arm fast,IPL
+PP Shaw,RHB,,IPL
+LE Plunkett,RHB,Right-arm fast,IPL
+Mustafizur Rahman,LHB,Left-arm fast,IPL
+AD Hales,RHB,,IPL
+MK Lomror,LHB,Slow left-arm orthodox,IPL
+DR Shorey,RHB,Off Break,IPL
+MM Ali,LHB,Leg Break,IPL
+M Prasidh Krishna,RHB,Right-arm fast,IPL
+P Chopra,RHB,,IPL
+JPR Scantlebury-Searles,RHB,Right-arm fast,IPL
+Abhishek Sharma,LHB,Slow left-arm orthodox,IPL
+IS Sodhi,RHB,Leg Break,IPL
+SO Hetmyer,LHB,,IPL
+S Dube,LHB,Right-arm fast,IPL
+NA Saini,RHB,Right-arm fast,IPL
+JM Bairstow,RHB,,IPL
+KMA Paul,RHB,Right-arm fast,IPL
+Rasikh Salam,RHB,Right-arm fast,IPL
+N Pooran,LHB,,IPL
+P Ray Barman,RHB,Leg Break,IPL
+SM Curran,LHB,Left-arm fast,IPL
+GC Viljoen,LHB,,IPL
+S Lamichhane,RHB,Off Break,IPL
+Avesh Khan,RHB,Right-arm fast,IPL
+HF Gurney,RHB,Left-arm fast,IPL
+SD Lad,RHB,Off Break,IPL
+AS Joseph,RHB,Right-arm fast,IPL
+R Parag,RHB,Leg Break,IPL
+MJ Santner,LHB,Slow left-arm orthodox,IPL
+JL Denly,RHB,Leg Break,IPL
+LS Livingstone,RHB,Leg Break,IPL
+KK Ahmed,RHB,Left-arm fast,IPL
+AJ Turner,RHB,Off Break,IPL
+Harpreet Brar,LHB,Slow left-arm orthodox,IPL
+SE Rutherford,RHB,Right-arm fast,IPL
+Y Prithvi Raj,LHB,Left-arm fast,IPL
+P Simran Singh,RHB,,IPL
+JL Pattinson,LHB,Right-arm fast,IPL
+A Nortje,RHB,Right-arm fast,IPL
+T Banton,RHB,,IPL
+D Padikkal,LHB,,IPL
+YBK Jaiswal,LHB,,IPL
+RD Gaikwad,RHB,,IPL
+TU Deshpande,LHB,Right-arm fast,IPL
+Abdul Samad,RHB,,IPL
+PK Garg,RHB,Right-arm fast,IPL
+JR Philippe,RHB,Off Break,IPL
+Kartik Tyagi,RHB,Right-arm fast,IPL
+CV Varun,RHB,Leg Break,IPL
+KL Nagarkoti,RHB,Right-arm fast,IPL
+I Udana,LHB,Left-arm fast,IPL
+Ravi Bishnoi,RHB,Leg Break,IPL
+Shahbaz Ahmed,LHB,Slow left-arm orthodox,IPL
+AT Carey,LHB,,IPL
+N Jagadeesan,RHB,,IPL
+T Natarajan,LHB,Left-arm fast,IPL
+P Dubey,RHB,Leg Break,IPL
+SS Cottrell,LHB,Left-arm fast,IPL
+Arshdeep Singh,LHB,Left-arm fast,IPL
+DR Sams,RHB,Left-arm fast,IPL
+M Jansen,LHB,Left-arm fast,IPL
+RM Patidar,RHB,,IPL
+KA Jamieson,LHB,Right-arm fast,IPL
+M Shahrukh Khan,RHB,,IPL
+JA Richardson,RHB,Right-arm fast,IPL
+Lalit Yadav,RHB,Off Break,IPL
+Virat Singh,LHB,Leg Break,IPL
+FA Allen,RHB,Slow left-arm orthodox,IPL
+C Sakariya,LHB,Left-arm fast,IPL
+DP Conway,LHB,Right-arm fast,IPL
+VR Iyer,LHB,Right-arm fast,IPL
+Anmolpreet Singh,RHB,Off Break,IPL
+Tilak Varma,LHB,Off Break,IPL
+TH David,RHB,Off Break,IPL
+TL Seifert,RHB,,IPL
+R Powell,RHB,Right-arm fast,IPL
+Anuj Rawat,LHB,,IPL
+PBB Rajapaksa,LHB,,IPL
+RA Bawa,LHB,Right-arm fast,IPL
+OF Smith,RHB,Right-arm fast,IPL
+A Badoni,RHB,,IPL
+PVD Chameera,RHB,Right-arm fast,IPL
+A Manohar,RHB,Leg Break,IPL
+AK Markram,RHB,Off Break,IPL
+R Shepherd,RHB,Right-arm fast,IPL
+DJ Willey,LHB,Left-arm fast,IPL
+PWH de Silva,RHB,Leg Break,IPL
+D Pretorius,RHB,Right-arm fast,IPL
+Navdeep Saini,RHB,Right-arm fast,IPL
+JM Sharma,RHB,,IPL
+VG Arora,RHB,Right-arm fast,IPL
+Mukesh Choudhary,LHB,Left-arm fast,IPL
+Umran Malik,RHB,Right-arm fast,IPL
+D Brevis,RHB,Leg Break,IPL
+B Sai Sudharsan,LHB,Leg Break,IPL
+Ramandeep Singh,RHB,Right-arm fast,IPL
+HE van der Dussen,RHB,,IPL
+SS Prabhudessai,RHB,Right-arm fast,IPL
+Akash Deep,RHB,Right-arm fast,IPL
+JR Hazlewood,LHB,Right-arm fast,IPL
+A Nel,RHB,Right-arm fast,IPL
+C Ganapathy,RHB,Right-arm fast,IPL
+TP Sudhindra,LHB,Right-arm fast,IPL
+BW Hilfenhaus,RHB,Right-arm fast,IPL
+RP Meredith,RHB,Right-arm fast,IPL
+P Amarnath,RHB,Right-arm fast,IPL
+B Geeves,RHB,Right-arm fast,IPL
+Gagandeep Singh,RHB,Right-arm fast,IPL
+AM Salvi,RHB,Right-arm fast,IPL
+RR Bose,RHB,Right-arm fast,IPL
+SS Sarkar,RHB,Right-arm fast,IPL
+RA Shaikh,LHB,Left-arm fast,IPL
+MB Parmar,RHB,Off Break,IPL
+AA Kazi,LHB,Slow left-arm orthodox,IPL
+Anand Rajan,RHB,Right-arm fast,IPL
+P Prasanth,LHB,Slow left-arm orthodox,IPL
+SS Mundhe,RHB,Right-arm fast,IPL
+RW Price,RHB,Slow left-arm orthodox,IPL
+Harmeet Singh,LHB,Slow left-arm orthodox,IPL
+P Suyal,RHB,Left-arm fast,IPL
+MG Neser,RHB,Right-arm fast,IPL
+K Santokie,LHB,Left-arm fast,IPL
+JW Hastings,RHB,Right-arm fast,IPL
+GS Sandhu,LHB,Right-arm fast,IPL
+T Shamsi,RHB,Slow left-arm chinaman,IPL
+SM Boland,RHB,Right-arm fast,IPL
+Tejas Baroka,RHB,Leg Break,IPL
+SS Agarwal,RHB,Leg Break,IPL
+NB Singh,RHB,Right-arm fast,IPL
+MJ Henry,RHB,Right-arm fast,IPL
+K Khejroliya,LHB,Left-arm fast,IPL
+KM Asif,RHB,Right-arm fast,IPL
+L Ngidi,RHB,Right-arm fast,IPL
+CJ Dala,RHB,Right-arm fast,IPL
+JP Behrendorff,LHB,Right-arm fast,IPL
+SC Kuggeleijn,RHB,Right-arm fast,IPL
+S Midhun,RHB,Leg Break,IPL
+O Thomas,LHB,Right-arm fast,IPL
+AS Roy,LHB,Slow left-arm orthodox,IPL
+S Sandeep Warrier,RHB,Right-arm fast,IPL
+CJ Green,RHB,Off Break,IPL
+Monu Kumar,RHB,Right-arm fast,IPL
+LI Meriwala,LHB,Left-arm fast,IPL
+Jalaj S Saxena,RHB,Off Break,IPL
+Mohsin Khan,LHB,Left-arm fast,IPL
+DG Nalkande,RHB,Right-arm fast,IPL
+M Theekshana,RHB,Off Break,IPL
+KR Sen,RHB,Right-arm fast,IPL
+Aman Hakim Khan,RHB,Right-arm fast,IPL
+DJ Malan,LHB,Leg Break,IPL
+GD Phillips,RHB,Off Break,IPL
+GHS Garton,LHB,Left-arm fast,IPL
+NT Ellis,RHB,Right-arm fast,IPL
+RV Patel,RHB,Right-arm fast,IPL
+KS Bharat,RHB,,IPL
+HR Shokeen,RHB,Off Break,IPL
+Yash Dayal,LHB,Left-arm fast,IPL
+DJ Mitchell,RHB,Right-arm fast,IPL
+K Yadav,LHB,Left-arm fast,IPL
+Shashank Singh,RHB,,IPL
+B Indrajith,RHB,Leg Break,IPL
+Harshit Rana,RHB,Right-arm fast,IPL
+Simarjeet Singh,RHB,Right-arm fast,IPL
+Fazalhaq Farooqi,RHB,Left-arm fast,IPL
+K Kartikeya,RHB,Slow left-arm orthodox,IPL
+KS Sharma,RHB,Off Break,IPL
+R Sai Kishore,LHB,Slow left-arm orthodox,IPL
+T Stubbs,RHB,Off Break,IPL
+R Sanjay Yadav,LHB,Slow left-arm orthodox,IPL
+A Tomar,RHB,Off Break,IPL
+PN Mankad,RHB,Right-arm fast,IPL
+OC McCoy,LHB,Left-arm fast,IPL
+N Dickwella,LHB,,T20I
+WU Tharanga,LHB,,T20I
+EMDY Munaweera,RHB,Off Break,T20I
+DAS Gunaratne,RHB,Right-arm fast,T20I
+TAM Siriwardana,LHB,Slow left-arm orthodox,T20I
+S Prasanna,RHB,Leg Break,T20I
+BKG Mendis,RHB,Leg Break,T20I
+MD Shanaka,RHB,Right-arm fast,T20I
+JRMVB Sanjaya,RHB,Right-arm fast,T20I
+CJ Chibhabha,RHB,Right-arm fast,T20I
+H Masakadza,RHB,Right-arm fast,T20I
+R Mutumbami,RHB,,T20I
+Sikandar Raza,RHB,,T20I
+MN Waller,RHB,Off Break,T20I
+CT Mutombodzi,RHB,Leg Break,T20I
+E Chigumbura,RHB,Right-arm fast,T20I
+AG Cremer,RHB,Leg Break,T20I
+N Madziva,RHB,Right-arm fast,T20I
+PJ Moor,RHB,,T20I
+DT Tiripano,RHB,Right-arm fast,T20I
+T Muzarabani,RHB,Right-arm fast,T20I
+V Sibanda,RHB,Right-arm fast,T20I
+T Maruma,RHB,Leg Break,T20I
+Tamim Iqbal,LHB,,T20I
+Imrul Kayes,LHB,,T20I
+Sabbir Rahman,RHB,Leg Break,T20I
+Soumya Sarkar,LHB,Right-arm fast,T20I
+Mahmudullah,RHB,Off Break,T20I
+Mosaddek Hossain,RHB,Off Break,T20I
+Nurul Hasan,RHB,,T20I
+Rubel Hossain,RHB,Right-arm fast,T20I
+NT Broom,RHB,Right-arm fast,T20I
+TC Bruce,RHB,Off Break,T20I
+BM Wheeler,RHB,Left-arm fast,T20I
+JT Smuts,RHB,Slow left-arm orthodox,T20I
+RR Hendricks,RHB,,T20I
+M Mosehle,RHB,,T20I
+AL Phehlukwayo,LHB,Right-arm fast,T20I
+D Paterson,RHB,Right-arm fast,T20I
+LA Dawson,RHB,Slow left-arm orthodox,T20I
+CAK Walton,RHB,,T20I
+AR Nurse,RHB,Off Break,T20I
+KOK Williams,RHB,Right-arm fast,T20I
+JE Root,RHB,Off Break,T20I
+AU Rashid,RHB,Leg Break,T20I
+SR Thompson,RHB,Right-arm fast,T20I
+PR Stirling,RHB,Off Break,T20I
+WTS Porterfield,LHB,Off Break,T20I
+KJ O'Brien,RHB,Right-arm fast,T20I
+GC Wilson,RHB,,T20I
+L Tucker,RHB,,T20I
+Mohammad Shahzad,RHB,,T20I
+Najeeb Tarakai,RHB,,T20I
+Samiullah Shenwari,RHB,Leg Break,T20I
+Asghar Stanikzai,RHB,Right-arm fast,T20I
+Shafiqullah,RHB,,T20I
+Karim Janat,RHB,Right-arm fast,T20I
+Najibullah Zadran,LHB,Off Break,T20I
+AR McBrine,LHB,Off Break,T20I
+GJ Thompson,RHB,Leg Break,T20I
+BJ McCarthy,RHB,Right-arm fast,T20I
+J Mulder,RHB,Leg Break,T20I
+GH Dockrell,RHB,Slow left-arm orthodox,T20I
+Usman Ghani,RHB,,T20I
+J Charles,RHB,Slow left-arm orthodox,T20I
+ADS Fletcher,RHB,,T20I
+Sharjeel Khan,LHB,Leg Break,T20I
+Khalid Latif,RHB,Off Break,T20I
+Babar Azam,RHB,,T20I
+Sarfraz Ahmed,RHB,,T20I
+Umar Akmal,RHB,,T20I
+Rohan Mustafa,LHB,Off Break,T20I
+Mohammed Qasim,RHB,Leg Break,T20I
+Mohammad Shahzad (2),RHB,,T20I
+Shaiman Anwar,RHB,Right-arm fast,T20I
+Rameez Shahzad,RHB,Off Break,T20I
+Amjad Gul,RHB,Leg Break,T20I
+Amjad Javed,RHB,Right-arm fast,T20I
+Muhammad Usman,LHB,Off Break,T20I
+Mohammad Naveed,RHB,Right-arm fast,T20I
+Hazratullah,LHB,Slow left-arm orthodox,T20I
+Ghulam Shabber,LHB,,T20I
+Ahmed Raza,RHB,Slow left-arm orthodox,T20I
+Muhammed Shanil,RHB,Right-arm fast,T20I
+TA Blundell,RHB,Off Break,T20I
+JM Vince,RHB,Right-arm fast,T20I
+MS Chapman,LHB,Slow left-arm orthodox,T20I
+AC Agar,LHB,Slow left-arm orthodox,T20I
+SW Poynter,RHB,,T20I
+Gulbadin Naib,RHB,Right-arm fast,T20I
+Zeeshan Maqsood,LHB,Slow left-arm orthodox,T20I
+Khawar Ali,RHB,Leg Break,T20I
+Aqib Ilyas,RHB,Off Break,T20I
+Mehran Khan,RHB,Right-arm fast,T20I
+Khurram Nawaz,RHB,,T20I
+AV Lalcheta,LHB,Slow left-arm orthodox,T20I
+Naseem Khushi,RHB,,T20I
+Mohammad Nadeem,RHB,Right-arm fast,T20I
+Nawroz Mangal,RHB,Off Break,T20I
+WB Rankin,RHB,Right-arm fast,T20I
+CA Young,RHB,Right-arm fast,T20I
+Mushfiqur Rahim,RHB,,T20I
+Mohammad Saifuddin,RHB,Right-arm fast,T20I
+Mehedi Hasan Miraz,RHB,Off Break,T20I
+Taskin Ahmed,RHB,Right-arm fast,T20I
+Shafiul Islam,RHB,Right-arm fast,T20I
+Liton Das,RHB,,T20I
+Ahmed Shehzad,RHB,,T20I
+Fakhar Zaman,LHB,,T20I
+Imad Wasim,LHB,Slow left-arm orthodox,T20I
+Shadab Khan,RHB,Leg Break,T20I
+Wahab Riaz,RHB,Left-arm fast,T20I
+Hasan Ali,RHB,Right-arm fast,T20I
+JN Mohammed,RHB,Off Break,T20I
+Amir Hamza,RHB,Slow left-arm orthodox,T20I
+Shapoor Zadran,LHB,Left-arm fast,T20I
+Noor Ali Zadran,RHB,Right-arm fast,T20I
+Dawlat Zadran,RHB,Right-arm fast,T20I
+Javed Ahmadi,RHB,Off Break,T20I
+SMA Priyanjan,RHB,Off Break,T20I
+AK Kitchen,RHB,Slow left-arm orthodox,T20I
+SD Hope,RHB,,T20I
+RR Emrit,RHB,Right-arm fast,T20I
+Umar Amin,LHB,Right-arm fast,T20I
+Mohammad Nawaz (3),LHB,Slow left-arm orthodox,T20I
+Haris Sohail,LHB,Slow left-arm orthodox,T20I
+Faheem Ashraf,LHB,Right-arm fast,T20I
+Mohammad Amir,LHB,Left-arm fast,T20I
+SHA Rance,RHB,Right-arm fast,T20I
+Aamer Yamin,RHB,Right-arm fast,T20I
+GD Elliott,RHB,Right-arm fast,T20I
+Sohail Khan,RHB,Right-arm fast,T20I
+MJ Swepson,RHB,Leg Break,T20I
+TWM Latham,LHB,,T20I
+HM Nicholls,LHB,,T20I
+MD Gunathilaka,LHB,Off Break,T20I
+S Samarawickrama,RHB,,T20I
+ML Udawatte,LHB,Off Break,T20I
+SS Pathirana,LHB,Slow left-arm orthodox,T20I
+PC de Silva,LHB,Slow left-arm orthodox,T20I
+C Jonker,RHB,Right-arm fast,T20I
+MVT Fernando,RHB,Left-arm fast,T20I
+N Pradeep,RHB,Right-arm fast,T20I
+Hussain Talat,LHB,Right-arm fast,T20I
+Asif Ali,RHB,Right-arm fast,T20I
+HG Munsey,LHB,Right-arm fast,T20I
+KJ Coetzer,RHB,Right-arm fast,T20I
+RD Berrington,RHB,Right-arm fast,T20I
+CS MacLeod,RHB,Right-arm fast,T20I
+DE Budge,RHB,Right-arm fast,T20I
+MA Leask,RHB,Off Break,T20I
+MH Cross,RHB,,T20I
+SM Sharif,RHB,Right-arm fast,T20I
+MRJ Watt,LHB,Slow left-arm orthodox,T20I
+CB Sole,RHB,Right-arm fast,T20I
+AC Evans,RHB,Right-arm fast,T20I
+Zakir Hasan,LHB,,T20I
+Afif Hossain,LHB,Off Break,T20I
+Ariful Haque,RHB,Right-arm fast,T20I
+LD Chandimal,RHB,,T20I
+Mohammad Mithun,RHB,,T20I
+Mahedi Hasan,RHB,Off Break,T20I
+Abu Jayed,RHB,Right-arm fast,T20I
+Nazmul Islam,LHB,Slow left-arm orthodox,T20I
+RAS Lakmal,RHB,Right-arm fast,T20I
+SF Mire,RHB,Right-arm fast,T20I
+BRM Taylor,RHB,,T20I
+RP Burl,LHB,Leg Break,T20I
+KM Jarvis,RHB,Right-arm fast,T20I
+TL Chatara,RHB,Right-arm fast,T20I
+B Muzarabani,RHB,Right-arm fast,T20I
+Karim Sadiq,RHB,Off Break,T20I
+Sharafuddin Ashraf,RHB,Leg Break,T20I
+Aftab Alam,RHB,Right-arm fast,T20I
+D Ramdin,RHB,,T20I
+AM McCarthy,RHB,Off Break,T20I
+DM de Silva,RHB,Off Break,T20I
+PHKD Mendis,LHB,Slow left-arm orthodox,T20I
+MA Aponso,RHB,Slow left-arm orthodox,T20I
+PADLR Sandakan,RHB,Slow left-arm orthodox,T20I
+JNK Shannon,RHB,Off Break,T20I
+A Balbirnie,RHB,Off Break,T20I
+Simi Singh,RHB,Off Break,T20I
+PKD Chase,RHB,Right-arm fast,T20I
+TK Musakanda,RHB,Right-arm fast,T20I
+TS Chisoro,LHB,Left-arm fast,T20I
+J Nyumbu,RHB,Off Break,T20I
+CB Mpofu,RHB,Right-arm fast,T20I
+C Zhuwao,LHB,Slow left-arm orthodox,T20I
+B Mavuta,RHB,Leg Break,T20I
+WP Masakadza,LHB,Slow left-arm orthodox,T20I
+JD Wildermuth,RHB,Right-arm fast,T20I
+Sahibzada Farhan,RHB,,T20I
+GL Cloete,LHB,,T20I
+SC Williams,RHB,Right-arm fast,T20I
+Mohammad Rizwan,RHB,,T20I
+JN Malan,RHB,Leg Break,T20I
+Shaheen Shah Afridi,LHB,Left-arm fast,T20I
+L Sipamla,RHB,Right-arm fast,T20I
+WIA Fernando,RHB,Right-arm fast,T20I
+AK Perera,RHB,Slow left-arm orthodox,T20I
+BR McDermott,RHB,,T20I
+Abul Hasan,LHB,Right-arm fast,T20I
+Abu Hider,RHB,Left-arm fast,T20I
+J Little,RHB,Left-arm fast,T20I
+TE Kane,RHB,Right-arm fast,T20I
+Imam-ul-Haq,LHB,,T20I
+BM Duckett,LHB,,T20I
+CAK Rajitha,RHB,Right-arm fast,T20I
+CBRLS Kumara,LHB,Right-arm fast,T20I
+NM Lyon,RHB,Off Break,T20I
+K Pierre,LHB,Slow left-arm orthodox,T20I
+D Bishoo,LHB,Leg Break,T20I
+JD Campbell,LHB,Off Break,T20I
+Ashfaq Ahmed,RHB,Off Break,T20I
+Chirag Suri,RHB,Off Break,T20I
+SC Getkate,RHB,Right-arm fast,T20I
+BOP Fernando,RHB,Leg Break,T20I
+GSNFG Jayasuriya,LHB,Off Break,T20I
+Iftikhar Ahmed,RHB,Off Break,T20I
+Khushdil Shah,LHB,Slow left-arm orthodox,T20I
+Mohammad Hasnain,RHB,Right-arm fast,T20I
+T Bavuma,RHB,,T20I
+BC Fortuin,RHB,Slow left-arm orthodox,T20I
+PJ van Biljon,RHB,,T20I
+Mohammad Naim,LHB,,T20I
+Aminul Islam Biplob,RHB,Leg Break,T20I
+BA King,RHB,,T20I
+HR Walsh,LHB,Leg Break,T20I
+L Gregory,RHB,Right-arm fast,T20I
+S Mahmood,RHB,Right-arm fast,T20I
+PR Brown,RHB,Right-arm fast,T20I
+BM Tickner,RHB,Right-arm fast,T20I
+HK Bennett,LHB,Right-arm fast,T20I
+LD Madushanka,RHB,Right-arm fast,T20I
+HD Rutherford,LHB,Slow left-arm orthodox,T20I
+TD Astle,RHB,Leg Break,T20I
+Rahmanullah Gurbaz,RHB,,T20I
+Ibrahim Zadran,RHB,Right-arm fast,T20I
+Fareed Ahmad,LHB,Left-arm fast,T20I
+Naveen-ul-Haq,RHB,Right-arm fast,T20I
+CR Ervine,LHB,Off Break,T20I
+RW Chakabva,RHB,,T20I
+Taijul Islam,LHB,Slow left-arm orthodox,T20I
+Nazmul Hossain Shanto,RHB,Right-arm fast,T20I
+A Ndlovu,RHB,Slow left-arm orthodox,T20I
+Fazal Niazai,RHB,Right-arm fast,T20I
+Haider Ali,RHB,,T20I
+M Bhanuka,LHB,,T20I
+GJ Delany,RHB,Leg Break,T20I
+HT Tector,RHB,Off Break,T20I
+MR Adair,RHB,Right-arm fast,T20I
+Ahsan Ali,RHB,Leg Break,T20I
+TS Kamunhukamwe,RHB,Off Break,T20I
+W Madhevere,RHB,Off Break,T20I
+CT Mumba,RHB,Right-arm fast,T20I
+M Shumba,LHB,Slow left-arm orthodox,T20I
+M Faraz Akram,LHB,Right-arm fast,T20I
+Abdullah Shafique,RHB,Off Break,T20I
+KR Mayers,LHB,Right-arm fast,T20I
+Haris Rauf,RHB,Right-arm fast,T20I
+FH Allen,RHB,,T20I
+WA Young,RHB,Off Break,T20I
+Shoriful Islam,LHB,Left-arm fast,T20I
+Nasum Ahmed,LHB,Slow left-arm orthodox,T20I
+GF Linde,LHB,Slow left-arm orthodox,T20I
+Sohaib Maqsood,RHB,Off Break,T20I
+Azam Khan,RHB,,T20I
+MW Parkinson,RHB,Leg Break,T20I
+GJ Snyman,RHB,Off Break,T20I
+Usman Qadir,LHB,Slow left-arm orthodox,T20I
+B Fernando,RHB,Left-arm fast,T20I
+WJ Lubbe,LHB,Off Break,T20I
+SSB Magala,RHB,Right-arm fast,T20I
+PWA Mulder,RHB,Right-arm fast,T20I
+LB Williams,LHB,Right-arm fast,T20I
+B White,RHB,Leg Break,T20I
+P Nissanka,RHB,Right-arm fast,T20I
+KNA Bandara,RHB,Leg Break,T20I
+K Sinclair,RHB,Off Break,T20I
+AJ Hosein,LHB,Slow left-arm orthodox,T20I
+HC Brook,RHB,Right-arm fast,T20I
+PD Salt,RHB,,T20I
+RJW Topley,RHB,Left-arm fast,T20I
+Danish Aziz,LHB,Slow left-arm orthodox,T20I
+T Marumani,LHB,Off Break,T20I
+LM Jongwe,RHB,Right-arm fast,T20I
+R Ngarava,LHB,Left-arm fast,T20I
+Arshad Iqbal,RHB,Right-arm fast,T20I
+KIC Asalanka,LHB,Off Break,T20I
+C Karunaratne,RHB,Right-arm fast,T20I
+RTM Mendis,RHB,Off Break,T20I
+Mohammad Wasim,RHB,Leg Break,T20I
+JP Inglis,RHB,,T20I
+JDF Vandersay,RHB,Leg Break,T20I
+K Mishara,LHB,Off Break,T20I
+J Liyanage,RHB,Right-arm fast,T20I
+D Myers,RHB,Right-arm fast,T20I
+Shamim Hossain,LHB,Off Break,T20I
+P Jayawickrama,RHB,Slow left-arm orthodox,T20I
+R Ravindra,LHB,Slow left-arm orthodox,T20I
+CE McConchie,RHB,Off Break,T20I
+AY Patel,LHB,Slow left-arm orthodox,T20I
+JA Duffy,RHB,Right-arm fast,T20I
+CN Greaves,RHB,Leg Break,T20I
+JH Davey,RHB,Right-arm fast,T20I
+BTJ Wheal,RHB,Right-arm fast,T20I
+SJ Baard,RHB,Right-arm fast,T20I
+ZE Green,LHB,,T20I
+CG Williams,RHB,Right-arm fast,T20I
+MG Erasmus,RHB,Off Break,T20I
+JJ Smit,RHB,Left-arm fast,T20I
+JN Frylinck,LHB,Left-arm fast,T20I
+JN Loftie-Eaton,LHB,Right-arm fast,T20I
+R Trumpelmann,RHB,Left-arm fast,T20I
+HN Ya France,RHB,Off Break,T20I
+BM Scholtz,RHB,Slow left-arm orthodox,T20I
+Jatinder Singh,RHB,Off Break,T20I
+KH Prajapati,RHB,,T20I
+Ayan Khan,LHB,Slow left-arm orthodox,T20I
+Sandeep Goud,RHB,Right-arm fast,T20I
+Kaleemullah,RHB,Right-arm fast,T20I
+Fayyaz Butt,RHB,Right-arm fast,T20I
+Bilal Khan,LHB,Left-arm fast,T20I
+C Campher,RHB,Right-arm fast,T20I
+NA Rock,LHB,,T20I
+L Siaka,RHB,Right-arm fast,T20I
+A Vala,LHB,Off Break,T20I
+CJA Amini,LHB,Leg Break,T20I
+S Bau,LHB,Right-arm fast,T20I
+SK Atai,LHB,,T20I
+H Hiri,RHB,Off Break,T20I
+N Vanua,RHB,Right-arm fast,T20I
+K Doriga,RHB,,T20I
+CA Soper,RHB,Right-arm fast,T20I
+KV Morea,RHB,Left-arm fast,T20I
+D Ravu,RHB,Right-arm fast,T20I
+SJ Myburgh,LHB,Off Break,T20I
+MP O'Dowd,RHB,Off Break,T20I
+BN Cooper,LHB,Right-arm fast,T20I
+CN Ackermann,RHB,Off Break,T20I
+BFW de Leede,RHB,,T20I
+SA Edwards,RHB,,T20I
+PM Seelaar,RHB,Slow left-arm orthodox,T20I
+FJ Klaassen,RHB,Left-arm fast,T20I
+BD Glover,RHB,Right-arm fast,T20I
+PA van Meekeren,RHB,Right-arm fast,T20I
+KA Maharaj,RHB,Slow left-arm orthodox,T20I
+RL Chase,RHB,Off Break,T20I
+M van Lingen,LHB,Left-arm fast,T20I
+Saif Hassan,RHB,Off Break,T20I
+DC Drakes,LHB,Left-arm fast,T20I
+DC Thomas,RHB,Right-arm fast,T20I
+SSJ Brooks,RHB,Leg Break,T20I
+M Labuschagne,RHB,Leg Break,T20I
+C Green,RHB,Off Break,T20I
+BJ Dwarshuis,LHB,Left-arm fast,T20I
+Munim Shahriar,RHB,Right-arm fast,T20I
+Yasir Ali Chowdhury,RHB,Off Break,T20I
+Darwish Rasooli,RHB,Off Break,T20I
+Azmatullah Omarzai,RHB,Right-arm fast,T20I
+Qais Ahmad,RHB,Leg Break,T20I
+N Thushara,RHB,Right-arm fast,T20I
+ME Trescothick,LHB,Right-arm fast,T20I
+GO Jones,RHB,,T20I
+MP Vaughan,RHB,Off Break,T20I
+AJ Strauss,LHB,,T20I
+VS Solanki,RHB,Off Break,T20I
+JN Gillespie,RHB,Right-arm fast,T20I
+MS Kasprowicz,RHB,Right-arm fast,T20I
+MS Sinclair,RHB,,T20I
+CD McMillan,RHB,Right-arm fast,T20I
+CL Cairns,RHB,Right-arm fast,T20I
+HJH Marshall,RHB,Right-arm fast,T20I
+AR Adams,RHB,Right-arm fast,T20I
+JW Wilson,RHB,Right-arm fast,T20I
+DR Tuffey,RHB,Right-arm fast,T20I
+KD Mills,RHB,Right-arm fast,T20I
+AG Prince,LHB,Off Break,T20I
+NJ Astle,RHB,Right-arm fast,T20I
+IR Bell,RHB,,T20I
+JWM Dalrymple,RHB,Off Break,T20I
+MH Yardy,LHB,Left-arm fast,T20I
+CMW Read,RHB,,T20I
+SI Mahmood,RHB,Right-arm fast,T20I
+Mohammad Yousuf,RHB,,T20I
+Inzamam-ul-Haq,RHB,,T20I
+Abdul Razzaq,RHB,Right-arm fast,T20I
+RP Arnold,LHB,Off Break,T20I
+TT Bresnan,RHB,Right-arm fast,T20I
+HH Dippenaar,RHB,Off Break,T20I
+AJ Hall,RHB,Right-arm fast,T20I
+JA Rudolph,LHB,Slow left-arm orthodox,T20I
+GJP Kruger,RHB,Right-arm fast,T20I
+M Zondeki,RHB,Right-arm fast,T20I
+D Ganga,RHB,,T20I
+RS Morton,RHB,Right-arm fast,T20I
+WW Hinds,LHB,Right-arm fast,T20I
+L Vincent,RHB,Right-arm fast,T20I
+PG Fulton,RHB,Right-arm fast,T20I
+LE Bosman,RHB,Right-arm fast,T20I
+NW Bracken,RHB,Left-arm fast,T20I
+EC Joyce,LHB,Right-arm fast,T20I
+PA Nixon,LHB,,T20I
+J Lewis,RHB,Right-arm fast,T20I
+MS Panesar,LHB,Slow left-arm orthodox,T20I
+JM Anderson,RHB,Right-arm fast,T20I
+JAH Marshall,RHB,Right-arm fast,T20I
+PD McGlashan,RHB,,T20I
+MR Gillespie,RHB,Right-arm fast,T20I
+MS Atapattu,RHB,,T20I
+HMCM Bandara,RHB,Leg Break,T20I
+R Telemachus,RHB,Right-arm fast,T20I
+D Mongia,LHB,Slow left-arm orthodox,T20I
+DS Smith,RHB,Right-arm fast,T20I
+AN Cook,LHB,,T20I
+MJ Prior,RHB,,T20I
+IJL Trott,RHB,Right-arm fast,T20I
+SCJ Broad,LHB,Right-arm fast,T20I
+ACL Richards,LHB,Right-arm fast,T20I
+MA Ouma,RHB,,T20I
+T Mishra,RHB,Right-arm fast,T20I
+SO Tikolo,RHB,Right-arm fast,T20I
+DO Obuya,RHB,,T20I
+CO Obuya,RHB,Leg Break,T20I
+TM Odoyo,RHB,Right-arm fast,T20I
+NN Odhiambo,RHB,Right-arm fast,T20I
+AA Obanda,RHB,Right-arm fast,T20I
+JK Kamande,RHB,Off Break,T20I
+RL Bhudia,RHB,Right-arm fast,T20I
+PJ Ongondo,RHB,Right-arm fast,T20I
+Imran Nazir,RHB,,T20I
+Yasir Arafat,RHB,Right-arm fast,T20I
+DF Watts,RHB,Right-arm fast,T20I
+RR Watson,RHB,Off Break,T20I
+NS Poonia,RHB,Right-arm fast,T20I
+GM Hamilton,LHB,Right-arm fast,T20I
+NFI McCallum,RHB,,T20I
+DR Brown,RHB,Right-arm fast,T20I
+CJO Smith,RHB,,T20I
+RM Haq,LHB,Off Break,T20I
+CM Wright,RHB,Right-arm fast,T20I
+JAR Blain,RHB,Right-arm fast,T20I
+JD Nel,RHB,Right-arm fast,T20I
+S Matsikenyeri,RHB,Off Break,T20I
+DBL Powell,RHB,Right-arm fast,T20I
+Nazimuddin,RHB,Right-arm fast,T20I
+Aftab Ahmed,RHB,Right-arm fast,T20I
+Alok Kapali,RHB,Leg Break,T20I
+DL Maddy,RHB,Right-arm fast,T20I
+CP Schofield,LHB,Leg Break,T20I
+P Utseya,RHB,Off Break,T20I
+J Mubarak,LHB,Off Break,T20I
+G Wijekoon,LHB,Left-arm fast,T20I
+LN Onyango,RHB,Right-arm fast,T20I
+RJ Kirtley,RHB,Right-arm fast,T20I
+Farhad Reza,RHB,Right-arm fast,T20I
+Syed Rasel,LHB,Left-arm fast,T20I
+JS Patel,RHB,Off Break,T20I
+VD Philander,RHB,Right-arm fast,T20I
+JN Snape,RHB,Off Break,T20I
+Nadif Chowdhury,RHB,Slow left-arm orthodox,T20I
+Junaid Siddique,LHB,Off Break,T20I
+JM How,RHB,Right-arm fast,T20I
+DR Flynn,LHB,Slow left-arm orthodox,T20I
+MJ Mason,RHB,Right-arm fast,T20I
+GJ Hopkins,RHB,,T20I
+RN Lewis,RHB,Leg Break,T20I
+JL Ontong,RHB,Off Break,T20I
+P Mustard,LHB,,T20I
+GP Swann,RHB,Off Break,T20I
+RJ Sidebottom,LHB,Left-arm fast,T20I
+CS Martin,RHB,Right-arm fast,T20I
+PA Hitchcock,RHB,Right-arm fast,T20I
+JS Jesani,RHB,Off Break,T20I
+AO Suji,RHB,,T20I
+HA Varaiya,RHB,Slow left-arm chinaman,T20I
+Fawad Alam,LHB,Slow left-arm chinaman,T20I
+GH Bodi,LHB,Slow left-arm orthodox,T20I
+BA Parchment,RHB,Off Break,T20I
+XM Marshall,RHB,Off Break,T20I
+WKD Perkins,RHB,,T20I
+Dhiman Ghosh,RHB,,T20I
+Shahadat Hossain,RHB,Right-arm fast,T20I
+RK Kleinveldt,RHB,Right-arm fast,T20I
+J Louw,RHB,Right-arm fast,T20I
+Raqibul Hasan,RHB,Leg Break,T20I
+Naeem Islam,RHB,Off Break,T20I
+Mehrab Hossain jnr,LHB,Slow left-arm chinaman,T20I
+VB van Jaarsveld,LHB,Right-arm fast,T20I
+LL Tsotsobe,RHB,Left-arm fast,T20I
+ND McKenzie,RHB,Right-arm fast,T20I
+PM Siddle,RHB,Right-arm fast,T20I
+SM Davies,LHB,,T20I
+GJ Batty,RHB,Off Break,T20I
+A Khan,RHB,Right-arm fast,T20I
+RWT Key,RHB,Off Break,T20I
+JS Foster,RHB,,T20I
+AN Kervezee,RHB,Right-arm fast,T20I
+DJ Reekers,RHB,Right-arm fast,T20I
+B Zuiderent,RHB,Right-arm fast,T20I
+TN de Grooth,RHB,Off Break,T20I
+PW Borren,RHB,Right-arm fast,T20I
+DLS van Bunge,RHB,Leg Break,T20I
+E Schiferli,RHB,Right-arm fast,T20I
+JH Stander,RHB,Right-arm fast,T20I
+GA Rogers,RHB,Slow left-arm chinaman,T20I
+GD Drummond,RHB,Right-arm fast,T20I
+JP Bray,LHB,Left-arm fast,T20I
+NJ O'Brien,LHB,,T20I
+JF Mooney,LHB,Right-arm fast,T20I
+NM Hauritz,RHB,Off Break,T20I
+J Smits,RHB,,T20I
+AC Botha,RHB,Off Break,T20I
+AR White,RHB,Off Break,T20I
+RM West,LHB,Left-arm fast,T20I
+AR Cusack,RHB,Right-arm fast,T20I
+WK McCallan,RHB,Off Break,T20I
+AJ Redmond,RHB,Leg Break,T20I
+DT Johnston,RHB,Right-arm fast,T20I
+PC Connell,RHB,Right-arm fast,T20I
+SJ Benn,LHB,Slow left-arm orthodox,T20I
+IG Butler,RHB,Right-arm fast,T20I
+Shahzaib Hasan,RHB,,T20I
+SHT Kandamby,LHB,Leg Break,T20I
+K Weeraratne,LHB,Right-arm fast,T20I
+Shoaib Khan jnr,LHB,Right-arm fast,T20I
+SE Findlay,LHB,Right-arm fast,T20I
+CS Baugh,RHB,,T20I
+EP Thompson,LHB,Left-arm fast,T20I
+HG Kuhn,RHB,,T20I
+MJ North,LHB,Off Break,T20I
+Nazmul Hossain,RHB,Off Break,T20I
+DM Richards,RHB,Right-arm fast,T20I
+TM Dowlin,RHB,Off Break,T20I
+FL Reifer,LHB,Right-arm fast,T20I
+DE Bernard,RHB,Right-arm fast,T20I
+RJMGM Rupasinghe,LHB,Leg Break,T20I
+N Deonarine,LHB,Off Break,T20I
+NO Miller,RHB,Slow left-arm orthodox,T20I
+Imran Farhat,LHB,Leg Break,T20I
+Naved-ul-Hasan,RHB,Right-arm fast,T20I
+Saeed Ajmal,RHB,Off Break,T20I
+Raees Ahmadzai,RHB,Off Break,T20I
+Hamid Hassan,RHB,Right-arm fast,T20I
+Suhrawadi Shuvo,LHB,Slow left-arm orthodox,T20I
+C Kieswetter,RHB,,T20I
+Mohammad Sami,RHB,Right-arm fast,T20I
+AM Blignaut,LHB,Right-arm fast,T20I
+CK Coventry,RHB,,T20I
+GA Lamb,RHB,Right-arm fast,T20I
+Mirwais Ashraf,RHB,Right-arm fast,T20I
+Jahurul Islam,RHB,,T20I
+Abdur Rehman,LHB,Slow left-arm orthodox,T20I
+UWMBCA Welegedara,RHB,Left-arm fast,T20I
+CU Jayasinghe,RHB,Right-arm fast,T20I
+PJ Ingram,RHB,Off Break,T20I
+SNJ O'Keefe,RHB,Slow left-arm orthodox,T20I
+BJ Watling,RHB,,T20I
+SW Masakadza,RHB,Right-arm fast,T20I
+AN Petersen,RHB,Off Break,T20I
+ES Szwarczynski,RHB,Right-arm fast,T20I
+AF Buurman,RHB,,T20I
+Mudassar Bukhari,RHB,Right-arm fast,T20I
+NG Jones,RHB,Right-arm fast,T20I
+A Shahzad,RHB,Leg Break,T20I
+EC Rainsford,RHB,Right-arm fast,T20I
+RJ Nicol,RHB,Right-arm fast,T20I
+AJ McKay,RHB,Left-arm fast,T20I
+Zulqarnain Haider,RHB,,T20I
+KM Dabengwa,LHB,Slow left-arm orthodox,T20I
+DG Brownlie,RHB,Right-arm fast,T20I
+Asad Shafiq,RHB,Off Break,T20I
+SR Patel,RHB,Slow left-arm orthodox,T20I
+DP Hyatt,RHB,Right-arm fast,T20I
+CD Barnwell,RHB,Right-arm fast,T20I
+Mohammad Salman,RHB,,T20I
+Junaid Khan,RHB,Left-arm fast,T20I
+MDK Perera,RHB,Off Break,T20I
+HMRKB Herath,LHB,Slow left-arm orthodox,T20I
+XJ Doherty,LHB,Slow left-arm orthodox,T20I
+F Mutizwa,RHB,,T20I
+KO Meth,RHB,Right-arm fast,T20I
+AM Ellis,RHB,Right-arm fast,T20I
+Rameez Raja (2),RHB,Off Break,T20I
+Yasir Shah,RHB,Leg Break,T20I
+NE Bonner,RHB,Leg Break,T20I
+DO Christian,RHB,Right-arm fast,T20I
+MC Bascombe,RHB,,T20I
+SG Borthwick,LHB,Leg Break,T20I
+JW Dernbach,RHB,Right-arm fast,T20I
+Awais Zia,LHB,Off Break,T20I
+Hammad Azam,RHB,Right-arm fast,T20I
+Aizaz Cheema,RHB,Right-arm fast,T20I
+Nasir Hossain,RHB,Off Break,T20I
+BV Vitori,LHB,Left-arm fast,T20I
+Ziaur Rahman,RHB,Right-arm fast,T20I
+Elias Sunny,LHB,Slow left-arm orthodox,T20I
+Izatullah Dawlatzai,RHB,Right-arm fast,T20I
+HDRL Thirimanne,LHB,Right-arm fast,T20I
+Nasir Jamshed,LHB,,T20I
+ST Finn,RHB,Right-arm fast,T20I
+GE Mathurin,LHB,Slow left-arm orthodox,T20I
+MR Swart,RHB,Off Break,T20I
+TLW Cooper,RHB,Off Break,T20I
+W Barresi,RHB,,T20I
+Shabir Noori,RHB,Off Break,T20I
+H Patel,RHB,Slow left-arm orthodox,T20I
+R Gunasekera,LHB,Leg Break,T20I
+Junaid Siddiqui,RHB,Leg Break,T20I
+NR Kumar,RHB,Off Break,T20I
+AS Hansra,RHB,Right-arm fast,T20I
+Rizwan Cheema,RHB,Right-arm fast,T20I
+TG Gordon,LHB,Right-arm fast,T20I
+HS Baidwan,RHB,Right-arm fast,T20I
+RA Bhatti,RHB,,T20I
+H Osinde,RHB,Right-arm fast,T20I
+Zahid Hussain,LHB,Slow left-arm orthodox,T20I
+AD Poynter,RHB,Off Break,T20I
+KS Lokuarachchi,RHB,Leg Break,T20I
+Shakeel Ansar,RHB,,T20I
+RMS Eranga,RHB,Right-arm fast,T20I
+JC Tredwell,LHB,Off Break,T20I
+Fawad Ahmed,RHB,Leg Break,T20I
+MC Sorensen,RHB,Right-arm fast,T20I
+TGJ Gruijters,RHB,Right-arm fast,T20I
+RM Hira,LHB,Slow left-arm orthodox,T20I
+H Davids,RHB,Right-arm fast,T20I
+Raza Hasan,RHB,Slow left-arm orthodox,T20I
+T van der Gugten,RHB,Right-arm fast,T20I
+Ahsan Malik,RHB,Right-arm fast,T20I
+Anamul Haque,RHB,,T20I
+NM Carter,LHB,Left-arm fast,T20I
+MW Machan,LHB,Off Break,T20I
+PL Mommsen,RHB,Off Break,T20I
+MM Iqbal,RHB,Leg Break,T20I
+D Murphy,RHB,,T20I
+N M'shangwe,RHB,Leg Break,T20I
+Shamsur Rahman,RHB,Off Break,T20I
+Sohag Gazi,RHB,Off Break,T20I
+Mominul Haque,LHB,Slow left-arm orthodox,T20I
+T Panyangara,RHB,Right-arm fast,T20I
+Zulfiqar Babar,RHB,Slow left-arm orthodox,T20I
+TL Best,RHB,Right-arm fast,T20I
+Mohammad Irfan,RHB,Left-arm fast,T20I
+Bilawal Bhatti,RHB,Right-arm fast,T20I
+Usman Shinwari,RHB,Left-arm fast,T20I
+Anwar Ali,RHB,Right-arm fast,T20I
+RML Taylor,LHB,Left-arm fast,T20I
+G Goudie,RHB,Right-arm fast,T20I
+DI Allan,RHB,Right-arm fast,T20I
+RR Patel,RHB,Off Break,T20I
+IA Karim,RHB,Slow left-arm orthodox,T20I
+RG Aga,RHB,Right-arm fast,T20I
+SO Ngoche,RHB,Slow left-arm orthodox,T20I
+KOA Powell,LHB,Right-arm fast,T20I
+Hashmatullah Shahidi,LHB,Off Break,T20I
+NM Odhiambo,RHB,Right-arm fast,T20I
+E Otieno,RHB,Right-arm fast,T20I
+Afsar Zazai,RHB,,T20I
+KDK Vithanage,LHB,Leg Break,T20I
+MA Carberry,LHB,Off Break,T20I
+AP Devcich,LHB,Slow left-arm orthodox,T20I
+Al-Amin Hossain,RHB,Right-arm fast,T20I
+Irfan Ahmed,RHB,Right-arm fast,T20I
+JJ Atkinson,RHB,,T20I
+Waqas Barkat,RHB,Leg Break,T20I
+Babar Hayat,RHB,Right-arm fast,T20I
+Nizakat Khan,RHB,Leg Break,T20I
+Munir Dar,RHB,Slow left-arm orthodox,T20I
+Tanwir Afzal,RHB,Right-arm fast,T20I
+Haseeb Amjad,RHB,Right-arm fast,T20I
+Aizaz Khan,RHB,Right-arm fast,T20I
+SP Khakurel,RHB,,T20I
+Sagar Pun,RHB,Off Break,T20I
+G Malla,RHB,,T20I
+P Khadka,RHB,Right-arm fast,T20I
+S Vesawkar,RHB,Off Break,T20I
+B Bhandari,RHB,,T20I
+NB Budayair,RHB,Right-arm fast,T20I
+Nadeem Ahmed,RHB,Leg Break,T20I
+LV van Beek,RHB,Right-arm fast,T20I
+JM Muirhead,RHB,Leg Break,T20I
+SD Parry,RHB,Slow left-arm orthodox,T20I
+Arafat Sunny,LHB,Slow left-arm orthodox,T20I
+TJ Murtagh,LHB,Right-arm fast,T20I
+Saad Nasim,RHB,Leg Break,T20I
+PJ Hughes,LHB,,T20I
+NJ Reardon,LHB,Right-arm fast,T20I
+CJ Boyce,RHB,Leg Break,T20I
+Rony Talukdar,RHB,Right-arm fast,T20I
+GH Worker,LHB,Slow left-arm orthodox,T20I
+AM Phangiso,RHB,Slow left-arm orthodox,T20I
+Mukhtar Ahmed,RHB,Leg Break,T20I
+Nauman Anwar,RHB,Right-arm fast,T20I
+MJG Rippon,RHB,Slow left-arm orthodox,T20I
+Faizan Asif,LHB,,T20I
+SP Patil,RHB,,T20I
+Abdul Shakoor,RHB,,T20I
+Umair Ali,RHB,Right-arm fast,T20I
+CD de Lange,RHB,Slow left-arm orthodox,T20I
+TP Ura,RHB,,T20I
+VV Morea,RHB,Right-arm fast,T20I
+MD Dai,RHB,Leg Break,T20I
+JNT Vare,RHB,,T20I
+Zeeshan Siddiqui,RHB,Leg Break,T20I
+Aamir Kaleem,LHB,Slow left-arm orthodox,T20I
+Sultan Ahmed,LHB,Slow left-arm orthodox,T20I
+Amir Ali,RHB,Off Break,T20I
+RJ Ranpura,LHB,Right-arm fast,T20I
+PM Nevill,RHB,,T20I
+Rafatullah Mohmand,RHB,Slow left-arm orthodox,T20I
+Imran Khan (1),LHB,Right-arm fast,T20I
+RLB Rambukwella,LHB,Off Break,T20I
+KMC Bandara,LHB,Left-arm fast,T20I
+Aaqib Sulehri,RHB,Off Break,T20I
+Adnan Ilyas,RHB,Off Break,T20I
+TB de Bruyn,RHB,Right-arm fast,T20I
+ST de Silva,LHB,Right-arm fast,T20I
+RJ Campbell,RHB,Off Break,T20I
+Anshuman Rath,LHB,,T20I
+KD Shah,LHB,Off Break,T20I
+M Ansari,RHB,Right-arm fast,T20I
+Shuvagata Hom,RHB,Off Break,T20I
+Muktar Ali,RHB,Right-arm fast,T20I
+Muhammad Kaleem,RHB,Right-arm fast,T20I
+Usman Mushtaq,RHB,Right-arm fast,T20I
+C Carter,RHB,,T20I
+Tanveer Ahmed,RHB,Right-arm fast,T20I
+A Mehmood,RHB,Left-arm fast,T20I
+Saqlain Haider,LHB,,T20I
+Qadeer Ahmed,RHB,Right-arm fast,T20I
+Fahad Tariq,RHB,Right-arm fast,T20I
+Khurram Manzoor,RHB,Off Break,T20I
+I Kaia,RHB,Off Break,T20I
+AJ Healy,RHB,,WT20
+S Mandhana,LHB,,WT20
+BL Mooney,LHB,,
+DB Sharma,LHB,Off Break,
+SW Bates,RHB,Right-arm fast,
+JI Rodrigues,RHB,,
+S Pandey,RHB,Right-arm fast,
+D Hazell,RHB,Off Break,
+E Bisht,LHB,Slow left-arm orthodox,
+LMM Tahuhu,RHB,Right-arm fast,
+J Goswami,RHB,Right-arm fast,
+Poonam Yadav,RHB,Leg Break,
+D Hemalatha,RHB,Off Break,
+M Raj,RHB,,
+DN Wyatt,RHB,,
+MM Lanning,RHB,,
+H Kaur,RHB,Off Break,
+SFM Devine,RHB,Right-arm fast,
+V Krishnamurthy,RHB,,
+EA Perry,RHB,Right-arm fast,
+MR Meshram,RHB,Right-arm fast,
+P Vastrakar,RHB,Right-arm fast,
+AA Patil,RHB,Off Break,
+T Bhatia,RHB,,
+ML Schutt,RHB,Right-arm fast,
+RS Gayakwad,RHB,Slow left-arm orthodox,
+S Ecclestone,RHB,Slow left-arm orthodox,
+SC Selman,RHB,Right-arm fast,
+BS Fulmali,RHB,Right-arm fast,
+HK Matthews,RHB,Off Break,
+Shafali Verma,RHB,,
+AC Kerr,RHB,Leg Break,
+Komal Zanzad,RHB,Left-arm fast,
+SD Pradhan,RHB,Off Break,
+H Deol,RHB,Leg Break,
+RP Yadav,RHB,Slow left-arm orthodox,
+NR Sciver,RHB,Right-arm fast,
+SR Taylor,RHB,Off Break,
+PS Punia,RHB,,
+AC Jayangani,LHB,Off Break,
+S Verma,RHB,,
+HASD Siriwardene,RHB,Off Break,
+S Luus,RHB,Leg Break,
+LM Kasperek,RHB,Off Break,
+Jahanara Alam,RHB,Right-arm fast,
+DJS Dottin,RHB,Right-arm fast,
+RM Ghosh,RHB,,
+A King,RHB,Leg Break,
+N Chantam,RHB,,
+Meghna Singh,RHB,Right-arm fast,
+V Chandu,RHB,Off Break,
+Sharmin Akhter,RHB,,
+SIR Dunkley,RHB,Leg Break,
+A Reddy,RHB,Right-arm fast,
+Salma Khatun,RHB,Off Break,
+Renuka Singh,RHB,Right-arm fast,
+YH Bhatia,LHB,,
+L Wolvaardt,RHB,,
+S Meghana,RHB,,
+KP Navgire,RHB,,
+Sneh Rana,RHB,Off Break,
+SD Bahadur,LHB,Right-arm fast,
+KL Cross,RHB,Right-arm fast,
