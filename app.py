@@ -16,8 +16,8 @@ app.add_app("Batter Matchups", battermatchups.app)
 app.add_app("Bowler Matchups", bowlermatchups.app)
 app.add_app("Team Matchups", teammatchups.app)
 app.add_app("Match Analysis", matchanalysis.app)
-app.add_app("Win Predictor", predictwinpercent.app)
-app.add_app("Score Predictor", scorepredictor.app)
+#app.add_app("Win Predictor", predictwinpercent.app)
+#app.add_app("Score Predictor", scorepredictor.app)
 
 # The main app
 app.run()
