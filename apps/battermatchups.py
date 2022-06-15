@@ -8,7 +8,8 @@ from apps import utils
 def app():
     utils.header()
     #st.title('Batter Matchups')    
-    
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Batsman Matchups</h3>"""
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
@@ -25,7 +26,7 @@ def app():
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
     with st.form("my_form"): 
-        st.markdown("<h3 style='text-align: center; color: white;'>Batsman Matchups</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         bowling_type = comb_df['bowling_style'].dropna().unique()
         batsman_list = utils.getBatsmanList(comb_df)
         season_list = utils.getSeasonList(comb_df)

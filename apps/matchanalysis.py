@@ -5,7 +5,8 @@ from apps import utils
 
 def app():
     utils.header()
-    
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Match Analysis</h3>"""
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
@@ -20,7 +21,7 @@ def app():
     season_list = utils.getSeasonList(comb_df)#.sort_values(by=0,ascending=False) 
     
     
-    st.markdown("<h3 style='text-align: center; color: white;'>Match Analysis</h3>", unsafe_allow_html=True)
+    st.markdown(table_header_str, unsafe_allow_html=True)
     DEFAULT = 'ALL'
     year = st.selectbox('Select Season *',sorted(season_list,reverse=True))
     venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)

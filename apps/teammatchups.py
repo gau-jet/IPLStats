@@ -5,7 +5,8 @@ from apps import utils
 
 def app():
     utils.header()
-    
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Team Matchups</h3>"""
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
@@ -22,7 +23,7 @@ def app():
     start_season = min(season_list)
     with st.form("my_form"):
         #st.title('Team Matchups')
-        st.markdown("<h3 style='text-align: center; color: white;'>Team Matchups</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         team1 = st.selectbox('Select Team 1 *',team_list)
         team2 = st.selectbox('Select Team 2 *',team_list,index=1)
         

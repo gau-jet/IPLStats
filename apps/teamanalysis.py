@@ -7,7 +7,8 @@ from apps import utils
 
 def app():
     utils.header()
-        
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Overall Records</h3>"""
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
@@ -18,7 +19,7 @@ def app():
     #st.write(merged_df.head(10))
     
     with st.form("my_form"):    
-        st.markdown("<h3 style='text-align: center; color: white;'>Overall Records</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         team_list = sorted(merged_df['team1'].unique())
         venue_list = utils.getVenueList(merged_df)    
         season_list = utils.getSeasonList(merged_df)

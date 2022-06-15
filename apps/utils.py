@@ -19,10 +19,14 @@ def header():
     """
     st.markdown(snippet, unsafe_allow_html=True)
 
-
-def load_deliveries_data():
+def getSeries():
     query_params = st.experimental_get_query_params()
     series = query_params['series'][0]
+    return series
+
+def load_deliveries_data():
+    
+    series = getSeries()
 
     if series == 'T20I':
         del_df = return_df("data/T20Ideliveries.csv")
@@ -34,8 +38,7 @@ def load_deliveries_data():
 
 
 def load_match_data():
-    query_params = st.experimental_get_query_params()
-    series = query_params['series'][0]
+    series = getSeries()
 
     if series == 'T20I':        
         match_df = return_df("data/T20Imatches.csv")

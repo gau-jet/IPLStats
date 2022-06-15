@@ -5,6 +5,9 @@ from apps import utils
 
 def app():
     utils.header()
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Bowling Records</h3>"""
+    
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
 
@@ -58,7 +61,7 @@ def app():
         return df
     
     with st.form("my_form"):   
-        st.markdown("<h3 style='text-align: center; color: white;'>Bowling Records</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         bowler_list = utils.getBowlerList(comb_df)
         season_list = utils.getSeasonList(comb_df)
         venue_list = utils.getVenueList(comb_df)

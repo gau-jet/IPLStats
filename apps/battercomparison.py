@@ -7,7 +7,8 @@ from apps import utils
 
 def app():
     utils.header()
-        
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Batsman Comparison</h3>"""
     phase_list = ['ALL','Powerplay',
      'Middle',
      'Death'    
@@ -39,7 +40,7 @@ def app():
     #st.table(comb_df.head(10))
 
     with st.form("my_form"):
-        st.markdown("<h3 style='text-align: center; color: white;'>Batsman Comparison</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
         DEFAULT_TYPE = 'ALL'

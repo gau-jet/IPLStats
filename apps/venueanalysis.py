@@ -4,7 +4,9 @@ from apps import utils
 
 def app():
     utils.header()
-   
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Venue Records</h3>"""
+        
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
@@ -14,7 +16,7 @@ def app():
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
     with st.form("my_form"):
-        st.markdown("<h3 style='text-align: center; color: white;'>Venue Records</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         DEFAULT = 'Pick a venue'
         
         venue_list = utils.getVenueList(comb_df)

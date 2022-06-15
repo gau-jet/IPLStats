@@ -7,7 +7,8 @@ from apps import utils
 
 def app():
     utils.header()
-        
+    series = utils.getSeries()
+    table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Bowler Comparison</h3>"""
     phase_list = ['ALL','Powerplay',
      'Middle',
      'Death'    
@@ -37,7 +38,7 @@ def app():
     #st.write(comb_df)
     
     with st.form("my_form"):
-        st.markdown("<h3 style='text-align: center; color: white;'>Bowler Comparison</h3>", unsafe_allow_html=True)
+        st.markdown(table_header_str, unsafe_allow_html=True)
         #DEFAULT_BATSMAN = 'Pick a style'
         DEFAULT = 'Pick a style'
         DEFAULT_STYLE = 'ALL'
