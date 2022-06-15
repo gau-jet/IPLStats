@@ -14,11 +14,13 @@ def get_series_index(series_list,option):
         
         if base_object['ShortName'] == option:
             return base_object['ID']
+    return 0
 
 def get_series_key(series_list,option):        
     for base_object in series_list:                
         if base_object['FullName'] == option:
             return base_object['ShortName']
+    return 'IPL'
     
 class MultiApp:
     """Framework for combining multiple streamlit applications.
