@@ -8,6 +8,12 @@ def get_position(spages,option):
         if spages[i]['title'] == option:
             break
     return i
+
+def get_series_index(series_list,option):        
+    for i in range(len(series_list)):        
+        if series_list[i] == option:
+            break
+    return i
     
 class MultiApp:
     """Framework for combining multiple streamlit applications.
@@ -50,11 +56,23 @@ class MultiApp:
     def run(self):
         tot_pages = len(self.apps)
         cols = st.sidebar.columns(tot_pages)
+        series_list = ["IPL","T20I","WT20"]
         query_params = st.experimental_get_query_params()
         if query_params:
             sel_index = get_position(self.apps,query_params['option'][0])
         else:
             sel_index =0
+        
+        if query_params:
+            series_index = get_series_index(series_list,query_params['series'][0])
+        else:
+            series_index =0
+        
+        series = st.sidebar.selectbox(
+            "Pick Series?",
+            (series_list),
+            index=series_index,
+        )
         app = st.sidebar.radio(
            'Go To',
            self.apps,
@@ -66,7 +84,7 @@ class MultiApp:
         try:
             query_option = app['title']            
         except:
-            st.experimental_set_query_params(option=app['title'])
+            st.experimental_set_query_params(option=app['title'],series=series)
             query_params = st.experimental_get_query_params()
             query_option = query_params['option'][0]
         q_index = get_position(self.apps,query_option)
@@ -77,8 +95,8 @@ class MultiApp:
         if True in but_values:
             c_index = but_values.index(True)            
             if q_index is c_index:                
-                final = c_index
-                st.experimental_set_query_params(option=self.apps[final]['title'])
+                final = c_index                
+                st.experimental_set_query_params(option=self.apps[final]['title'],series=series)
             else:                
                 final = q_index
         st.session_state.cmenu=final
