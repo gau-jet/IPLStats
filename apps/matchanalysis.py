@@ -6,8 +6,8 @@ from apps import utils
 def app():
     utils.header()
     
-    del_df = utils.return_df("data/deliveries.csv")
-    match_df = utils.return_df("data/matches.csv")
+    del_df = utils.load_deliveries_data()
+    match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
     comb_df=utils.return_combined_matchdf(del_df,match_df)
     comb_df.rename(columns = {'id':'match_id'}, inplace = True)
@@ -17,14 +17,15 @@ def app():
     
     
     venue_list = utils.getVenueList(comb_df)    
-    season_list = utils.getSeasonList(comb_df).sort_values(by=0,ascending=False) 
+    season_list = utils.getSeasonList(comb_df)#.sort_values(by=0,ascending=False) 
     
     
     st.markdown("<h3 style='text-align: center; color: white;'>Match Analysis</h3>", unsafe_allow_html=True)
     DEFAULT = 'ALL'
-    year = st.selectbox('Select Season *',season_list)
+    year = st.selectbox('Select Season *',sorted(season_list,reverse=True))
     venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)
     match_list = utils.getMatchList(match_df,year,venue)
+    #st.write(match_list)
     match_string = st.selectbox('Select Match *',match_list)
     submitted = st.button("Show Stats")
     

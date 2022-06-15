@@ -7,9 +7,10 @@ def app():
     utils.header()
     #st.title('Batting Records')    
     
-    del_df = utils.return_df("data/deliveries.csv")
-    match_df = utils.return_df("data/matches.csv")
-          
+    del_df = utils.load_deliveries_data()
+    match_df = utils.load_match_data()
+    
+        
     comb_df=utils.return_combined_matchdf(del_df,match_df)
     
 
@@ -17,6 +18,7 @@ def app():
         st.markdown("<h3 style='text-align: center; color: white;'>Batting Records</h3>", unsafe_allow_html=True)
         batsman_list = utils.getBatsmanList(comb_df)
         season_list = utils.getSeasonList(comb_df)
+        start_season = min(season_list)
         venue_list = utils.getVenueList(comb_df)
         team_list = sorted(comb_df['team1'].unique())
         
@@ -27,7 +29,7 @@ def app():
         batsman = utils.selectbox_with_default(st,'Select batsman *',batsman_list,DEFAULT)
         venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_ALL)
         opposition = utils.selectbox_with_default(st,'Select opposition',team_list,DEFAULT_ALL)
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)

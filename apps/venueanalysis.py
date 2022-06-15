@@ -5,8 +5,8 @@ from apps import utils
 def app():
     utils.header()
    
-    del_df = utils.return_df("data/deliveries.csv")
-    match_df = utils.return_df("data/matches.csv")
+    del_df = utils.load_deliveries_data()
+    match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
     comb_df=utils.return_combined_matchdf(del_df,match_df)
 
@@ -19,8 +19,9 @@ def app():
         
         venue_list = utils.getVenueList(comb_df)
         season_list = utils.getSeasonList(comb_df)
+        start_season = min(season_list)
         venue = utils.selectbox_with_default(st,'Select venue *',venue_list,DEFAULT)
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)

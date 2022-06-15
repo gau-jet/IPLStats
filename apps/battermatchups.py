@@ -9,8 +9,8 @@ def app():
     utils.header()
     #st.title('Batter Matchups')    
     
-    del_df = utils.return_df("data/deliveries.csv")
-    match_df = utils.return_df("data/matches.csv")
+    del_df = utils.load_deliveries_data()
+    match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
     
 
@@ -29,6 +29,7 @@ def app():
         bowling_type = comb_df['bowling_style'].dropna().unique()
         batsman_list = utils.getBatsmanList(comb_df)
         season_list = utils.getSeasonList(comb_df)
+        start_season = min(season_list)
         #st.write(comb_df)
         
         DEFAULT_BATSMAN = 'Pick a player'
@@ -37,7 +38,7 @@ def app():
         bowling_type = utils.selectbox_with_default(st,'Select bowler type',sorted(bowling_type),DEFAULT)
         col1, col2 = st.columns(2)
         with col1:
-            start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+            start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
         with col2:    
             min_balls = st.number_input('Min. Balls',min_value=10,value=20,format='%d')
         submitted = st.form_submit_button("Show Stats")

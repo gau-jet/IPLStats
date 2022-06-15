@@ -13,11 +13,11 @@ def app():
      'Death'    
      ]
     
-    del_df = utils.return_df("data/deliveries.csv")
-    match_df = utils.return_df("data/matches.csv")
+    del_df = utils.load_deliveries_data()
+    match_df = utils.load_match_data()
     player_df = utils.return_df("data/Player Profile.csv")
     
-
+    
     merged_df = utils.return_combined_matchdf(del_df,match_df)   
     batting_merged_df = pd.merge(merged_df, player_df[['Player_Name','batting_style']], left_on='batsman', right_on='Player_Name', how='left')
     batting_merged_df.drop(['Player_Name'], axis=1, inplace=True)       
@@ -25,13 +25,14 @@ def app():
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
     
     #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
-    #comb_df = comb_df.replace(np.NaN, 0)
+    #comb_df = comb_df['batting_style'].replace(np.NaN, 0)
     #st.write(comb_df.head(10))
     
        
     bowling_type_list = comb_df['bowling_style'].dropna().unique()
     batting_style_list = comb_df['batting_style'].unique()
     season_list = utils.getSeasonList(comb_df)
+    start_season = min(season_list)
     venue_list = utils.getVenueList(comb_df)
     #st.table(batting_style_list)
     #comb_df = comb_df[comb_df['batting_style'].isnull()]
@@ -52,7 +53,7 @@ def app():
         
         col1, col2 = st.columns(2)
         with col1:
-            start_year, end_year = st.select_slider('Season',options=season_list, value=(2008, 2022))
+            start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
         with col2:    
             min_balls = st.number_input('Min. Balls',min_value=20,value=40,format='%d')
         submitted = st.form_submit_button("Show Stats")
@@ -60,6 +61,7 @@ def app():
         st.markdown(title_alignment, unsafe_allow_html=True)
         
     if submitted:       
+        
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
                 
         if batting_style != DEFAULT:
@@ -75,7 +77,7 @@ def app():
             
             if not filtered_df.empty:  
                 
-               # st.write(filtered_df)
+                #st.write(filtered_df)
                 #grpbyList = 'bowler'
                 filtered_df['isBowlerWk'] = filtered_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
                 

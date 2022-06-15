@@ -19,7 +19,33 @@ def header():
     """
     st.markdown(snippet, unsafe_allow_html=True)
 
-@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
+
+def load_deliveries_data():
+    query_params = st.experimental_get_query_params()
+    series = query_params['series'][0]
+
+    if series == 'T20I':
+        del_df = return_df("data/T20Ideliveries.csv")
+    elif series == 'WT20':
+        del_df = return_df("data/WT20deliveries.csv")
+    else:
+        del_df = return_df("data/deliveries.csv")        
+    return del_df
+
+
+def load_match_data():
+    query_params = st.experimental_get_query_params()
+    series = query_params['series'][0]
+
+    if series == 'T20I':        
+        match_df = return_df("data/T20Imatches.csv")
+    elif series == 'WT20':
+        match_df = return_df("data/WT20matches.csv")
+    else:        
+        match_df = return_df("data/matches.csv")
+    return match_df
+
+#@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
 def return_df(f):        
     try:
         df = pd.read_csv(f)
@@ -53,8 +79,8 @@ def getBowlerList(df):
 
 @st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getSeasonList(df):
-    return pd.DataFrame(sorted({2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022}))
-    #return sorted(df['season'].unique())
+    #return pd.DataFrame(sorted({2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022}))
+    return sorted(df['season'].unique())
         
 @st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getVenueList(df):
@@ -64,7 +90,15 @@ def getMatchList(df,year,venue):
     df = df[(df.season == year)]
     if venue != 'ALL':
         df = df[(df.venue == venue)]    
-    df = df.sort_values(by='id',ascending = False).reset_index()
+    query_params = st.experimental_get_query_params()
+    series = query_params['series'][0]
+    
+    if series == 'T20I':  
+        df['date'] = pd.to_datetime(df['date'])
+        df = df.sort_values(by='date',ascending = False).reset_index()
+    else:        
+        df = df.sort_values(by='id',ascending = False).reset_index()
+    
     df['match_string'] = df.id.astype(str)+"-"+df.team1.astype(str)+" Vs "+df.team2.astype(str)+" at "+df.venue
     #st.write(df['match_string'])
     return df['match_string']
