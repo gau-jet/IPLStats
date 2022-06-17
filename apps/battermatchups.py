@@ -16,7 +16,7 @@ def app():
     
 
     merged_df = utils.return_combined_matchdf(del_df,match_df)   
-    batting_merged_df = pd.merge(merged_df, player_df[['Player_Name','batting_style']], left_on='batsman', right_on='Player_Name', how='left')
+    batting_merged_df = pd.merge(merged_df, player_df[['Player_Name','display_name','batting_style']], left_on='batsman', right_on='Player_Name', how='left')
     batting_merged_df.drop(['Player_Name'], axis=1, inplace=True)       
     comb_df = pd.merge(batting_merged_df, player_df[['Player_Name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
@@ -49,7 +49,8 @@ def app():
     if submitted:       
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
         if batsman != DEFAULT_BATSMAN:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)    
+            batsman_name = utils.getPlayerName(batsman,player_df)
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman_name)    
         else:
             st.error('Please select batsman')
             return
@@ -77,7 +78,7 @@ def app():
                 #topSRbatsman_df = getTopRecordsDF(player_df,'Runs',10)
                 
                 grpbyList=['bowler']
-                title = batsman+ ' - against bowlers'
+                title = batsman_name+ ' - against bowlers'
                 xKey = 'Runs'
                 xlabel = 'Runs scored'
                 ylabel = 'Bowler'

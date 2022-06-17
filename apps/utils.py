@@ -48,6 +48,11 @@ def load_match_data():
         match_df = return_df("data/matches.csv")
     return match_df
 
+def load_player_data():
+    
+    player_df = return_df("data/Player Profile.csv")
+    return player_df
+
 #@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
 def return_df(f):        
     try:
@@ -72,12 +77,16 @@ def return_combined_matchdf(del_df,match_df):
 
 @st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
 def getBatsmanList(df):
-    batsman_list = df['batsman'].unique()
+    batsman_list = df['display_name'].unique()    
     return sorted(batsman_list)
 
+def getPlayerName(player,player_df):    
+    df = player_df[(player_df.display_name == player)].reset_index()    
+    return df['Player_Name'][0]
+    
 @st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
-def getBowlerList(df):
-    bowler_list = df['bowler'].unique()
+def getBowlerList(df):    
+    bowler_list = df['display_name'].unique()    
     return sorted(bowler_list)
 
 @st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)

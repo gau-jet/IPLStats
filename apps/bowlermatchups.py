@@ -16,7 +16,7 @@ def app():
     merged_df.rename(columns = {'id':'match_id'}, inplace = True)    
     batting_merged_df = pd.merge(merged_df, player_df[['Player_Name','batting_style']], left_on='batsman', right_on='Player_Name', how='left')
     batting_merged_df.drop(['Player_Name'], axis=1, inplace=True)       
-    comb_df = pd.merge(batting_merged_df, player_df[['Player_Name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
+    comb_df = pd.merge(batting_merged_df, player_df[['Player_Name','display_name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
     
     comb_df=utils.replaceTeamNames (comb_df)
@@ -54,7 +54,8 @@ def app():
         
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
         if bowler != DEFAULT_BOWLER:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)
+            bowler_name = utils.getPlayerName(bowler,player_df)
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler_name)
         else:
             st.error('Please select bowler')
             return

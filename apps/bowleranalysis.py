@@ -10,14 +10,17 @@ def app():
     
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
-
+    player_df = utils.load_player_data()
+    
     comb_df=utils.return_combined_matchdf(del_df,match_df)
+    merged_df = pd.merge(comb_df, player_df, left_on='bowler', right_on='Player_Name', how='left')
+    comb_df = merged_df
 
     #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
     #comb_df = comb_df.replace(np.NaN, 0)
     #st.write(comb_df.head(10))
     
-                
+        
     def playerStatistics(df):    
         
         df['isDot'] = df['batsman_runs'].apply(lambda x: 1 if x == 0 else 0)
@@ -81,10 +84,10 @@ def app():
         
     if submitted:                
         comb_df['isBowlerWk'] = comb_df.apply(lambda x: utils.is_wicket(x['player_dismissed'], x['dismissal_kind']), axis = 1)
-        
+        bowler_name = utils.getPlayerName(bowler,player_df)
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
         if bowler != DEFAULT:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler)    
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'bowler',bowler_name)    
         else:
              st.error('Please select bowler')
              return

@@ -10,11 +10,12 @@ def app():
     table_header_str = f"""<h3 style='text-align: center; color: white;'>{series} - Batting Records</h3>"""
     del_df = utils.load_deliveries_data()
     match_df = utils.load_match_data()
-    
+    player_df = utils.load_player_data()
         
     comb_df=utils.return_combined_matchdf(del_df,match_df)
-    
-
+      
+    merged_df = pd.merge(comb_df, player_df, left_on='batsman', right_on='Player_Name', how='left')
+    comb_df = merged_df
     with st.form("my_form"):     
         st.markdown(table_header_str, unsafe_allow_html=True)
         batsman_list = utils.getBatsmanList(comb_df)
@@ -35,11 +36,11 @@ def app():
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)
         
-    if submitted: 
-        
+    if submitted:         
         filtered_df = utils.getSeasonDataFrame(comb_df,start_year,end_year)
         if batsman != DEFAULT:
-            filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman)       
+            batsman_name = utils.getPlayerName(batsman,player_df)
+            filtered_df = utils.getSpecificDataFrame(filtered_df,'batsman',batsman_name)       
         else:
             st.error('Please select batsman')
             return
