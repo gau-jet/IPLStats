@@ -3,32 +3,40 @@ import pickle
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
+from xgboost import XGBRegressor
 from apps import utils
 
 def app():
     utils.header()
-    teams = ['Sunrisers Hyderabad',
-     'Mumbai Indians',
-     'Royal Challengers Bangalore',
-     'Kolkata Knight Riders',
-     'Punjab Kings',
-     'Chennai Super Kings',
-     'Rajasthan Royals',
-     'Delhi Capitals',
-     'Gujarat Titans',
-     'Lucknow Super Giants'     
-     ]
-    
-    #deliveres = pd.read_csv("data/IPL Matches 2008-2022.csv")
-    deliveres = utils.return_df("data/matches.csv")
-    
+     
+    def replaceTeamNames(df):
 
-
-    venue = deliveres['venue'].unique()
+        team_name_mappings = {'Delhi Daredevils':'Delhi Capitals','Deccan Chargers':'Sunrisers Hyderabad','Gujarat Lions':'Gujarat Titans','Kings XI Punjab':'Punjab Kings','Rising Pune Supergiants':'Rising Pune Supergiant','Pune Warriors':'Rising Pune Supergiant'} 
+        
+        for key, value in team_name_mappings.items():
+            df['team1'] = df['team1'].str.replace(key,value)
+            df['team2'] = df['team2'].str.replace(key,value)
+            df['toss_winner'] = df['toss_winner'].str.replace(key,value)
+            df['winner'] = df['winner'].str.replace(key,value)        
+        return df
     
-    dt_regressor = pickle.load(open('Batting-score-dt_regressor-model.pkl','rb'))    
-    rdf_regressor = pickle.load(open('Batting-score-rdf_regressor-model.pkl','rb'))
+    deliveres = utils.load_match_data()
+    series = utils.getSeries()
     
+    if series == 'IPL':
+        deliveres=replaceTeamNames(deliveres)
+        rdf_regressor = pickle.load(open('data/IPL-Batting-score-xgboost.pkl','rb'))        
+    elif series == 'T20I':
+        rdf_regressor = pickle.load(open('data/T20I-Batting-score-xgboost.pkl','rb'))
+    elif series == 'WT20':    
+        rdf_regressor = pickle.load(open('data/WT20-Batting-score-xgboost.pkl','rb'))
+    
+    teams = sorted(deliveres['team1'].unique())
+    venue = utils.getVenueList(deliveres)   
+    
+    #venue = deliveres['venue'].unique()
+    
+        
     st.title('Score Predictor')
 
     col1, col2 = st.columns(2)
@@ -62,84 +70,14 @@ def app():
         prev_30_boundaries = st.number_input('No of boundaries in prev 5 overs',min_value=0,format='%d')    
 
     if st.button('Predict Score'):
-        comb = pd.DataFrame(np.empty((0, 69)))
-        comb.columns = ['inning', 'over', 'ball', 'current_score', 'current_wickets',
-       'prev_30_runs', 'prev_30_wickets', 'prev_30_dot_balls',
-       'prev_30_boundaries', 'batting_team_Chennai Super Kings',
-       'batting_team_Delhi Capitals', 'batting_team_Gujarat Titans',
-       'batting_team_Kochi Tuskers Kerala',
-       'batting_team_Kolkata Knight Riders',
-       'batting_team_Lucknow Super Giants', 'batting_team_Mumbai Indians',
-       'batting_team_Punjab Kings', 'batting_team_Rajasthan Royals',
-       'batting_team_Rising Pune Supergiant',
-       'batting_team_Royal Challengers Bangalore',
-       'batting_team_Sunrisers Hyderabad', 'bowling_team_Chennai Super Kings',
-       'bowling_team_Delhi Capitals', 'bowling_team_Gujarat Titans',
-       'bowling_team_Kochi Tuskers Kerala',
-       'bowling_team_Kolkata Knight Riders',
-       'bowling_team_Lucknow Super Giants', 'bowling_team_Mumbai Indians',
-       'bowling_team_Punjab Kings', 'bowling_team_Rajasthan Royals',
-       'bowling_team_Rising Pune Supergiant',
-       'bowling_team_Royal Challengers Bangalore',
-       'bowling_team_Sunrisers Hyderabad', 'venue_Arun Jaitley Stadium',
-       'venue_Barabati Stadium', 'venue_Brabourne Stadium',
-       'venue_Buffalo Park', 'venue_De Beers Diamond Oval',
-       'venue_Dr DY Patil Sports Academy',
-       'venue_Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium',
-       'venue_Dubai International Cricket Stadium', 'venue_Eden Gardens',
-       'venue_Feroz Shah Kotla', 'venue_Green Park',
-       'venue_Himachal Pradesh Cricket Association Stadium',
-       'venue_Holkar Cricket Stadium',
-       'venue_JSCA International Stadium Complex', 'venue_Kingsmead',
-       'venue_M Chinnaswamy Stadium', 'venue_MA Chidambaram Stadium',
-       'venue_Maharashtra Cricket Association Stadium',
-       'venue_Narendra Modi Stadium', 'venue_Nehru Stadium',
-       'venue_New Wanderers Stadium', 'venue_Newlands',
-       'venue_OUTsurance Oval',
-       'venue_Punjab Cricket Association IS Bindra Stadium',
-       'venue_Rajiv Gandhi International Stadium',
-       'venue_Sardar Patel Stadium, Motera',
-       'venue_Saurashtra Cricket Association Stadium',
-       'venue_Sawai Mansingh Stadium',
-       'venue_Shaheed Veer Narayan Singh International Stadium',
-       'venue_Sharjah Cricket Stadium', 'venue_Sheikh Zayed Stadium',
-       'venue_St George\'s Park', 'venue_Subrata Roy Sahara Stadium',
-       'venue_SuperSport Park',
-       'venue_Vidarbha Cricket Association Stadium',
-       'venue_Wankhede Stadium']
-        input = pd.DataFrame(columns = comb.columns)
-        oversdata=str(overs)
-        over,ball = ([int(x)]  for x in oversdata.split(".",1))
+    
+        input = pd.DataFrame(
+        {'batting_team': [batting_team], 'bowling_team': [bowling_team], 'venue': Venue, 'current_score': [runs],
+         'overs': [overs], 'current_wickets': [wickets], 'prev_30_runs': [runs_in_prev_5], 'prev_30_wickets': [wickets_in_prev_5], 'prev_30_dot_balls': [prev_30_dot_balls], 'prev_30_boundaries': [prev_30_boundaries]})
         
-        input.at[ 0, 'inning'] = 1
-        input['over'] = over
-        input['ball'] = ball
-        input['current_score'] = runs
-        input['current_wickets'] = wickets
-        input['prev_30_runs'] = runs_in_prev_5
-        input['prev_30_wickets'] = wickets_in_prev_5
-        input['prev_30_dot_balls'] = prev_30_dot_balls
-        input['prev_30_boundaries'] = prev_30_boundaries
-        input['venue_' + Venue] = 1
-        input['batting_team_' +  batting_team ] = 1
-        input['bowling_team_' +  bowling_team ] = 1
-
-        input = input.replace(np.nan,0)
+        rdf_regressor_score = rdf_regressor.predict(input)
+       
+        st.text(batting_team + " will score between " + str(int(rdf_regressor_score[0])-5) + " and " +  str(int(rdf_regressor_score[0])+5))
         
-        
-        rdf_regressor_score = str(rdf_regressor.predict(input));
-        dt_regressor_score = str(dt_regressor.predict(input));
-        b="[]"
-        for char in b:
-            
-            rdf_regressor_score = rdf_regressor_score.replace(char, "")
-            dt_regressor_score = dt_regressor_score.replace(char, "")
-        
-        
-        rdf_regressor_score = rdf_regressor_score.split(".")
-        dt_regressor_score = dt_regressor_score.split(".")
-        
-        st.subheader(batting_team + " will score")
-        
-        st.text("Random Forest method: "+ rdf_regressor_score[0])
-        st.text("Decision Tree method: " + dt_regressor_score[0])
+      
+      
