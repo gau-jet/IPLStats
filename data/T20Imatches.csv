@@ -843,3 +843,7 @@ id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winn
 1303308,2022,Dublin,28-06-2022 00:00,India,Ireland,India,bat,normal,0,India,runs,4,DJ Hooda,The Village,Jareth McCready,R Black,
 1317149,2022,Roseau,02-07-2022 00:00,Bangladesh,West Indies,West Indies,field,no result,0,,,0,,Windsor Park,GO Brathwaite,PA Gustard,
 1317150,2022,Roseau,03-07-2022 00:00,West Indies,Bangladesh,West Indies,bat,normal,0,West Indies,runs,35,R Powell,Windsor Park,LS Reifer,N Duguid,
+1276904,2022,Southampton,07-07-2022 00:00,India,England,India,bat,normal,0,India,runs,50,HH Pandya,The Rose Bowl,AG Wharf,DJ Millns,
+1276905,2022,Birmingham,09-07-2022 00:00,India,England,England,field,normal,0,India,runs,49,B Kumar,Edgbaston,DJ Millns,MJ Saggers,
+1276906,2022,Nottingham,10-07-2022 00:00,England,India,England,bat,normal,0,England,runs,17,RJW Topley,Trent Bridge,AG Wharf,MJ Saggers,
+1317151,2022,Providence,07-07-2022 00:00,Bangladesh,West Indies,Bangladesh,bat,normal,0,West Indies,wickets,5,N Pooran,Providence Stadium,GO Brathwaite,LS Reifer,
