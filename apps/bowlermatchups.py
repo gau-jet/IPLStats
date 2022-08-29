@@ -20,22 +20,17 @@ def app():
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
     
     comb_df=utils.replaceTeamNames (comb_df)
-
-    #comb_df = comb_df[['id' , 'inning' , 'batting_team' , 'bowling_team' , 'over' , 'ball' , 'total_runs' , 'is_wicket' , 'player_dismissed' , 'venue']]
-    #comb_df = comb_df.replace(np.NaN, 0)
-    #st.write(comb_df.head(10))
-    
-          
+    season_list = utils.getSeasonList(comb_df)
     
     #st.text(df.columns)    
     #st.text(df.head())
     with st.form("my_form"):        
         st.markdown(table_header_str, unsafe_allow_html=True)
         batting_type = comb_df['batting_style'].dropna().unique()
+        
         bowler_list = utils.getBatsmanList(comb_df)    
-        season_list = utils.getSeasonList(comb_df)
+        
         start_season = min(season_list)
-        #st.write(comb_df)
         
         DEFAULT_BOWLER = 'Pick a player'
         bowler = utils.selectbox_with_default(st,'Select bowler *',sorted(bowler_list),DEFAULT_BOWLER)
