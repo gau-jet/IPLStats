@@ -875,3 +875,8 @@ id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winn
 1323297,2022,Harare,02-08-2022 00:00,Zimbabwe,Bangladesh,Zimbabwe,bat,normal,0,Zimbabwe,runs,10,RP Burl,Harare Sports Club,C Phiri,L Rusere,
 1307162,2022,Belfast,15-08-2022 00:00,Afghanistan,Ireland,Ireland,field,normal,0,Afghanistan,runs,27,Rashid Khan,Civil Service Cricket Club,M Hawthorne,PA Reynolds,
 1307163,2022,Belfast,17-08-2022 00:00,Afghanistan,Ireland,Ireland,field,normal,1,Ireland,wickets,7,MR Adair,Civil Service Cricket Club,Jareth McCready,R Black,
+1327269,2022,Dubai,27-08-2022 00:00,Sri Lanka,Afghanistan,Afghanistan,field,normal,0,Afghanistan,wickets,8,Fazalhaq Farooqi,Dubai International Cricket Stadium,Ahsan Raza,AK Chaudhary,
+1327270,2022,Dubai,28-08-2022 00:00,Pakistan,India,India,field,normal,0,India,wickets,5,HH Pandya,Dubai International Cricket Stadium,Masudur Rahman,RSA Palliyaguruge,
+1327271,2022,Sharjah,30-08-2022 00:00,Bangladesh,Afghanistan,Bangladesh,bat,normal,0,Afghanistan,wickets,7,Mujeeb Ur Rahman,Sharjah Cricket Stadium,Asif Yaqoob,J Madanagopal,
+1327272,2022,Dubai,31-08-2022 00:00,India,Hong Kong,Hong Kong,field,normal,0,India,runs,40,SA Yadav,Dubai International Cricket Stadium,Ahsan Raza,Gazi Sohel,
+1327273,2022,Dubai,01-09-2022 00:00,Bangladesh,Sri Lanka,Sri Lanka,field,normal,0,Sri Lanka,wickets,2,BKG Mendis,Dubai International Cricket Stadium,Ahmed Shah Pakteen,AK Chaudhary,
