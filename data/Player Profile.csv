@@ -87,7 +87,7 @@ AB Agarkar,RHB,Right-arm fast,IPL,26184,Ajit Agarkar,Ajit Bhalchandra Agarkar,Bo
 AM Rahane,RHB,Right-arm fast,IPL,277916,Ajinkya Rahane,Ajinkya Madhukar Rahane,Top-order batter,Right-hand bat,Right-arm medium
 Shoaib Malik,RHB,Off Break,IPL,42657,Shoaib Malik,Shoaib Malik,Allrounder,Right-hand bat,Right-arm offbreak
 MK Tiwary,RHB,Leg Break,IPL,35565,Manoj Tiwary,Manoj Kumar Tiwary,Batter,Right-hand bat,Legbreak googly
-KD Karthik,RHB,,IPL,30045,Dinesh Karthik,Krishnakumar Dinesh Karthik,Wicketkeeper batter,Right-hand bat,Right-arm offbreak
+KD Karthik,RHB,Off Break,IPL,30045,Dinesh Karthik,Krishnakumar Dinesh Karthik,Wicketkeeper batter,Right-hand bat,Right-arm offbreak
 R Bhatia,RHB,Right-arm fast,IPL,26907,Rajat Bhatia,Rajat Bhatia,Allrounder,Right-hand bat,Right-arm medium-fast
 MF Maharoof,RHB,Right-arm fast,IPL,49638,Farveez Maharoof,Mohamed Farveez Maharoof,Allrounder,Right-hand bat,Right-arm fast-medium
 VY Mahesh,RHB,Right-arm fast,IPL,31732,Yo Mahesh,Vijaykumar Yo Mahesh,Allrounder,Right-hand bat,Right-arm medium-fast
@@ -1558,12 +1558,44 @@ TL Chivanga,RHB,Right-arm fast,T20I,1059122,Tanaka Chivanga,Tanaka Lance Chivang
 JK Masara,RHB,Leg Break,T20I,722313,John Masara,John Kumbirai Masara,Bowler,Right-hand bat,Legbreak
 D Madushanka,RHB,Left-arm fast,T20I,793007,Dilshan Madushanka,Lokumarakkalage Dilshan Madushanka,Bowler,Right-hand bat,Left-arm medium-fast
 Naseem Shah,RHB,Right-arm fast,T20I,1158088,Naseem Shah,Naseem Shah,Bowler,Right-hand bat,Right-arm fast
-Yasim Murtaza,LHB,Slow left-arm orthodox,,233904,Yasim Murtaza,Yasim Murtaza,Allrounder,Left-hand bat,Slow left-arm orthodox
-Zeeshan Ali (2),RHB,,,386302,Zeeshan Ali,Zeeshan Ali,Wicketkeeper batter,Right-hand bat,
-SS McKechnie,RHB,,,459752,Scott McKechnie,Scott Stephen McKechnie,Wicketkeeper batter,Right-hand bat,
-AM Fernando,RHB,Right-arm fast,,786925,Asitha Fernando,Asitha Madusanka Fernando,Bowler,Right-hand bat,Right-arm medium-fast
-Haroon Arshad,RHB,Right-arm fast,,1068983,Haroon Arshad,Haroon Arshad,Bowling allrounder,Right-hand bat,Right-arm medium
-A Shukla,RHB,Right-arm fast,,1167779,Ayush Shukla,Ayush Shukla,Bowler,Right-hand bat,Right-arm medium
-Ehsan Khan,RHB,Off Break,,40082,Ehsan Khan,Ehsan Khan,Bowler,Right-hand bat,Right-arm offbreak
-Mohammad Ghazanfar,RHB,Leg Break,,633428,Mohammad Ghazanfar,Mohammad Ghazanfar,Bowler,Right-hand bat,Legbreak
-Ebadat Hossain,RHB,Right-arm fast,,932355,Ebadat Hossain,Ebadat Hossain,Bowler,Right-hand bat,Right-arm fast-medium
+Yasim Murtaza,LHB,Slow left-arm orthodox,T20I,233904,Yasim Murtaza,Yasim Murtaza,Allrounder,Left-hand bat,Slow left-arm orthodox
+Zeeshan Ali (2),RHB,,T20I,386302,Zeeshan Ali,Zeeshan Ali,Wicketkeeper batter,Right-hand bat,
+SS McKechnie,RHB,,T20I,459752,Scott McKechnie,Scott Stephen McKechnie,Wicketkeeper batter,Right-hand bat,
+AM Fernando,RHB,Right-arm fast,T20I,786925,Asitha Fernando,Asitha Madusanka Fernando,Bowler,Right-hand bat,Right-arm medium-fast
+Haroon Arshad,RHB,Right-arm fast,T20I,1068983,Haroon Arshad,Haroon Arshad,Bowling allrounder,Right-hand bat,Right-arm medium
+A Shukla,RHB,Right-arm fast,T20I,1167779,Ayush Shukla,Ayush Shukla,Bowler,Right-hand bat,Right-arm medium
+Ehsan Khan,RHB,Off Break,T20I,40082,Ehsan Khan,Ehsan Khan,Bowler,Right-hand bat,Right-arm offbreak
+Mohammad Ghazanfar,RHB,Leg Break,T20I,633428,Mohammad Ghazanfar,Mohammad Ghazanfar,Bowler,Right-hand bat,Legbreak
+Ebadat Hossain,RHB,Right-arm fast,T20I,932355,Ebadat Hossain,Ebadat Hossain,Bowler,Right-hand bat,Right-arm fast-medium
+D Elgar,LHB,Slow left-arm orthodox,T20I,230852,Dean Elgar,Dean Elgar,Opening batter,Left-hand bat,Slow left-arm orthodox
+SJ Erwee,LHB,Off Break,T20I,324260,Sarel Erwee,Sarel Johannes Erwee,Opening batter,Left-hand bat,Right-arm offbreak
+KD Petersen,RHB,Leg Break,,485676,Keegan Petersen,Keegan Darryl Petersen,Top-order batter,Right-hand bat,Legbreak
+RD Rickelton,LHB,,,605661,Ryan Rickelton,Ryan David Rickelton,Wicketkeeper batter,Left-hand bat,
+K Zondo,RHB,Off Break,,318842,Khayelihle Zondo,Khayelihle Zondo,Batter,Right-hand bat,Right-arm offbreak
+K Verreynne,RHB,Off Break,,595004,Kyle Verreynne,Kyle Verreynne,Wicketkeeper batter,Right-hand bat,Right-arm offbreak
+AZ Lees,LHB,Leg Break,,460756,Alexander Lees,Alexander Zak Lees,Opening batter,Left-hand bat,Legbreak
+Z Crawley,RHB,Off Break,,665053,Zak Crawley,Zak Crawley,Top-order batter,Right-hand bat,Right-arm offbreak
+OJ Pope,RHB,,,887207,Oliver Pope,Oliver John Douglas Pope,Middle-order batter,Right-hand bat,
+BT Foakes,RHB,,,364788,Benjamin Foakes,Benjamin Thomas Foakes,Wicketkeeper batter,Right-hand bat,
+T Marumani,LHB,Off Break,,946507,Tadiwanashe Marumani,Tadiwanashe Marumani,Top-order batter,Left-hand bat,Right-arm offbreak
+OE Robinson,RHB,Right-arm fast,,527776,Oliver Robinson,Oliver Edward Robinson,Bowling allrounder,Right-hand bat,Right-arm medium-fast
+MJ Leach,LHB,Slow left-arm orthodox,,455524,Matthew Jack Leach,Matthew Jack Leach,Bowler,Left-hand bat,Slow left-arm orthodox
+T Kaitano,RHB,Off Break,,493765,Takudzwanashe Kaitano,Takudzwanashe Kaitano,Opening batter,Right-hand bat,Right-arm offbreak
+T Munyonga,RHB,Off Break,,1122853,Tony Munyonga,Tony Tanaka Munyonga,Allrounder,Right-hand bat,Right-arm offbreak
+Shan Masood,LHB,Right-arm fast,,233901,Shan Masood,Shan Masood Khan,Opening batter,Left-hand bat,Right-arm medium-fast
+WG Jacks,RHB,Off Break,,897549,William Jacks,William George Jacks,Batter,Right-hand bat,Right-arm offbreak
+OP Stone,RHB,Right-arm fast,,457279,Oliver Stone,Oliver Peter Stone,Bowler,Right-hand bat,Right-arm fast
+Waseem Muhammad,RHB,Right-arm fast,,1241277,Muhammad Waseem,Muhammad Waseem,Opening batter,Right-hand bat,Right-arm fast
+Aryan Lakra,LHB,Slow left-arm orthodox,,1058989,Aryan Lakra,Aryan Lakra,Bowler,Left-hand bat,Slow left-arm orthodox
+Chirag Suri,RHB,Leg Break,,534734,Chirag Suri,Chirag Suri,Opening batter,Right-hand bat,Legbreak
+V Aravind,RHB,,,1178586,Vriitya Aravind,Vriitya Aravind,Wicketkeeper batter,Right-hand bat,
+CP Rizwan,RHB,Leg Break,,474760,Chundangapoyil Rizwan,Chundangapoyil Puthiyapurayil Rizwan,Middle-order batter,Right-hand bat,Legbreak
+Basil Hameed,RHB,Off Break,,1209110,Basil Hameed,Basil Hameed,Middle-order batter,Right-hand bat,Right-arm offbreak
+Zawar Farid,RHB,Right-arm fast,,1196500,Zawar Farid,Zawar Farid,Bowler,Right-hand bat,Right-arm medium
+Aayan Afzal Khan,RHB,Slow left-arm orthodox,,1241265,Aayan Khan,Aayan Afzal Khan,,Right-hand bat,Slow left-arm orthodox
+Zawar Farid,RHB,Right-arm fast,,1196500,Zawar Farid,Zawar Farid,Bowler,Right-hand bat,Right-arm medium
+KP Meiyappan,RHB,Leg Break,,1058987,Karthik Meiyappan,Karthik Palaniapan Meiyappan,Bowler,Right-hand bat,Legbreak
+Junaid Siddique (2),RHB,Right-arm fast,,1203754,Muhammad Junaid Siddique,Muhammad Junaid Siddique,Bowler,Right-hand bat,Right-arm medium-fast
+L Wood,LHB,Left-arm fast,,573170,Luke Wood,Luke Wood,Bowling allrounder,Left-hand bat,Left-arm fast-medium
+PM Liyanagamage,RHB,Right-arm fast,,826689,Pramod Liyanagamage,Pramod Madushan Liyanagamage,Bowler,Right-hand bat,Right-arm medium-fast
+Sabir Ali,RHB,Left-arm fast,,1328438,Sabir Ali,Sabir Ali,Bowler,Right-hand bat,Left-arm fast-medium
