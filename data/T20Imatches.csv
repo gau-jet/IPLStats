@@ -955,3 +955,8 @@ id,season,city,date,team1,team2,toss_winner,toss_decision,result,dl_applied,winn
 1298177,2022,Sydney,09-11-2022 00:00,New Zealand,Pakistan,New Zealand,bat,normal,0,Pakistan,wickets,7,Mohammad Rizwan,Sydney Cricket Ground,M Erasmus,RK Illingworth,
 1298178,2022,Adelaide,10-11-2022 00:00,India,England,England,field,normal,0,England,wickets,10,AD Hales,Adelaide Oval,HDPK Dharmasena,PR Reiffel,
 1298179,2022,Melbourne,13-11-2022 00:00,Pakistan,England,England,field,normal,0,England,wickets,5,SM Curran,Melbourne Cricket Ground,HDPK Dharmasena,M Erasmus,
+1322276,2022,Mount Maunganui,20-11-2022 00:00,India,New Zealand,New Zealand,field,normal,0,India,runs,65,SA Yadav,Bay Oval,CB Gaffaney,WR Knights,
+1322277,2022,Napier,22-11-2022 00:00,New Zealand,India,New Zealand,bat,tie,1,,,0,Mohammed Siraj,McLean Park,CM Brown,CB Gaffaney,
+1348640,2023,Mumbai,03-01-2023 00:00,India,Sri Lanka,Sri Lanka,field,normal,0,India,runs,2,DJ Hooda,Wankhede Stadium,AK Chaudhary,KN Ananthapadmanabhan,
+1348641,2023,Pune,05-01-2023 00:00,Sri Lanka,India,India,field,normal,0,Sri Lanka,runs,16,MD Shanaka,Maharashtra Cricket Association Stadium,J Madanagopal,Nitin Menon,
+1348642,2023,Rajkot,07-01-2023 00:00,India,Sri Lanka,India,bat,normal,0,India,runs,91,SA Yadav,Saurashtra Cricket Association Stadium,J Madanagopal,Nitin Menon,
