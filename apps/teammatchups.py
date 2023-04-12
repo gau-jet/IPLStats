@@ -21,6 +21,7 @@ def app():
     venue_list = utils.getVenueList(comb_df)    
     season_list = utils.getSeasonList(comb_df)
     start_season = min(season_list)
+    end_season = max(season_list)
     with st.form("my_form"):
         #st.title('Team Matchups')
         st.markdown(table_header_str, unsafe_allow_html=True)
@@ -29,7 +30,7 @@ def app():
         
         DEFAULT = 'ALL'
         venue = utils.selectbox_with_default(st,'Select Venue',venue_list,DEFAULT)
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, end_season))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)

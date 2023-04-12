@@ -21,6 +21,7 @@ def app():
         batsman_list = utils.getBatsmanList(comb_df)
         season_list = utils.getSeasonList(comb_df)
         start_season = min(season_list)
+        end_season = max(season_list)
         venue_list = utils.getVenueList(comb_df)
         team_list = sorted(comb_df['team1'].unique())
         
@@ -31,7 +32,7 @@ def app():
         batsman = utils.selectbox_with_default(st,'Select batsman *',batsman_list,DEFAULT)
         venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_ALL)
         opposition = utils.selectbox_with_default(st,'Select opposition',team_list,DEFAULT_ALL)
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, end_season))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)

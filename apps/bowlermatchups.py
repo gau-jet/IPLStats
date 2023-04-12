@@ -18,10 +18,11 @@ def app():
     batting_merged_df.drop(['Player_Name'], axis=1, inplace=True)       
     comb_df = pd.merge(batting_merged_df, player_df[['Player_Name','display_name','bowling_style']], left_on='bowler', right_on='Player_Name', how='left')
     comb_df.drop(['Player_Name'], axis=1, inplace=True)
-    
-    comb_df=utils.replaceTeamNames (comb_df)
-    season_list = utils.getSeasonList(comb_df)
-    
+   
+    comb_df=utils.replaceTeamNames(comb_df)
+    season_list = utils.getSeasonList(comb_df)    
+    #comb_df = comb_df[comb_df['bowling_style'].isnull()]
+    #st.table(comb_df.head(10))
     #st.text(df.columns)    
     #st.text(df.head())
     with st.form("my_form"):        
@@ -31,6 +32,7 @@ def app():
         bowler_list = utils.getBatsmanList(comb_df)    
         
         start_season = min(season_list)
+        end_season = max(season_list)
         
         DEFAULT_BOWLER = 'Pick a player'
         bowler = utils.selectbox_with_default(st,'Select bowler *',sorted(bowler_list),DEFAULT_BOWLER)
@@ -38,7 +40,7 @@ def app():
         batting_type = utils.selectbox_with_default(st,'Select batting type',sorted(batting_type),DEFAULT)
         col1, col2 = st.columns(2)
         with col1:
-            start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
+            start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, end_season))
         with col2:    
             min_balls = st.number_input('Min. Balls',min_value=10,value=20,format='%d')
         submitted = st.form_submit_button("Show Stats")

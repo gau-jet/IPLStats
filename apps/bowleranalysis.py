@@ -77,7 +77,8 @@ def app():
         venue = utils.selectbox_with_default(st,'Select venue',venue_list,DEFAULT_ALL)
         opposition = utils.selectbox_with_default(st,'Select opposition',team_list,DEFAULT_ALL)
         start_season = min(season_list)
-        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
+        end_season = max(season_list)
+        start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, end_season))
         submitted = st.form_submit_button("Show Stats")
         title_alignment= """   <style>  .css-1p05t8e {   border-width : 0    }    </style>   """
         st.markdown(title_alignment, unsafe_allow_html=True)
