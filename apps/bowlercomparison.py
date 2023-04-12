@@ -36,8 +36,8 @@ def app():
     start_season = min(season_list)
     venue_list = utils.getVenueList(comb_df)
     #st.write(comb_df['batting_style'].unique())
-    na_df = comb_df[comb_df['batting_style'].isna()]
-    st.write(na_df)
+    #na_df = comb_df[comb_df['batting_style'].isna()]
+    #st.write(na_df)
     
     with st.form("my_form"):
         st.markdown(table_header_str, unsafe_allow_html=True)
