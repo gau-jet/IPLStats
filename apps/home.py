@@ -19,11 +19,12 @@ def app():
     col5, col6 = st.columns(2)
     col7, col8 = st.columns(2)
     col9, col10 = st.columns(2)
-    query_params = st.experimental_get_query_params()
-    if query_params:
-        series = query_params['series'][0]
+    series_name = st.query_params
+    if series_name:        
+        series = series_name['series']
     else:
         series = 'IPL'
+        
     
     with col1:
         st.markdown  ("[Batting Records](?option=Batting+Records&series="+series+") <br>Check a batter's record by innings, phase, venue",True)
