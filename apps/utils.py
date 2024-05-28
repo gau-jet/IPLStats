@@ -20,8 +20,8 @@ def header():
     st.markdown(snippet, unsafe_allow_html=True)
 
 def getSeries():
-    query_params = st.experimental_get_query_params()
-    series = query_params['series'][0]
+    query_params = st.query_params
+    series = query_params['series']
     return series
 
 def load_deliveries_data():
@@ -54,6 +54,7 @@ def load_player_data():
     return player_df
 
 #@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24,show_spinner=True)    
+@st.cache_data(ttl="1d")    
 def return_df(f):        
     try:
         df = pd.read_csv(f)
@@ -63,7 +64,7 @@ def return_df(f):
         st.error(e)
     return df.copy()
 
-@st.cache(allow_output_mutation=True,suppress_st_warning=True,ttl=3600*24)    
+@st.cache_data(ttl="1d")    
 def return_combined_matchdf(del_df,match_df):        
     try:
         comb_df = pd.merge(del_df, match_df, on = 'id', how='left')
@@ -75,26 +76,33 @@ def return_combined_matchdf(del_df,match_df):
         st.error(e)
     return comb_df   
 
-@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
-def getBatsmanList(df):
-    batsman_list = df['display_name'].unique()    
+#@st.cache_data(ttl=3600*24,show_spinner=True)
+@st.cache_data(ttl="1d")
+def getBatsmanList(df):    
+    batsman_list = df['display_name'].unique()   
+    #st.table(batsman_list)    
     return sorted(batsman_list)
 
 def getPlayerName(player,player_df):    
     df = player_df[(player_df.display_name == player)].reset_index()    
     return df['Player_Name'][0]
     
-@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
+#@st.cache_data(ttl=3600*24,show_spinner=True)
+@st.cache_data(ttl="1d")    
 def getBowlerList(df):    
+    #comb_df = df[df['display_name'].isnull()]
+    #st.table(comb_df['bowler'].unique())
     bowler_list = df['display_name'].unique()    
     return sorted(bowler_list)
 
-@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
+#@st.cache_data(ttl=3600*24,show_spinner=True)
+@st.cache_data(ttl="1d")    
 def getSeasonList(df):
     #return pd.DataFrame(sorted({2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022}))
     return sorted(df['season'].unique())
         
-@st.cache(suppress_st_warning=True,ttl=3600*24,show_spinner=True)
+
+@st.cache_data(ttl="1d")    
 def getVenueList(df):
     return sorted(df['venue'].unique())
         
@@ -102,11 +110,11 @@ def getMatchList(df,year,venue):
     df = df[(df.season == year)]
     if venue != 'ALL':
         df = df[(df.venue == venue)]    
-    query_params = st.experimental_get_query_params()
-    series = query_params['series'][0]
+    query_params = st.query_params
+    series = query_params['series']
     
     if series == 'T20I':  
-        df['date'] = pd.to_datetime(df['date'])
+        #df['date'] = pd.to_datetime(df['date'])
         df = df.sort_values(by='date',ascending = False).reset_index()
     else:        
         df = df.sort_values(by='id',ascending = False).reset_index()
