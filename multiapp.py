@@ -67,14 +67,14 @@ class MultiApp:
                         {'ID':1,'ShortName':"T20I",'FullName':"T20 Internationals"},
                         {'ID':2,'ShortName':"WT20",'FullName':"Women T20 Challenge"},
                       ]
-        query_params = st.experimental_get_query_params()
+        query_params = st.query_params
         if query_params:
-            sel_index = get_position(self.apps,query_params['option'][0])
+            sel_index = get_position(self.apps,query_params['option'])
         else:
             sel_index =0
         
         if query_params:
-            series_index = get_series_index(series_list,query_params['series'][0])
+            series_index = get_series_index(series_list,query_params['series'])
         else:
             series_index =0
         
@@ -108,9 +108,10 @@ class MultiApp:
         try:
             query_option = app['title']            
         except:
-            st.experimental_set_query_params(option=app['title'],series=series_key)
-            query_params = st.experimental_get_query_params()
-            query_option = query_params['option'][0]
+            st.query_params['option']=app['title']
+            st.query_params['series']=series_key            
+            query_params = st.query_params
+            query_option = query_params['option']
         q_index = get_position(self.apps,query_option)
         but_values[q_index] = True
         if "cmenu" not in st.session_state:
@@ -120,7 +121,9 @@ class MultiApp:
             c_index = but_values.index(True)            
             if q_index is c_index:                
                 final = c_index                                
-                st.experimental_set_query_params(option=self.apps[final]['title'],series=series_key)
+                #st.query_params(option=self.apps[final]['title'],series=series_key)
+                st.query_params['option']=self.apps[final]['title']
+                st.query_params['series']=series_key
             else:                
                 final = q_index
         st.session_state.cmenu=final
