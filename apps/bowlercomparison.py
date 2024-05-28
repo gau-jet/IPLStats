@@ -33,10 +33,11 @@ def app():
     bowling_type_list = comb_df['bowling_style'].dropna().unique()
     batting_style_list = comb_df['batting_style'].unique()
     season_list = utils.getSeasonList(comb_df)
-    start_season = min(season_list)
+    start_season = min(season_list)    
+    end_season = max(season_list)
     venue_list = utils.getVenueList(comb_df)
     #st.write(comb_df['batting_style'].unique())
-    #na_df = comb_df[comb_df['batting_style'].isna()]
+    #na_df = comb_df[comb_df['bowling_style'].isna()]
     #st.write(na_df)
     
     with st.form("my_form"):
@@ -54,7 +55,7 @@ def app():
         
         col1, col2 = st.columns(2)
         with col1:
-            start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, 2022))
+            start_year, end_year = st.select_slider('Season',options=season_list, value=(start_season, end_season))
         with col2:    
             min_balls = st.number_input('Min. Balls',min_value=20,value=100,format='%d')
         submitted = st.form_submit_button("Show Stats")
