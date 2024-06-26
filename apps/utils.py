@@ -114,10 +114,12 @@ def getMatchList(df,year,venue):
     series = query_params['series']
     
     if series == 'T20I':  
-        #df['date'] = pd.to_datetime(df['date'])
+        df['date'] = pd.to_datetime(df['date'], dayfirst=True)
+        #df["date"] = df["date"].astype('datetime64[ns]')
         df = df.sort_values(by='date',ascending = False).reset_index()
     else:        
         df = df.sort_values(by='id',ascending = False).reset_index()
+    
     
     df['match_string'] = df.id.astype(str)+"-"+df.team1.astype(str)+" Vs "+df.team2.astype(str)+" at "+df.venue
     #st.write(df['match_string'])
